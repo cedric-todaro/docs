@@ -1,0 +1,90 @@
+\documentclass{scrartcl}
+\input{fcards.latex}
+\input{fcard-courbes.latex}
+
+% Coleurs des cartes : http://latexcolor.com/
+\bgcolors{amber}{americanrose}
+
+\def\chapitre{1 Spé. - Dérivation}
+
+\begin{document}
+
+\card{Donner la dérivée de $f(x)=k$}{$f\prime(x)=0$}
+\card{Donner la dérivée de $f(x)=x$}{$f\prime(x)=1$}
+\card{Donner la dérivée de $f(x)=ax+b$}{$f\prime(x)=a$}
+\card{Donner la dérivée de $f(x)=x^2$}{$f\prime(x)=2x$}
+\card{Donner la dérivée de $f(x)=x^n$}{$f\prime(x)=nx^{n-1}$}
+\card{Donner la dérivée de $f(x)=\sqrt{x}$}{$f\prime(x)=\dfrac{1}{2\sqrt{x}}$}
+\card{Donner la dérivée de $f(x)=\dfrac{1}{x}$}{$f\prime(x)=\dfrac{-1}{x^2}$}
+\card{Donner la dérivée de $f(x)=\dfrac{1}{x^n}$}{$f\prime(x)=\dfrac{-n}{x^{n+1}}$}
+\card{Soient $u$ et $v$ des fonctions et $a$ et $b\in\mathbb{R}$\\Donner la dérivée de $\left(au+bv\right)$}{$au\prime +bv\prime $}
+\card{Soit $u$ une fonction et $k\in\mathbb{R}$\\ Donner la dérivée de $\left(ku\right)$}{$ku\prime $}
+\card{Soient $u$ et $v$ des fonctions\\ Donner la dérivée de $\left(u\times v\right)$}{$u\prime v+uv\prime $}
+\card{Soit $u$ une fonction\\ Donner la dérivée de $\left(\dfrac{1}{u}\right)$}{$\dfrac{-u\prime }{u^2}$}
+\card{Soient $u$ et $v$ des fonctions\\ Donner la dérivée de $\left(\dfrac{u}{v}\right)$}{$\dfrac{u\prime v-uv\prime }{v^2}$}
+\card{Soit $u$ une fonction\\ Donner la dérivée de $\left(u^2\right)$}{$2u\prime u$}
+\card{Soit $u$ une fonction et $n\in\mathbb{N}$\\ Donner la dérivée de $\left(u^n\right)$}{$nu\prime u^{n-1}$}
+\card{Soit $u$ une fonction\\ Donner la dérivée de $\left(\sqrt{u}\right)$}{$\dfrac{u\prime }{2\sqrt{u}}$}
+\card{Si $f\prime(x)>0$ sur $I$ alors\\ $f$ est ... sur $I$}{croissante}
+\card{Si $f\prime(x)<0$ sur $I$ alors\\ $f$ est ... sur $I$}{décroissante}
+\card{Si $f$ est croissante sur $I$ alors\\ $f\prime(x)$ est ... sur $I$}{positive}
+\card{Si $f$ est décroissante sur $I$ alors\\ $f\prime(x)$ est ... sur $I$}{négative}
+\card{$f\prime(2)=\ldots ?$ \courbe{1}}{$f\prime(2)=0$}
+\card{Sur $[0;2]$, $f\prime$ est ...?\courbe{1}}{positive}
+\card{Sur $[2;+\infty[$, $f\prime$ est ...?\courbe{1}}{négative}
+\card{$f\prime(0)=...?$\courbe{2}}{$f\prime(0)=1$}
+\card{$f$ est ... sur $[0;+\infty[$ \img[width=.85\longueur]{img/tab01}}{décroissante}
+\card{$f$ est ... sur $]-\infty;0]$ \img[width=.85\longueur]{img/tab01}}{croissante}
+\card{$f\prime$ est ... sur $]-\infty;0]$ \img[width=.85\longueur]{img/tab02}}{négative}
+\card{$f\prime$ est ... sur $[0;2]$ \img[width=.85\longueur]{img/tab02}}{positive}
+\card{$f\prime$ est ... sur $[2;+\infty[$ \img[width=.85\longueur]{img/tab02}}{négative}
+\card{$f\prime(0)=...?$ \img[width=.85\longueur]{img/tab02}}{$f\prime(0)=0$}
+\card{$f\prime(2)=...?$ \img[width=.85\longueur]{img/tab02}}{$f\prime(2)=0$}
+\card{$f$ est ... sur $[-2;0]$ \img[width=.85\longueur]{img/tab03}}{décroissante}
+\card{$f$ est ... sur $[0;+\infty$ \img[width=.85\longueur]{img/tab03}}{croissante}
+\card{$f$ est ... sur $]-\infty;-2]$ \img[width=.85\longueur]{img/tab03}}{croissante}
+\card{$f$ est croisante sur ... \img[width=.85\longueur]{img/tab03}}{$]-\infty;-2]\cup[0;+\infty[$}
+\card{$f$ possède ... extremum(s) locaux en ...\img[width=.85\longueur]{img/tab03}}{$f$ possède 2 extremums locaux \\ pour $x=-2$ et $x=0$}
+\card{$f$ possède ... extremums locaux pour ...\img[width=.85\longueur]{img/tab04}}{$f$ possède 3 extremums locaux \\ pour $x=-2$, $x=0$ et $x=5$}
+\card{$f\prime\left(\dfrac{1}{3}\right)=$...? \img[width=.85\longueur]{img/tab05}}{$f\prime\left(\dfrac{1}{3}\right)=0$}
+\card{$f\prime(x)\leq 0$ sur ... \img[width=.85\longueur]{img/tab05}}{$\left[\dfrac{1}{3};+\infty\right[$}
+\card{$f\prime(x)\geq 0$ sur ... \img[width=.85\longueur]{img/tab05}}{$\left]-\infty;\dfrac{1}{3}\right]$}
+\card{On a représenté $f\prime$. $\quad f$ est ... sur $\mathbb{R}$ \courbe{3}}{$f$ est croissante sur $\mathbb{R}$ car \\ $f\prime(x)\geq 0$ sur $\mathbb{R}$}
+\card{On a représenté $f$.  $\quad f\prime$ est ... sur $]-\infty;-1]$ \courbe{3}}{$f\prime(x)\leq 0$ sur $]-\infty;-1]$}
+\card{On a reprensté $f$.   $\quad f\prime$ est ... sur $[0;+\infty[$ \courbe{3}}{$f\prime(x)\geq 0$ sur $[0;+\infty[$}
+\card{On a reprensté $f$.   $\quad f\prime$ est ... sur $]-\infty;0[$ \courbe{4}}{$f\prime(x)\geq 0$ sur $]-\infty;0[$}
+\card{On a reprensté $f\prime$.  $\quad f$ est ... sur $[-1;+\infty[$ \courbe{4}}{$f$ est croissante sur $[-1;+\infty[$}
+\card{On a reprensté $f\prime$.  $\quad f$ est ... sur $]-\infty;-1]$ \courbe{4}}{$f$ est décroissante sur $]-\infty;-1]$}
+\card{On a reprensté $f$.   $\quad f\prime\geq 0$ sur ... \courbe{5}}{$f\prime(x)\geq 0$ sur $]-\infty;-1]\cup[2;+\infty[$}
+\card{On a reprensté $f$.   $\quad f\prime\leq 0$ sur ... \courbe{5}}{$f\prime(x)\leq 0$ sur $[-1;2]$}
+\card{$f\prime(0)=...$\par\courbe{6}}{$f\prime(0)=-2$}
+\card{$f\prime(1)=...$\par\courbe{6}}{$f\prime(1)=0$}
+\card{$f\prime(2)=...$\par\courbe{6}}{$f\prime(2)=2$}
+\card{On a représenté $f$. $\quad f\prime(x)\leq 0$ sur ... \courbe{6}}{$f\prime(x)\leq$ sur $]-\infty;1]$}
+\card{On a représenté $f$. $\quad f\prime(x)\geq 0$ sur ... \courbe{6}}{$f\prime(x)\geq$ sur $[1;+\infty[$}
+\card{On a représenté $f$. $\quad f\prime(2)=...$ \courbe{7}}{$f\prime(2)=-1$}
+\card{On a représenté $f$. $\quad f\prime(x)\geq 0$ sur ... \courbe{7}}{$f\prime(x)\geq 0$ sur $]-\infty;1]$}
+\card{On a représenté $f$. $\quad f\prime(x)\leq 0$ sur ... \courbe{7}}{$f\prime(x)\leq 0$ sur $[1;+\infty[$}
+\card{L'équation de la tangente à $\mathcal{C}_f$ en $a$ est ... }{$y=f\prime(a)(x-a)+f(a)$}
+\card{$$f(x)=3x^2-x+10$$L'équation de la tangente à $\mathcal{C}_f$ en $0$ est ...}{$y=-x+10$}
+\card{$$f(x)=x^3+x+1$$L'équation de la tangente à $\mathcal{C}_f$ en $0$ est ...}{$y=x+1$}
+\card{$$f(x)=ax^2+bx+c$$ $f\prime(x)=...?$}{$f\prime(x)=2ax+b$}
+\card{$$f(x)=ax^3+bx^2+cx+d$$ $f\prime(x)=...?$}{$f\prime(x)=3ax^2+2bx+c$}
+\card{$$f(x)=x(x+1)$$ $f\prime(x)=...?$}{$f\prime(x)=2x+1$}
+\card{$$f(x)=4\sqrt{x}$$ $f\prime(x)=...?$}{$f\prime(x)=\dfrac{2}{\sqrt{x}}$}
+\card{$$f(x)=\dfrac{1}{\sqrt{x}}$$ $f\prime(x)=...?$}{$f\prime(x)=\dfrac{-u\prime }{u^2}=-\dfrac{1}{2\sqrt{x}}\times\dfrac{1}{(\sqrt{x})^2}=\dfrac{-1}{2x\sqrt{x}}$}
+\card{$$f(x)=2x+\dfrac{3}{x}$$ $f\prime(x)=...?$}{$f\prime(x)=2-\dfrac{3}{x^2}$}
+\card{$$f(x)=\dfrac{x-1}{x+1}$$ $f\prime(x)=...?$}{$f\prime(x)=\dfrac{(x+1)-(x-1)}{(x+1)^2}=\dfrac{2}{(x+1)^2}$}
+\card{$$f(x)=\dfrac{x}{1-x}$$ $f\prime(x)=...?$}{$f\prime(x)=\dfrac{1(1-x)-x(-1)}{(1-x)^2}=\dfrac{1}{(1-x)^2}$}
+\card{$$f(x)=1+x+\dfrac{x^2}{2}+\dfrac{x^3}{6}$$ $f\prime(x)=...?$}{$f\prime(x)=1+x+\dfrac{x^2}{2}$}
+\card{$$f(x)=\dfrac{4x+5}{3}$$ $f\prime(x)=...?$}{$f\prime(x)=\dfrac{4}{3}$}
+\card{$$f(x)=\dfrac{x^3+5x-1}{3}$$ $f\prime(x)=...?$}{$f\prime(x)=x^2+\dfrac{5}{3}$}
+\card{$$f(x)=x+\dfrac{1}{x}$$ $f\prime(x)=...?$}{$f\prime(x)=1-\dfrac{1}{x^2}$}
+\card{$$f(x)=\dfrac{1}{x^2}$$ $f\prime(x)=...?$}{$f\prime(x)=\dfrac{-2x}{x^4}=\dfrac{-2}{x^3}$}
+\card{$$f(x)=2+\dfrac{5}{7x}$$ $f\prime(x)=...?$}{$f\prime(x)=\dfrac{-5}{7x^2}$}
+\card{$$f(x)=(1-x)^2$$ $f\prime(x)=...?$}{$f\prime(x)=-2(1-x)$}
+\card{Taux d'accroissement de $f$ entre $a$ et $a+h$}{$\dfrac{f(a+h)-f(a)}{h}$}
+\card{$f\prime(x)=\lim\limits_{h \to 0}$...}{$$f\prime(x)=\lim\limits_{h \to 0}\dfrac{f(x+h)-f(x)}{h}$$}
+\card{$$f(x)=2x$$ $f\prime(x)=\lim\limits_{h \to 0}$...}{$$f\prime(x)=\lim\limits_{h \to 0}\dfrac{2(x+h)-2x}{h}=2$$}
+
+\end{document}

@@ -1,0 +1,49 @@
+\usepackage[french]{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{calc,blindtext,lastpage,amsmath,amsfonts,amssymb,nccmath,multicol,enumitem,eurosym,graphicx,array,unicode-math}
+\usepackage{xcolor,tikz,pgf,pgfplots,multirow,makecell,colortbl,setspace}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows,backgrounds}
+\setlength{\columnsep}{15pt}
+\usepackage[left=1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[fontsize=9pt]{fontsize}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{16pt}
+\renewcommand\headrulewidth{0.2pt}
+\fancyhead[L]{\small Nom :}
+\fancyhead[R]{\small\Classe}
+\fancyfoot[C]{}
+\fancyfoot[R]{\small\jobname}
+
+% Polices
+\usepackage{fontspec}
+\setmainfont{Asap}
+\usepackage{contour,ulem}
+\renewcommand{\ULdepth}{1.5pt}
+\renewcommand{\ULthickness}{0.75pt}
+\contourlength{0.6pt}
+\newcommand{\souligne}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+
+%%% macros persos
+\newcommand\ligne{\begin{center}\rule{2cm}{0.1pt}\end{center}}
+\newcommand\espace{\begin{center}\rule{2cm}{0.0pt}\end{center}}
+\newcounter{num}
+\newcommand\q{\medskip\addtocounter{num}{1}{\par\noindent\small\textbf{Q.\arabic{num}.~}}}
+\newenvironment{choix}{\begin{itemize}[label=\large$\Box$]}{\end{itemize}}
+\newenvironment{choix2col}{\setlength{\columnseprule}{0pt}\begin{multicols}{2}\begin{choix}}{\end{choix}\end{multicols}}
+\newenvironment{qcm}{\begin{center}\LARGE{\textbf{\souligne{QCM : \Titre}}}\par\normalsize Pour chacune des questions suivantes, cochez la ou les bonnes réponses.\end{center}\begin{multicols*}{2}\setlength{\columnseprule}{1pt}}{\end{multicols*}}
+
+%%macro math
+\let\le\leqslant\let\ge\geqslant
+\newcommand\R{\mathbb{R}}
+\newcommand\D{\mathbb{D}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\Z{\mathbb{Z}}
+\newcommand\N{\mathbb{N}}
+\newcommand\C{\mathbb{C}}
+\renewcommand\vec[1]{\overrightarrow{#1}}
+\newcommand\coord[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand\coordl[2]{\left(#1;#2\right)}
+\newcommand\eqv{\Leftrightarrow}
+

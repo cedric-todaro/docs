@@ -1,0 +1,36 @@
+\documentclass[french,a4paper]{scrartcl}
+\input{eval.latex}
+%%%%%%%%%%%%%%%%
+\def\Classe{TSTMG}
+\def\Titre{Évaluation : Variable aléatoire / Loi binomiale}
+\def\NoterSur{10}
+%%%%%%%%%%%%%%%%
+\begin{document}
+\DoTitle
+\exo{Chapitre précédent - Statistiques \exosur{5}}{
+	On s'intéresse à l'évolution de la fréquentation des camping 4 étoiles ou plus en France métropolitaine.
+	\vspace*{2mm}
+	\begin{center}
+		\def\arraystretch{1.2}
+		\begin{tabular}{|l|c|c|c|c|c|c|c|}\hline
+			Année                                        & 2004   & 2005   & 2006   & 2007   & 2008   & 2009   & 2010   \\ \hline
+			Rang de l'année : $x_i$                      & 0      & 1      & 2      & 3      & 4      & 5      & 6      \\ \hline
+			Fréquentation en milliers de nuitées : $y_i$ & 25 156 & 26 470 & 28 295 & 28 897 & 30 063 & 31 212 & 32 014 \\ \hline
+		\end{tabular}
+	\end{center}
+	\vspace*{2mm}
+	Le nuage de points de coordonnées $(x_i ; y_i)$ pour $i$ variant de $0$ à $6$ est représenté en  annexe.
+	\vspace*{2mm}
+	\begin{enumerate}
+		\q{1} Déterminer le taux d'évolution du nombre de nuité entre 2004 et 2010.
+		\q{1} À l'aide de la calculatrice, déterminer une équation de la droite d'ajustement affine de $y$ en $x$ obtenue par la méthode des moindres carrés (arrondir les coefficients au \textbf{dixième}).
+		\item On décide d'ajuster le nuage avec la droite $(D)$ d'équation $y = 1~150x+25~500$.
+		      \begin{enumerate}
+			      \q{1} Tracer la droite $(D)$ sur le graphique de l'annexe.
+			      \q{1} Déterminer graphiquement le nombre de nuitées prévu par ce modèle en 2014. Faire apparaître les tracés utiles.
+			      \q{1} Déterminer à partir de quelle année le nombre de nuitées prévu par ce modèle sera supérieur à $48~000$.
+		      \end{enumerate}
+	\end{enumerate}
+}
+
+\end{document}

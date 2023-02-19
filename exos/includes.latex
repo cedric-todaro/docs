@@ -1,0 +1,73 @@
+\usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{calc,blindtext,lastpage}
+\usepackage{amsmath,amsfonts,amssymb,nccmath,unicode-math}
+
+% --- Polices
+\usepackage{fontspec,fontawesome5}
+\setmainfont{Asap}
+\usepackage{contour,ulem}
+\renewcommand{\ULdepth}{1.5pt}
+\renewcommand{\ULthickness}{0.5pt}
+\contourlength{0.6pt}
+\newcommand{\myuline}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+\setlength{\parindent}{0pt}
+% \usepackage{mlmodern}
+% \renewcommand{\familydefault}{\sfdefault}
+
+% --- Geometry
+\usepackage[left=1cm,right=1cm,top=1.35cm,bottom=1.75cm]{geometry}
+\setlength{\headheight}{1.30cm}
+\setlength{\headsep}{0.35cm}
+\setlength{\footskip}{0.5cm}
+\setlength{\fboxrule}{1pt}
+
+% --- Graphics
+\usepackage{xcolor,graphicx,tikz,pgf,pgfplots}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows,backgrounds}
+\usepackage{array,multirow,makecell,colortbl,multicol}
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{black}}
+
+% --- Headers et footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{1pt}
+\fancyhead[L]{\small Nom - Prénom :\hfill\Classe}\fancyhead[C]{}\fancyhead[R]{}
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[L]{\small\Titre}\fancyfoot[C]{}\fancyfoot[R]{\small\thepage/\pageref{LastPage}}
+
+% 
+% --- Mes macros
+% 
+\newcommand\MonTitre[1]{\begin{center}\LARGE\bfseries\myuline{#1}\end{center}}
+\newcommand\exo[2][9cm]{\includegraphics[width=#1]{exos/#2}\par\vspace{0.3cm}\par}
+\newcommand\objectif[1]{\parbox{9cm}{\bfseries\uline{#1}}\par}
+\newcommand\BlankSpace[1]{\foreach \nb in {1,...,#1}{\hfill\break}}
+\newcommand\bs[1]{\foreach \nb in {1,...,#1}{\hfill\break}}
+% 
+% --- Mes Environnements
+% 
+
+% Pour les objectifs de fin de chapitre
+% \newenvironment{MonTableau}{\begin{center}\begin{tabular}{>{\centering}c >{\centering\arraybackslash}m{\LargColThree}}\begin{tabular}{|S{m{\LargColOne}} >{\centering\columncolor{gray!25}\arraybackslash}S{m{\LargColTwo}}|}}{\end{tabular}&\includegraphics[width=\LargColThree]{img/image.png}\end{tabular}\end{center}}
+\newenvironment{MonTableau}{\begin{center}\begin{tabular}{>{\centering}c >{\centering\arraybackslash}m{\LargColThree}}\begin{tabular}{|S{m{\LargColOne}} >{\columncolor{gray!25}\arraybackslash}S{m{\LargColTwo}}|}}{\end{tabular}&\includegraphics[width=\LargColThree]{img/image.png}\end{tabular}\end{center}}
+
+% Pour les exos
+\newenvironment{Page_exos}{\begin{center}\begin{multicols}{2}}{\end{multicols}\end{center}\newpage}
+
+% --- macro math
+\let\le\leqslant\let\ge\geqslant
+\newcommand\R{\mathbb{R}}
+\newcommand\D{\mathbb{D}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\Z{\mathbb{Z}}
+\newcommand\N{\mathbb{N}}
+\newcommand\C{\mathbb{C}}
+\renewcommand\vec[1]{\overrightarrow{#1}}
+\newcommand\coord[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand\coordl[2]{\left(#1;#2\right)}
+\newcommand\eqv{\Leftrightarrow}

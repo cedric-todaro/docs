@@ -1,4 +1,4 @@
-SUBDIRS = actp cours eval exos
+SUBDIRS = actp cours eval exos fcard
 TOPTARGETS = all clean mrproper
 
 $(TOPTARGETS): $(SUBDIRS)

@@ -1,25 +1,27 @@
-\documentclass[french,a4paper]{scrartcl}
-\input{eval.latex}
+\input{_eval.latex}
 %%%%%%%%%%%%%%%%
 \def\Classe{TSTMG}
 \def\Titre{Évaluation : Variable aléatoire / Loi binomiale}
-\def\NoterSur{25}
+\def\NoterSur{20}
 %%%%%%%%%%%%%%%%
 \begin{document}
 \DoTitle
 \exo{Chapitre précédent - Statistiques \exosur{5}}{
-	On \faDiceOne~s'intéresse à l'évolution de la fréquentation des camping 4 étoiles ou plus en France métropolitaine.
+	$\bra{\pa{\norm{\dfrac{\vec{AB}}{2}}}}^{2\times{ 1\over x }}$ On \faDiceTwo\faDiceOne~s'intéresse à $\dfrac{\dely}{\Delx}\varep$ l'évolution de \pdx{f} la fréquentation des camping 4 étoiles ou plus en France métropolitaine.
+
+	$\pmat{5\\3}=\dfrac{5\times 4\times 3}{1\times 2\times 3}\quad\bsmat{1 & 2 \\a & 4}$
+
 	\vspace*{2mm}
 	\begin{center}
 		\def\arraystretch{1.2}
-		\begin{tabular}{|l|c|c|c|c|c|c|c|}\hline
-			Année                                        & 2004   & 2005   & 2006   & 2007   & 2008   & 2009   & 2010   \\ \hline
-			Rang de l'année : $x_i$                      & 0      & 1      & 2      & 3      & 4      & 5      & 6      \\ \hline
-			Fréquentation en milliers de nuitées : $y_i$ & 25 156 & 26 470 & 28 295 & 28 897 & 30 063 & 31 212 & 32 014 \\ \hline
+		\begin{tabular}{|R{6cm}|*8{C{1cm}|}}\hline
+			Année                                           & $2004$   & $2005$   & $2006$   & $2007$   & $2008$   & $2009$   & $2010$   \\ \hline
+			Rang de l'année : \bra{x_i}                     & $0$      & $1$      & $2$      & $3$      & $4$      & $5$      & $6$      \\ \hline
+			Fréquentation en milliers de nuitées : \pa{y_i} & $25~156$ & $26~470$ & $28~295$ & $28~897$ & $30~063$ & $31~212$ & $32~014$ \\ \hline
 		\end{tabular}
 	\end{center}
 	\vspace*{2mm}
-	Le nuage de points de coordonnées $(x_i ; y_i)$ pour $i$ variant de $0$ à $6$ est représenté en  annexe.
+	Le nuage de points de coordonnées \coordl{x_i}{y_i} pour $i$ variant de $0$ à $6$ est représenté en  annexe.
 	\vspace*{2mm}
 	\begin{enumerate}
 		\q{1} Déterminer le taux d'évolution du nombre de nuité entre 2004 et 2010.
@@ -42,6 +44,7 @@
 	La probabilité qu'un écran pris au hasard présente uniquement un défaut est de $0,07$ et la probabilité qu'il présente deux défauts et de $0,04$.
 
 	Soit $X$ la variable aléatoire qui, a tout écran de cette production pris au hasard, associe le nombre de défauts.
+
 	\begin{enumerate}
 		\q{1} Quelles sont les valeurs prises par $X$ ?
 		\q{2} Donner sous forme de tableau la loi de probabilité de $X$.

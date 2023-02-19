@@ -1,10 +1,10 @@
-SUBDIRS = actp cours eval exos
+SUBDIRS := $(wildcard */.)
 TOPTARGETS = all clean mrproper
 
 $(TOPTARGETS): $(SUBDIRS)
 
 $(SUBDIRS):
-	$(MAKE) -C $@ $(MAKECMDGOALS)
+	$(MAKE) -k -C $@ $(MAKECMDGOALS)
 
 .PHONY: $(TOPTARGETS) $(SUBDIRS)
 

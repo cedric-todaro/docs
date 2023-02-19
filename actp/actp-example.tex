@@ -1,152 +1,66 @@
-\documentclass[a4paper,10pt]{article}
-\usepackage[T1]{fontenc}
-% \usepackage[utf8]{inputenc}
-\usepackage[french]{babel}
-\usepackage[autolanguage]{numprint}
-\usepackage{calc,blindtext,lastpage}
-\usepackage{amsmath,amsfonts,amssymb,nccmath,unicode-math}
-
-% --- Polices
-\usepackage{fontspec,fontawesome5}
-\setmainfont{Asap}
-\usepackage{contour,ulem}
-\renewcommand{\ULdepth}{1.5pt}
-\renewcommand{\ULthickness}{0.5pt}
-\contourlength{0.6pt}
-\newcommand{\myuline}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
-\setlength{\parindent}{0pt}
-% \usepackage{mlmodern}
-% \renewcommand{\familydefault}{\sfdefault}
-
-% --- Geometry
-\usepackage[left=1cm,right=1cm,top=1.35cm,bottom=1.75cm]{geometry}
-\setlength{\headheight}{1.30cm}
-\setlength{\headsep}{0.35cm}
-\setlength{\footskip}{0.5cm}
-\setlength{\fboxrule}{1pt}
-
-% --- Graphics
-\usepackage{xcolor,graphicx,tikz,pgf,pgfplots}
-\pgfplotsset{compat=1.15}
-\usetikzlibrary{arrows,backgrounds}
-\usepackage{array,multirow,makecell,colortbl,multicol}
-\setlength{\columnseprule}{1pt}
-\def\columnseprulecolor{\color{black}}
-
-% --- Headers et footers
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{1pt}
-\fancyhead[L]{\small Nom - Prénom :\hfill\Classe}\fancyhead[C]{}\fancyhead[R]{}
-\renewcommand{\footrulewidth}{1pt}
-\fancyfoot[L]{\small\Titre}\fancyfoot[C]{}\fancyfoot[R]{\small\thepage/\pageref{LastPage}}
-
-% --- macro titre / section
-\newcommand\MonTitre[1]{\begin{center}\LARGE\bfseries\myuline{#1}\end{center}}
-\renewcommand{\section}[1]{\large\textbf{\uline{#1}}\normalsize\par}
-
-% --- macro math
-\let\le\leqslant\let\ge\geqslant
-\newcommand\R{\mathbb{R}}
-\newcommand\D{\mathbb{D}}
-\newcommand\Q{\mathbb{Q}}
-\newcommand\Z{\mathbb{Z}}
-\newcommand\N{\mathbb{N}}
-\newcommand\C{\mathbb{C}}
-\renewcommand\vec[1]{\overrightarrow{#1}}
-\newcommand\coord[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
-\newcommand\coordl[2]{\left(#1;#2\right)}
-\newcommand\eqv{\Leftrightarrow}
-
+\input{_actp.latex}
 
 % --- Titre et classe
 \def\Titre{Suites numériques}
-\def\Classe{1\up{ère} Spé}
+\def\Classe{1STMG}
 
 % ---
 \begin{document}
 \MonTitre{Activité : \Titre}
-
-\section{Activité 1 : des nombres et leurs places}
+\vspace*{0.7cm}
+\section{Activité 1 : Listes de nombres à prolonger}
+On donne les quatres listes de nombre suivantes :
+\begin{center}$A:1;3;5;7;9\qquad B:1;3;9;27;81\qquad C:0;1;4;9;16;25\qquad D:3;6;11;18;27$\end{center}
 \begin{enumerate}
-	\def\labelenumi{\arabic{enumi}.}
-	\item {
-	      Aurélia a acquis un portable. Comme elle a pris son abonnement au cours du mois, l'opérateur lui a offert deux heuresde communication au départ. Les mois suivants, elle a relevé sa consommation téléphonique, arrondie au dixième d'heures.
-	      \begin{center}
-		      \def\arraystretch{1.6}
-		      \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
-			      2,1h & 3,1h & 3,4h & 4,3h & 2h & 2,8h & 2h & 1,5h & 2,3h & 1,4h & 1h & 2h & 1,7h & 2,5h & 3h & 4h & 2h \\ \hline
-		      \end{tabular}
-	      \end{center}
-
-	      \begin{flushright}
-		      ...ce qui signifie qu'elle a consommée 2,1 h le premier mois, 3,1 h le deuxième, etc...
-	      \end{flushright}
-
-	      On note $u_n$ la consommation d'Aurélia le $n\up{ième}$ mois de son abonnement. Les 2 heures de consommation offertes au départ sont notées $u_0$. On a donc $u_0 = 2$.
-	      \begin{enumerate}
-		      \item Déterminer $u_1$, $u_2$, $u_3$ et $u_{15}$ .
-		      \item Quelle est la consommation le neuvième mois ? le seizième mois ? Donner la notation correspondante.
-	      \end{enumerate}
-	      }\vspace*{2mm}
-
-	\item {
-	      On considère la suite des multiples de 7 : $0$, $7$, $14$, $21$, $\ldots$
-
-	      On les note successivement $u_0$ , $u_1$ , $u_2$ , $u_3$ , $\ldots$ (ainsi $u_0 = 0$, $u_1 = 7$, etc...)
-	      \begin{enumerate}
-		      \item Donner les valeurs de $u_3$ , $u_4$ , $u_{25}$ , $u_{100}$ et $u_{286}$.
-		      \item Exprimer $u_n$ en fonction de $n$.
-	      \end{enumerate}
-	      }\vspace*{2mm}
-
-	\item {
-	      À sa date anniversaire, Elora reçoit de sa grand-mère dix fois son âge en euros, auquel elle ajoute 25€.
-
-	      On note $u_n$ le montant, en €, reçu par Elora pour son $n\up{ième}$ anniversaire.
-	      \begin{enumerate}
-		      \item Déterminer $u_1$ , $u_2$ et $u_5$ .
-		      \item Déterminer la somme reçue par Elora pour ses $7$ ans et donner la notation correspondante.
-		      \item Exprimer $u_n$ en fonction de $n$.
-	      \end{enumerate}
-	      }\vspace*{2mm}
-
-	\item {
-	      On a pu modéliser le nombre de ménages équipés d'un micro-ondes en fonction de l'année $n$, en prenant $n = 0$ en 1995.  On note $u_n$ le nombre de ménages en millions.
-
-	      On a obtenu : $u_n =\dfrac{6n + 4}{n+2}$
-	      \begin{enumerate}
-		      \item Calculer le nombre de ménages équipés en 1995, en 2003 puis en 2011.
-	      \end{enumerate}
-	      }
+	\item Indiquer comment chacunes est construite.
+	\item Donner les deux nombres suivants de chaque liste.
+	\item Pour quelles listes est-il possible de trouver le $20$\up{ème} nombre de la liste sans calculer tous ceux qui le précèdent ?
 \end{enumerate}
-\vspace*{3mm}
-\section{Activité 2 : des nombres obtenus par un procédé}
+\vspace*{0.7cm}
+\section{Activité 2 : Une situation discrète}
+Votre cinéma propose un tarif de $6$\euro~la séance pour les moins de 26 ans.
+
+Ainsi, le coût total pour $3$ séances est de : $6\times 3=18$\euro~et, pour $5$ séances, $6\times 5=30$\euro.
+
+Plus généralement, le coût total en \euro~, pour $x$ séances de cinéma, est $6\times x$.
+
+
 \begin{enumerate}
-	\def\labelenumi{\arabic{enumi}.}
-	\item {
-	      On prend un nombre entier au départ et on imagine un jeu : on divise le nombre par $2$, on ajoute $1$ au résultat et on multiplie par $3$. On trouve un nouveau nombre et on recommence.
-
-	      On choisit comme nombre initial $u_0 = 4$.
-	      \begin{enumerate}
-		      \item Calculer $u_1$ et $u_2$
-		      \item Peut-on facilement calculer $u_{25}$ ? Pourquoi ?
-		      \item Montrer que : $~u_{n+1}=\left(\dfrac{u_n}{2} + 1\right)\times 3$
+	\item Tracer dans un repère la représentation de la fonction $f(x)=6x$
+	\item \begin{enumerate}
+		      \item Déterminer graphiquement la valeur de $x$ lorsque $f(x)=24$
+		      \item Compléter : "Le coût total pour ...... séances est de ...... \euro"
 	      \end{enumerate}
-	      }\vspace*{2mm}
-
-	\item {
-	      Une ville a une population de $200\ 000$ habitants l'année $0$.
-
-	      Chaque année, sa population augmente de $5\%$ par rapport à la population de l'année précédente, mais $15\ 000$ habitants déménagent et quittent la ville.
-
-	      On note $~p_0 = 200\ 000~$ et $~p_n~$ la population de l'année $n$.
-	      \begin{enumerate}
-		      \item Calculer $p_1$ et $p_2$ .
-		      \item Établir une formule donnant la population en fonction de la population de l'année précédente.
-		      \item À l'aide d'une calculatrice, déterminer la population de la ville l'année $15$.
-	      \end{enumerate}
-	      }
+	\item Reprendre la question 2. pour $f(x)=15$.\par La phrase à compléter a-t-elle un sens dans ce cas ? pourquoi ?
 \end{enumerate}
 
+Nous venons d'étudier une situation où la variable $x$ pour la fonction $f$ définie par $f(x)=6x$ ne peut prendre que des valeurs entières : $1 ; 2 ; 3; ...$
+
+Dans ce cas, en mathématiques, on a l'habitude de remplacer la lettre $f$ par $u$ et la variable $x$ par $n$.
+
+Dans cet exemple, $u(n)=6n$.
+
+En particulier $u(0)=0~,~u(1)=6~,~u(2)=12~,...$ et la représentation graphique de $u$ est constituée des seuls points d'abscisse \textit{entière} obtenus à la question 1.
+
+\begin{enumerate}[resume]
+	\item Représenter ces points par une croix.
+\end{enumerate}
+\vspace*{0.7cm}
+\section{Activité 3 : Triangle de Sierpiński}
+Ce triangle est obtenu en répétant l'algorithme suivant à partir d'un triangle équilatéral :
+\begin{itemize}[label=$\bullet$]
+	\item Pour chaque triangle rouge, tracer les segments joignants les milieux des cotés, de façon à obtenir 4 triangles.
+	\item Retirer le triangle central.
+\end{itemize}
+\begin{center}\includegraphics[width=18cm]{triangles.png}\end{center}
+On part d'un triangle de 10cm de coté et on note $n$ le nombre d'itération de l'algorithme, c'est à dire le nombre de fois que l'algorithme est utilisé.
+
+\begin{enumerate}
+	\item Chaque fois que l'on passe d'une figure à la suivante, c'est-à-dire que l'on utilise une fois de plus l'algorithme, indiquer sans explication par une courte phrase ce que devient ...
+	      \begin{enumerate}
+		      \item ... le nombre de triangles rouges
+		      \item ... la longueur d'un côté d'un triangle rouge
+		      \item ... l'aire d'un triangle rouge
+	      \end{enumerate}
+\end{enumerate}
 \end{document}

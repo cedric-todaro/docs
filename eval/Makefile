@@ -1,6 +1,7 @@
 LATEXPRG = latexmk
 LI = latexindent
 LATEXFLAGS = -pdfxe -silent -quiet -rules- -rc-report- -no-shell-escape
+LATEXFLAGS2 = -pdfps -silent -quiet -rules- -rc-report- -no-shell-escape
 LATEXCLEANFLAGS = -c -silent -quiet -rules- -rc-report- -no-shell-escape
 LIFLAGS = -s -w
 
@@ -12,17 +13,28 @@ else
     NOOUTPUT = > /dev/null
 endif
 
-SRC = $(wildcard *.tex)
+SRC = $(wildcard eval-*.tex) $(wildcard qcm-*.tex) $(wildcard IR-*.tex)
+SRCBAC = $(wildcard bac-*.tex)
 INC = $(wildcard *.latex)
 PDF = $(SRC:.tex=.pdf)
+PDFBAC = $(SRCBAC:.tex=.pdf)
+DVIBAC = $(SRCBAC:.tex=.dvi)
+PSBAC = $(SRCBAC:.tex=.ps)
 
-all : $(PDF)
+all : $(PDF) $(PDFBAC)
 
 %.pdf: %.tex $(INC)
 	$(LI) $(LIFLAGS) $< $(NOOUTPUT)
 	$(RM) indent.log $(NOOUTPUT)
 	$(RM) *.bak* $(NOOUTPUT) $(NOOUTPUT)
 	$(LATEXPRG) $(LATEXFLAGS) $<
+	$(LATEXPRG) $(LATEXCLEANFLAGS) $(NOOUTPUT)
+
+bac-%.pdf: bac-%.tex $(SRCBAC)
+	$(LI) $(LIFLAGS) $< $(NOOUTPUT)
+	$(RM) indent.log $(NOOUTPUT)
+	$(RM) *.bak* bac-*.dvi* $(NOOUTPUT) $(NOOUTPUT)
+	$(LATEXPRG) $(LATEXFLAGS2) $<
 	$(LATEXPRG) $(LATEXCLEANFLAGS) $(NOOUTPUT)
 
 .PHONY: all clean mrproper
@@ -32,6 +44,6 @@ clean :
 
 mrproper :
 	$(LATEXPRG) $(LATEXCLEANFLAGS) $(NOOUTPUT)
-	$(RM) $(PDF) $(NOOUTPUT)
+	$(RM) $(PDF) $(PDFBAC) $(DVIBAC) $(PSBAC) $(NOOUTPUT)
 
 .SILENT:

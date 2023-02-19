@@ -4,10 +4,9 @@
 git clone https://www.github.com/cedric-todaro/docs
 ```
 
+![](https://img.freepik.com/vecteurs-libre/tableau-elements-mathematiques_1411-88.jpg)
+
 ## Activités préliminaires
-
- - [ ] Ajouter un ```includes.latex```
-
 
 ## Évaluation
 
@@ -15,3 +14,4 @@ git clone https://www.github.com/cedric-todaro/docs
 
 ## Objectifs fin de chapitre / Exos
 
+## Flash cards

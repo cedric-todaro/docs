@@ -1,3 +1,5 @@
+\documentclass[a4paper,10pt]{article}
+
 \usepackage[T1]{fontenc}
 % \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
@@ -8,6 +10,7 @@
 % --- Polices
 \usepackage{fontspec,fontawesome5}
 \setmainfont{Asap}
+\setmathfont{Cambria Math}
 \usepackage{contour,ulem}
 \renewcommand{\ULdepth}{1.5pt}
 \renewcommand{\ULthickness}{0.5pt}
@@ -59,15 +62,57 @@
 % Pour les exos
 \newenvironment{Page_exos}{\begin{center}\begin{multicols}{2}}{\end{multicols}\end{center}\newpage}
 
-% --- macro math
-\let\le\leqslant\let\ge\geqslant
-\newcommand\R{\mathbb{R}}
-\newcommand\D{\mathbb{D}}
-\newcommand\Q{\mathbb{Q}}
-\newcommand\Z{\mathbb{Z}}
-\newcommand\N{\mathbb{N}}
-\newcommand\C{\mathbb{C}}
-\renewcommand\vec[1]{\overrightarrow{#1}}
-\newcommand\coord[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
-\newcommand\coordl[2]{\left(#1;#2\right)}
-\newcommand\eqv{\Leftrightarrow}
+% --- Marge dans tabular
+\usepackage{cellspace}
+\cellspacetoplimit=6pt
+\cellspacebottomlimit=6pt
+\setlength{\arrayrulewidth}{1pt}
+
+%%%% Math stuff
+\let\nc\newcommand\let\rnc\renewcommand\nc{\m}[1]{\ensuremath{#1}\xspace}\nc{\euro}{€}
+\let\le\leqslant\let\ge\geqslant\let\l\left\let\r\right
+\def\be{\begin{enumerate}}\def\ee{\end{enumerate}}
+\def\bi{\begin{itemize}}\def\ei{\end{itemize}}
+\nc{\eqn}[1]{\begin{align*}#1\end{align*}}
+\nc{\R}{\m{\mathbb{R}}}
+\nc{\D}{\m{\mathbb{D}}}
+\nc{\Q}{\m{\mathbb{Q}}}
+\nc{\Z}{\m{\mathbb{Z}}}
+\nc{\N}{\m{\mathbb{N}}}
+\nc{\C}{\m{\mathbb{C}}}
+\nc{\Cf}{\m{\mathcal{C}_f}}
+\nc{\Cg}{\m{\mathcal{C}_g}}
+\rnc{\vec}[1]{\overrightarrow{#1}}
+\nc\norm[1]{\left\lVert#1\right\rVert}
+\nc{\eqv}{\Leftrightarrow}
+\nc{\rarr}{\rightarrow}\nc{\larr}{\leftarrow}
+\nc{\Rarr}{\Rightarrow}\nc{\Larr}{\Leftarrow}
+\nc{\Lrarr}{\Leftrightarrow}\nc{\lrarr}{\leftrightarrow}
+\nc{\coord}[2]{\m{\begin{pmatrix}#1\\#2\end{pmatrix}}}
+\nc{\coordl}[2]{\m{\left(#1~;~#2\right)}}
+\nc{\OIJ}{\m{\left(O;I,J\right)}}
+\nc{\vOIJ}{\m{\left(O;\vec{i},\vec{j}\right)}}
+\nc{\pd}{\partial}
+\nc{\pdx}[1]{\m{\frac{\pd #1}{\pd x}}}
+\nc{\pdy}[1]{\m{\frac{\pd #1}{\pd y}}}
+\nc{\pdz}[1]{\m{\frac{\pd #1}{\pd z}}}
+\nc{\pdt}[1]{\m{\frac{\pd #1}{\pd t}}}
+\nc{\delw}{\m{\delta w}}\nc{\Delw}{\m{\Delta w}}
+\nc{\delu}{\m{\delta u}}\nc{\Delu}{\m{\Delta u}}
+\nc{\delv}{\m{\delta v}}\nc{\Delv}{\m{\Delta v}}
+\nc{\delx}{\m{\delta x}}\nc{\Delx}{\m{\Delta x}}
+\nc{\dely}{\m{\delta y}}\nc{\Dely}{\m{\Delta y}}
+\nc{\delz}{\m{\delta z}}\nc{\Delz}{\m{\Delta z}}
+\nc{\varep}{\varepsilon}
+\nc{\pa}[1]{\m{\left(#1\right)}}
+\nc{\bra}[1]{\m{\left[#1\right]}}
+\nc{\mat}[1]{\m{\begin{matrix}#1\end{matrix}}}
+\nc{\pmat}[1]{\m{\pa{\mat{#1}}}}
+\nc{\bmat}[1]{\m{\bra{\mat{#1}}}}
+\nc{\pfrac}[2]{\m{\pa{\frac{#1}{#2}}}}
+\nc{\bfrac}[2]{\m{\bra{\frac{#1}{#2}}}}
+\nc{\psfrac}[2]{\m{\pa{\sfrac{#1}{#2}}}}
+\nc{\bsfrac}[2]{\m{\bra{\sfrac{#1}{#2}}}}
+\nc{\smat}[1]{\m{\begin{smallmatrix}#1\end{smallmatrix}} }
+\nc{\psmat}[1]{\m{\pa{\smat{#1}}}}
+\nc{\bsmat}[1]{\m{\bra{\smat{#1}}}}

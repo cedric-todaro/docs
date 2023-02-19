@@ -3,8 +3,6 @@ LIFLAGS = -s -w
 LATEXPRG = latexmk
 LATEXFLAGS = -pdfxe -silent -quiet -rules- -rc-report- -no-shell-escape
 LATEXCLEANFLAGS = -c -silent -quiet -rules- -rc-report- -no-shell-escape
-MARP = marp
-DIAPO_FLAGS = --pdf --allow-local-files
 
 ifeq ($(OS),Windows_NT)
     RM =  del /f /q
@@ -14,22 +12,18 @@ else
     NOOUTPUT = > /dev/null
 endif
 
-SRC = $(wildcard actp-*.tex)
-FSRC = $(wildcard flash-*.md)
+SRC = $(wildcard *.tex)
+INC = $(wildcard *.latex)
 PDF = $(SRC:.tex=.pdf)
-FPDF = $(FSRC:.md=.pdf)
 
-all: $(PDF) $(FPDF)
+all : $(PDF)
 
-actp-%.pdf: actp-%.tex
+%.pdf: %.tex $(INC)
 	$(LI) $(LIFLAGS) $< $(NOOUTPUT)
 	$(RM) indent.log $(NOOUTPUT)
 	$(RM) *.bak* $(NOOUTPUT)
 	$(LATEXPRG) $(LATEXFLAGS) $<
-	$(LATEXPRG) $(LATEXCLEANFLAGS)  $(NOOUTPUT)
-
-flash-%.pdf: flash-%.md
-	$(MARP) $< -o $@ $(DIAPO_FLAGS)
+	$(LATEXPRG) $(LATEXCLEANFLAGS) $(NOOUTPUT)
 
 .PHONY: all clean mrproper
 
@@ -39,6 +33,5 @@ clean :
 mrproper :
 	$(LATEXPRG) $(LATEXCLEANFLAGS) $(NOOUTPUT)
 	$(RM) $(PDF) $(NOOUTPUT)
-	$(RM) $(FPDF) $(NOOUTPUT)
 
 .SILENT:

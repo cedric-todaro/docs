@@ -1,13 +1,14 @@
 \documentclass[french,a4paper]{scrartcl}
-\usepackage{amsmath,amsfonts,amssymb,nccmath,unicode-math,polyglossia,setspace,xcolor,pgf,tikz,tkz-tab,pgfplots,lastpage,fancyhdr,mdframed,enumitem, array,cellspace,tabularx,multicol,multirow,makecell,longtable,booktabs,wrapfig}
+\usepackage{amsmath,amsfonts,amssymb,nccmath,unicode-math,polyglossia,setspace,xcolor,pgf,tikz,tkz-tab,pgfplots,lastpage,fancyhdr,mdframed,enumitem, array,cellspace,tabularx,multicol,multirow,makecell,longtable,booktabs,wrapfig,xspace,xfrac}
 \usepackage[left=1cm,right=1cm,top=1.35cm,bottom=1.35cm,headheight=1.35cm,headsep=0.5pt, footskip=0pt]{geometry}
 \usepackage[fontsize=11pt]{fontsize}
+\let\nc\newcommand\let\rnc\renewcommand
+\nc{\m}[1]{\ensuremath{#1}\xspace}
 \pgfplotsset{compat=1.15}\usetikzlibrary{arrows,backgrounds}
-\pagestyle{fancy}\renewcommand{\headrulewidth}{0.5pt}\renewcommand{\footrulewidth}{0.5pt}
+\pagestyle{fancy}\rnc{\headrulewidth}{0.5pt}\rnc{\footrulewidth}{0.5pt}
+\fancyhead[C]{}\fancyhead[R]{}\fancyfoot[L]{}\fancyfoot[C]{}
 \fancyhead[L]{\small Nom - Prénom :\hfill\Classe}
 \fancyfoot[R]{\small\thepage/\pageref{LastPage}}
-\fancyhead[C]{}\fancyhead[R]{}
-\fancyfoot[L]{}\fancyfoot[C]{}
 \PassOptionsToPackage{usenames,dvipsnames}{xcolor}
 \setmainlanguage{french}
 \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
@@ -16,15 +17,15 @@
 \usepackage{fontspec,fontawesome5,lipsum,upquote,microtype,graphicx,transparent,eso-pic,grffile,contour,parskip,tocloft}
 \UseMicrotypeSet[protrusion]{basicmath}
 \setcounter{secnumdepth}{2}
-\renewcommand\labelitemi{\textbullet}
-\renewcommand\labelitemii{\textbullet}
-\renewcommand\labelitemiii{\textbullet}
-\renewcommand\labelitemiv{\textbullet}
+\rnc\labelitemi{$\bullet$}
+\rnc\labelitemii{$\bullet$}
+\rnc\labelitemiii{$\bullet$}
+\rnc\labelitemiv{$\bullet$}
 \usepackage[normalem]{ulem}
 \contourlength{0.5pt}
-\renewcommand{\ULdepth}{1.5pt}
-\renewcommand{\ULthickness}{0.5pt}
-\renewcommand{\underline}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+\rnc{\ULdepth}{1.5pt}
+\rnc{\ULthickness}{0.5pt}
+\rnc{\underline}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
 \setlength{\fboxsep}{0pt}
 \setlength{\fboxrule}{0pt}
 \newlength{\DefaultParskip}
@@ -33,19 +34,18 @@
 \usepackage[placement=center,opacity=1,angle=0,scale=1]{background}
 \backgroundsetup{contents={\includegraphics[width=189.95mm,height=270mm]{back}}}
 %%%%
-\newcommand{\cbox}[2]{\colorbox{#1}{\ensuremath{#2}}}
-\newcommand{\ul}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
-\newcommand{\up}[1]{\ensuremath{^{\textrm{#1}}}}
-\newcommand{\DoTitle}{\colorbox{white}{\begin{minipage}{17cm}\begin{center}\huge{\ul{\textbf{\Titre}}}\end{center}\end{minipage}\hfill\begin{minipage}{2cm}\vspace*{5mm}\raggedleft{\Large{/\NoterSur}}\vspace*{5mm}\end{minipage}}\setlength{\parskip}{-1pt}\par\setlength{\DefaultParskip}{\parskip}}
-\newcommand{\WhiteBox}[1]{\colorbox{white}{\begin{minipage}{19cm}#1\vspace{1mm}\end{minipage}}}
+\nc{\cbox}[2]{\colorbox{#1}{\ensuremath{#2}}}
+\nc{\ul}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+\nc{\up}[1]{\ensuremath{^{\textrm{#1}}}}
+\nc{\DoTitle}{\colorbox{white}{\begin{minipage}{17cm}\begin{center}\huge{\ul{\textbf{\Titre}}}\end{center}\end{minipage}\hfill\begin{minipage}{2cm}\vspace*{5mm}\raggedleft{\Large{/\NoterSur}}\vspace*{5mm}\end{minipage}}\setlength{\parskip}{-1pt}\par\setlength{\DefaultParskip}{\parskip}}
+\nc{\WhiteBox}[1]{\colorbox{white}{\begin{minipage}{19cm}#1\vspace{1mm}\end{minipage}}}
 %%%%
-\newcommand{\euro}{€}
+\nc{\euro}{€}
 \newcounter{ExoN}\setcounter{ExoN}{0}
-\newcommand{\exo}[2]{\addtocounter{ExoN}{1}\WhiteBox{\vspace*{1mm}\ul{\textbf{Exercice n°\theExoN : #1}}\par#2\vspace*{1mm}}}
-\newcommand{\img}[2]{\begin{wrapfigure}{r}{#1}\vspace{-7mm}\begin{center}\includegraphics[width=#1]{#2}\end{center}\end{wrapfigure}}
-\newcommand{\exosur}[1]{\qquad\qquad\qquad\qquad/#1}
-\newcommand{\quest}[1]{\item (/#1)\qquad}
-\setcellgapes{1pt}\makegapedcells
+\nc{\exo}[2]{\addtocounter{ExoN}{1}\WhiteBox{\vspace*{1mm}\ul{\textbf{Exercice n°\theExoN : #1}}\par#2\vspace*{1mm}}}
+\nc{\img}[2]{\begin{wrapfigure}{r}{#1}\vspace{-7mm}\begin{center}\includegraphics[width=#1]{#2}\end{center}\end{wrapfigure}}
+\nc{\exosur}[1]{\qquad\qquad\qquad\qquad/#1}
+\nc{\quest}[1]{\item (/#1)\qquad}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
@@ -55,22 +55,49 @@
 \let\q\quest
 \def\be{\begin{enumerate}}\def\ee{\end{enumerate}}
 \def\bi{\begin{itemize}}\def\ei{\end{itemize}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\D}{\mathbb{D}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\C}{\mathbb{C}}
-\renewcommand{\vec}[1]{\overrightarrow{#1}}
-\newcommand{\eqv}{\Leftrightarrow}
-\newcommand{\rarr}{\rightarrow}
-\newcommand{\larr}{\leftarrow}
-\newcommand{\Rarr}{\Rightarrow}
-\newcommand{\Larr}{\Leftarrow}
-\newcommand{\Lrarr}{\Leftrightarrow}
-\newcommand{\lrarr}{\leftrightarrow}
-\newcommand{\coord}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
-\newcommand{\coordl}[2]{\left(#1;#2\right)}
+\nc{\eqn}[1]{\begin{align*}#1\end{align*}}
+\nc{\R}{\m{\mathbb{R}}}
+\nc{\D}{\m{\mathbb{D}}}
+\nc{\Q}{\m{\mathbb{Q}}}
+\nc{\Z}{\m{\mathbb{Z}}}
+\nc{\N}{\m{\mathbb{N}}}
+\nc{\C}{\m{\mathbb{C}}}
+\nc{\Cf}{\m{\mathcal{C}_f}}
+\nc{\Cg}{\m{\mathcal{C}_g}}
+\rnc{\vec}[1]{\overrightarrow{#1}}
+\nc{\eqv}{\Leftrightarrow}
+\nc{\rarr}{\rightarrow}\nc{\larr}{\leftarrow}
+\nc{\Rarr}{\Rightarrow}\nc{\Larr}{\Leftarrow}
+\nc{\Lrarr}{\Leftrightarrow}\nc{\lrarr}{\leftrightarrow}
+\nc{\coord}[2]{\m{\begin{pmatrix}#1\\#2\end{pmatrix}}}
+\nc{\coordl}[2]{\m{\left(#1~;~#2\right)}}
+\nc{\OIJ}{\m{\left(O;I,J\right)}}
+\nc{\vOIJ}{\m{\left(O;\vec{i},\vec{j}\right)}}
+\nc{\pd}{\partial}
+\nc{\pdx}[1]{\m{\frac{\pd #1}{\pd x}}}
+\nc{\pdy}[1]{\m{\frac{\pd #1}{\pd y}}}
+\nc{\pdz}[1]{\m{\frac{\pd #1}{\pd z}}}
+\nc{\pdt}[1]{\m{\frac{\pd #1}{\pd t}}}
+\nc{\delw}{\m{\delta w}}\nc{\Delw}{\m{\Delta w}}
+\nc{\delu}{\m{\delta u}}\nc{\Delu}{\m{\Delta u}}
+\nc{\delv}{\m{\delta v}}\nc{\Delv}{\m{\Delta v}}
+\nc{\delx}{\m{\delta x}}\nc{\Delx}{\m{\Delta x}}
+\nc{\dely}{\m{\delta y}}\nc{\Dely}{\m{\Delta y}}
+\nc{\delz}{\m{\delta z}}\nc{\Delz}{\m{\Delta z}}
+\nc{\varep}{\varepsilon}
+\nc{\pa}[1]{\m{\left(#1\right)}}
+\nc{\bra}[1]{\m{\left[#1\right]}}
+\nc{\mat}[1]{\m{\begin{matrix}#1\end{matrix}}}
+\nc{\pmat}[1]{\m{\pa{\mat{#1}}}}
+\nc{\bmat}[1]{\m{\bra{\mat{#1}}}}
+\nc{\pfrac}[2]{\m{\pa{\frac{#1}{#2}}}}
+\nc{\bfrac}[2]{\m{\bra{\frac{#1}{#2}}}}
+\nc{\psfrac}[2]{\m{\pa{\sfrac{#1}{#2}}}}
+\nc{\bsfrac}[2]{\m{\bra{\sfrac{#1}{#2}}}}
+\nc{\smat}[1]{\m{\begin{smallmatrix}#1\end{smallmatrix}} }
+\nc{\psmat}[1]{\m{\pa{\smat{#1}}}}
+\nc{\bsmat}[1]{\m{\bra{\smat{#1}}}}
+
 %%%%%%%%%%%%%%%%
 \def\Classe{TSTMG}
 \def\Titre{Évaluation : Variable aléatoire / Loi binomiale}
@@ -79,18 +106,21 @@
 \begin{document}
 \DoTitle
 \exo{Chapitre précédent - Statistiques \exosur{5}}{
-	On \faDiceOne~s'intéresse à l'évolution de la fréquentation des camping 4 étoiles ou plus en France métropolitaine.
+	On \faDiceOne~s'intéresse à $\dfrac{\dely}{\Delx}\varep$ l'évolution de \pdx{f} la fréquentation des camping 4 étoiles ou plus en France métropolitaine.
+
+	$\pmat{5\\3}=\dfrac{5\times 4\times 3}{1\times 2\times 3}\quad\bsmat{1 & 2 \\a & 4}$
+
 	\vspace*{2mm}
 	\begin{center}
 		\def\arraystretch{1.2}
-		\begin{tabular}{|R{5.7cm}|*8{C{1cm}|}}\hline
-			Année                                        & 2004   & 2005   & 2006   & 2007   & 2008   & 2009   & 2010   \\ \hline
-			Rang de l'année : $x_i$                      & 0      & 1      & 2      & 3      & 4      & 5      & 6      \\ \hline
-			Fréquentation en milliers de nuitées : $y_i$ & 25 156 & 26 470 & 28 295 & 28 897 & 30 063 & 31 212 & 32 014 \\ \hline
+		\begin{tabular}{|R{6cm}|*8{C{1cm}|}}\hline
+			Année                                           & $2004$   & $2005$   & $2006$   & $2007$   & $2008$   & $2009$   & $2010$   \\ \hline
+			Rang de l'année : \bra{x_i}                     & $0$      & $1$      & $2$      & $3$      & $4$      & $5$      & $6$      \\ \hline
+			Fréquentation en milliers de nuitées : \pa{y_i} & $25~156$ & $26~470$ & $28~295$ & $28~897$ & $30~063$ & $31~212$ & $32~014$ \\ \hline
 		\end{tabular}
 	\end{center}
 	\vspace*{2mm}
-	Le nuage de points de coordonnées $(x_i ; y_i)$ pour $i$ variant de $0$ à $6$ est représenté en  annexe.
+	Le nuage de points de coordonnées \coordl{x_i}{y_i} pour $i$ variant de $0$ à $6$ est représenté en  annexe.
 	\vspace*{2mm}
 	\begin{enumerate}
 		\q{1} Déterminer le taux d'évolution du nombre de nuité entre 2004 et 2010.

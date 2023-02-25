@@ -74,6 +74,12 @@
 \newcommand\N{\mathbb{N}}
 \newcommand\C{\mathbb{C}}
 \renewcommand\vec[1]{\overrightarrow{#1}}
+\newcommand\eqv{\Leftrightarrow}
+\newcommand\rarr{\rightarrow}
+\newcommand\larr{\leftarrow}
+\newcommand\Rarr{\Rightarrow}
+\newcommand\Larr{\Leftarrow}
+\newcommand\Lrarr{\Leftrightarrow}
+\newcommand\lrarr{\leftrightarrow}
 \newcommand\coord[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
 \newcommand\coordl[2]{\left(#1;#2\right)}
-\newcommand\eqv{\Leftrightarrow}

@@ -42,7 +42,7 @@ diapo-%.html: diapo-%.md
 .PHONY: all clean mrproper
 
 clean :
-	$(LATEXPRG) $(LATEXCLEANFLAGS) $(NOOUTPUT)
+	# $(LATEXPRG) $(LATEXCLEANFLAGS) $(NOOUTPUT)
 
 mrproper :
 	$(RM) $(PDF) $(NOOUTPUT)

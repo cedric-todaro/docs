@@ -6,18 +6,7 @@
 \usepackage[autolanguage]{numprint}
 \usepackage{calc,blindtext,lastpage,lipsum,wrapfig2}
 \usepackage{amsmath,amsfonts,amssymb,nccmath,unicode-math}
-
-% --- Macros diverses
 \let\nc\newcommand\let\rnc\renewcommand\nc{\m}[1]{\ensuremath{#1}\xspace}\nc{\euro}{€}
-\let\hs\hspace
-\nc{\cbox}[2]{\colorbox{#1}{\ensuremath{#2}}}
-\nc{\tbox}[1]{\fbox{\texttt{#1}}}
-\def\be{\begin{enumerate}}\def\ee{\end{enumerate}}
-\def\bi{\begin{itemize}}\def\ei{\end{itemize}}
-\usepackage{tabularx}
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
-\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
 
 % --- Polices
 \usepackage{fontspec,fontawesome5}
@@ -33,6 +22,19 @@
 \setlength{\parskip}{3pt}
 % \usepackage{mlmodern}
 % \renewcommand{\familydefault}{\sfdefault}
+
+
+% --- Macros diverses
+\let\hs\hspace
+\nc{\cbox}[2]{\colorbox{#1}{\ensuremath{#2}}}
+\nc{\tbox}[1]{\fbox{\texttt{#1}}}
+\def\be{\begin{enumerate}}\def\ber{\begin{enumerate}[resume]}\def\ee{\end{enumerate}}
+\def\bi{\begin{itemize}[label=$\bullet$]}\def\ei{\end{itemize}}
+\usepackage{tabularx}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+
 
 % --- Geometry
 \usepackage[left=1cm,right=1cm,top=1.35cm,bottom=1.75cm]{geometry}

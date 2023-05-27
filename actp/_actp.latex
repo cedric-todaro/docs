@@ -13,6 +13,7 @@
 \setmainfont{Asap}
 \setmathfont{Cambria Math}
 \usepackage{contour,ulem,enumitem}
+\setitemize[0]{label=$\bullet$}
 \rnc{\ULdepth}{1.5pt}
 \rnc{\ULthickness}{0.5pt}
 \contourlength{0.6pt}
@@ -29,7 +30,7 @@
 \nc{\cbox}[2]{\colorbox{#1}{\ensuremath{#2}}}
 \nc{\tbox}[1]{\fbox{\texttt{#1}}}
 \def\be{\begin{enumerate}}\def\ber{\begin{enumerate}[resume]}\def\ee{\end{enumerate}}
-\def\bi{\begin{itemize}[label=$\bullet$]}\def\ei{\end{itemize}}
+\def\bi{\begin{itemize}}\def\ei{\end{itemize}}
 \usepackage{tabularx}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}

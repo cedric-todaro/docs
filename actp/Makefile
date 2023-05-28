@@ -1,3 +1,4 @@
+# ACTP Makefile
 LI = latexindent
 LIFLAGS = -s -w
 LATEXPRG = latexmk
@@ -18,10 +19,11 @@ SRC = $(wildcard actp-*.tex)
 FSRC = $(wildcard flash-*.md)
 PDF = $(SRC:.tex=.pdf)
 FPDF = $(FSRC:.md=.pdf)
+INC = $(wildcard *.latex)
 
 all: $(PDF) $(FPDF)
 
-actp-%.pdf: actp-%.tex
+actp-%.pdf: actp-%.tex $(INC)
 	$(LI) $(LIFLAGS) $< $(NOOUTPUT)
 	$(RM) indent.log $(NOOUTPUT)
 	$(RM) *.bak* $(NOOUTPUT)

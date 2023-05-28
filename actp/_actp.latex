@@ -1,3 +1,4 @@
+% --- actp preambule
 \documentclass[a4paper,10pt]{article}
 
 % --- General Package
@@ -31,6 +32,7 @@
 \nc{\tbox}[1]{\fbox{\texttt{#1}}}
 \def\be{\begin{enumerate}}\def\ber{\begin{enumerate}[resume]}\def\ee{\end{enumerate}}
 \def\bi{\begin{itemize}}\def\ei{\end{itemize}}
+\def\btab{\begin{tabular}}\def\etab{\end{tabular}}
 \usepackage{tabularx}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}

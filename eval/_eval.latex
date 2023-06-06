@@ -1,5 +1,5 @@
 \documentclass[french,a4paper,11pt]{scrartcl}
-\usepackage{amsmath,amsfonts,amssymb,nccmath,unicode-math,polyglossia,xcolor,setspace,pgf,tikz,tkz-tab,pgfplots,lastpage,fancyhdr,mdframed,enumitem, array,cellspace,tabularx,multicol,multirow,makecell,longtable,booktabs,wrapfig,xspace,xfrac,fontspec,fontawesome5,lipsum,upquote,graphicx,transparent,eso-pic,grffile,contour,parskip,tocloft,colortbl}
+\usepackage{amsmath,amsfonts,amssymb,nccmath,unicode-math,polyglossia,xcolor,setspace,pgf,tikz,tkz-tab,pgfplots,lastpage,fancyhdr,mdframed,enumitem, array,cellspace,tabularx,multicol,multirow,makecell,longtable,booktabs,wrapfig,xspace,xfrac,fontspec,fontawesome5,lipsum,upquote,graphicx,transparent,eso-pic,grffile,contour,parskip,tocloft,colortbl,pifont}
 \usepackage[left=1cm,right=1cm,top=1.35cm,bottom=1.35cm,headheight=1.35cm,headsep=0.5pt, footskip=0pt]{geometry}
 \usepackage[normalem]{ulem}
 \PassOptionsToPackage{usenames,dvipsnames}{xcolor}

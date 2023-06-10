@@ -10,7 +10,7 @@
 \let\nc\newcommand\let\rnc\renewcommand\nc{\m}[1]{\ensuremath{#1}\xspace}\nc{\euro}{€}
 
 % --- Polices
-\usepackage{fontspec,fontawesome5}
+\usepackage{fontspec,fontawesome5,pifont}
 \setmainfont{Asap}
 \setmathfont{Cambria Math}
 \usepackage{contour,ulem,enumitem}

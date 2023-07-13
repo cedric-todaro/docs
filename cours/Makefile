@@ -10,9 +10,11 @@ DIAPO_HTML_FLAGS = --html --allow-local-files
 ifeq ($(OS),Windows_NT)
     RM =  del /f /q
     NOOUTPUT = >nul 2>&1
+    EC = echo
 else
     RM =  rm -f -r
     NOOUTPUT = > /dev/null
+    EC = echo
 endif
 
 SRC = $(wildcard cours-*.md)
@@ -27,24 +29,30 @@ DIAPOHTML = $(DIAPOSRC:.md=.html)
 all : $(PDF) $(DIAPOPDF) $(DIAPOHTML)
 
 cours-%.tex: cours-%.md $(INC)
+	$(EC) "... [Pandoc] : $<"
 	$(PDOC_PRG) -i $< -o $@ $(PDOC_FLAGS)
 	
 cours-%.pdf: cours-%.tex
+	$(EC) "... [Latex] : $<"
 	$(LATEXPRG) $< $(LATEXFLAGS)
 	$(LATEXPRG) $(LATEXCLEANFLAGS) $(NOOUTPUT)
 
 diapo-%.pdf: diapo-%.md
+	$(EC) "... [Marp] : $<"
 	$(MARP_PRG) $< -o $@ $(DIAPO_FLAGS)
 
 diapo-%.html: diapo-%.md
+	$(EC) "... [Marp] : $<"
 	$(MARP_PRG) $< -o $@ $(DIAPO_HTML_FLAGS)
 
 .PHONY: all clean mrproper
 
 clean :
-	# $(LATEXPRG) $(LATEXCLEANFLAGS) $(NOOUTPUT)
+	$(EC) "... [Clean]"
+	$(LATEXPRG) $(LATEXCLEANFLAGS) $(NOOUTPUT)
 
 mrproper :
+	$(EC) "... [MrProper]"
 	$(RM) $(PDF) $(NOOUTPUT)
 	$(RM) $(TEX) $(NOOUTPUT)
 	$(RM) $(DIAPOPDF) $(NOOUTPUT)

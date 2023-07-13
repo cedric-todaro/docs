@@ -59,7 +59,8 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \rnc{\headrulewidth}{1pt}
-\fancyhead[L]{\small Nom - Prénom :\hfill\Classe}\fancyhead[C]{}\fancyhead[R]{}
+%\fancyhead[L]{\small Nom - Prénom :\hfill\Classe}\fancyhead[C]{}\fancyhead[R]{}
+\fancyhead[L]{\ \hfill\Classe}\fancyhead[C]{}\fancyhead[R]{}
 \rnc{\footrulewidth}{1pt}
 \fancyfoot[L]{\small\Titre}\fancyfoot[C]{}\fancyfoot[R]{\small\thepage/\pageref{LastPage}}
 

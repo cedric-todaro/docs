@@ -4,7 +4,8 @@ TOPTARGETS = all clean mrproper
 $(TOPTARGETS): $(SUBDIRS)
 
 $(SUBDIRS):
-	$(MAKE) -k -C $@ $(MAKECMDGOALS)
+	echo ">> $@"
+	$(MAKE) -s -k -C $@ $(MAKECMDGOALS)
 
 .PHONY: $(TOPTARGETS) $(SUBDIRS)
 

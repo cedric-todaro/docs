@@ -1,8 +1,8 @@
 *.dvi
 *.ps
-*.pdf
+## *.pdf
 *.docx
-*.html
+## *.html
 *.mst
 **/*.dvi
 **/*.ps

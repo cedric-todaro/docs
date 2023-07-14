@@ -1,7 +1,10 @@
 ---
 marp: true
 math: katex
+paginate: true
+header: 1Plop - Énigmes ...
 ---
+
 # Nombre de triangles
 
 - Combien de triangles compose la figure ...

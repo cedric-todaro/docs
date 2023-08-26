@@ -16,6 +16,7 @@
 \usepackage{wrapfig2,graphicx,tabularx}
 \usepackage{lastpage}
 \usepackage{fancyhdr}
+\usepackage{longtable,booktabs,array}
 \usepackage{xcolor,pgf,tikz,tkz-tab,pgfplots,xfp}
 \pgfplotsset{compat=1.15}
 \usetikzlibrary{arrows,backgrounds,calc,shapes}

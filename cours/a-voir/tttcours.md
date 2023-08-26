@@ -11,7 +11,7 @@ $$f_n(x)=\sum\limits_{n=0}^{+\infty}\frac{x^n}{n!}$$
 
 ## Replop
 
-lorem etc etc etc mplates contain variables, which allow for the inclusion of arbitrary information at any point in the file. They may be set at the command line using the -V/--variable option. If a variable is not set, pandoc will look for the key in the document’s metadata, which can be set using either YAML metadata blocks or with the -M/--metadata option. In addition, some variables are given default values by pandoc.
+lorém etc etc etc mplates contain variables, which allow for the inclusion of arbitrary information at any point in the file. They may be set at the command line using the -V/--variable option. If a variable is not set, pandoc will look for the key in the document’s metadata, which can be set using either YAML metadata blocks or with the -M/--metadata option. In addition, some variables are given default values by pandoc.
 
 # re plop
 

@@ -49,6 +49,7 @@
 %%%% Math stuff
 \let\le\leqslant\let\ge\geqslant\let\l\left\let\r\right
 \def\be{\begin{enumerate}}\def\ee{\end{enumerate}}
+\def\beresume{\begin{enumerate}[resume]}\def\ee{\end{enumerate}}
 \def\bi{\begin{itemize}}\def\ei{\end{itemize}}
 \nc{\eqn}[1]{\begin{align*}#1\end{align*}}
 \nc{\R}{\m{\mathbb{R}}}

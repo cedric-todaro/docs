@@ -35,6 +35,7 @@
 \nc{\up}[1]{\ensuremath{^{\textrm{#1}}}}
 \def\dashfill{\cleaders\hbox to .5em{\rule{.4ex}{.4pt}}\hfill}
 \newcommand\dashline[1]{\hbox to #1{\dashfill\hfil}}
+\nc{\btt}[1]{\textbf{\texttt{#1}}}
 %%%% Specific document stuff
 \nc{\DoTitle}{\colorbox{white}{\begin{minipage}{17cm}\begin{center}\huge{\ul{\textbf{\Titre}}}\end{center}\end{minipage}\hfill\begin{minipage}{2cm}\vspace*{5mm}\raggedleft{\Large{/\NoterSur}}\vspace*{5mm}\end{minipage}}\setlength{\parskip}{-1pt}\par\setlength{\DefaultParskip}{\parskip}}
 \nc{\WhiteBox}[1]{\colorbox{white}{\begin{minipage}{19cm}#1\vspace{1mm}\end{minipage}}}

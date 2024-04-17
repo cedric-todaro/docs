@@ -27,6 +27,7 @@
 
 
 % --- Macros diverses
+\nc{\btt}[1]{\textbf{\texttt{#1}}}
 \let\hs\hspace
 \nc{\cbox}[2]{\colorbox{#1}{\ensuremath{#2}}}
 \nc{\tbox}[1]{\fbox{\texttt{#1}}}

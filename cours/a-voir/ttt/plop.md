@@ -1,757 +1,252 @@
 ---
-title: ceci pest un essai
-classe: 1^spé^
-thanks: matt
+title: Arithmétique
+classe: 2^nde^
 toc: true
 ---
 
-# An h1 header
+# Nombres entiers
 
-Paragraphs are separated by a bl^ank^ l~i~ne.
+## Entier naturel
 
-2nd paragraph. _Italic_, **bold**, and `monospace`. Itemized lists
-look like:
+**Def :** Un nombre **entier naturel** est un nombre entier qui est **positif**.
 
-- this one
-- that one
-- the other one
+L'ensemble des nombres **entiers naturels** est noté $\N$.
 
-Note that --- not considering the asterisk --- the actual text
-content starts at 4-columns in.
+$$\N=\left\{0 ;1 ;2 ;3 ;4 ;...\right\}$$
 
-> Block quotes are
-> written like so.
->
-> They can span multiple paragraphs,
-> if you like.
+**Ex. :** $\qquad 4\in\N\qquad\qquad-2 \notin \N$
 
-Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
-in chapters 12--14"). Three dots ... will be converted to an ellipsis.
-Unicode is supported.
+## Entier relatif
 
-## An h2 header
+**Def :** Un nombre **entier relatif** est un nombre entier qui est **positif** ou **négatif**.
 
-Here's a numbered list:
+L'ensemble des nombres entiers relatifs est noté $\Z$.
 
-1. first item
-2. second item
-3. third item
+$$\Z = \left\{...;-3 ; -2 ; -1 ; 0 ;1 ;2 ;3 ;...\right\}$$
 
-Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here's a code sample:
+**Ex. :** $\qquad 14\in\Z\qquad\qquad-4 \in \Z\qquad\qquad0.33\notin\Z$
 
-    # Let me re-iterate ...
-    for i in 1 .. 10 { do-something(i) }
+![Représentation de \ensuremath{\mathbb{N}} et \ensuremath{\mathbb{Z}} :](img/n_et_z.png){width=3cm}
 
-As you probably guessed, indented 4 spaces. By the way, instead of
-indenting the block, you can use delimited blocks, if you like:
+# Multiples et diviseurs
 
-```
-define foobar() {
-    print "Welcome to flavor country!";
-}
-```
+## Multiple et diviseur
 
-(which makes copying & pasting easier). You can optionally mark the
-delimited block for Pandoc to syntax highlight it:
+**Def :** Soit $a$ et $b$ deux entiers. On dit que $a$ est un **multiple** de $b$ s'il existe un **entier** $k$ tel que :
 
-```python
-import time
-# Quick, count to ten!
-for i in range(10):
-    # (but not *too* quick)
-    time.sleep(0.5)
-    print i
-```
+$$a = k\times b$$
 
-### An h3 header
-
-Now a nested list:
-
-1. First, get these ingredients:
-
-    - carrots
-    - celery
-    - lentils
-
-2. Boil some water.
-
-3. Dump everything in the pot and follow
-    this algorithm:
-
-        find wooden spoon
-        uncover pot
-        stir
-        cover pot
-        balance wooden spoon precariously on pot handle
-        wait 10 minutes
-        goto first step (or shut off burner when done)
-
-    Do not bump wooden spoon or it will fall.
-
-Notice again how text always lines up on 4-space indents (including
-that last line which continues item 3 above).
-
-Here's a link to [a website](http://foo.bar), to a [local
-doc](local-doc.html), and to a [section heading in the current
-doc](#an-h2-header). Here's a footnote.
-
-Tables can look like this:
-
-size material color
-
----
-
-|  9  | leather | brown          |
-| :-: | :-----: | :------------- |
-| 10  |  hemp   | canvas natural |
-| 11  |  glass  | transparent    |
-
-Table: Shoes, their sizes, and what they're made of
-
-(The above is the caption for the table.) Pandoc also supports
-multi-line tables:
-
----
-
-keyword text
-
----
-
-red Sunsets, apples, and
-other red or reddish
-things.
-
-green Leaves, grass, frogs
-and other things it's
-not easy being.
-
----
-
-A horizontal rule follows.
-
----
-
-Here's a definition list:
-
-apples
-: Good for making applesauce.
-oranges
-: Citrus!
-tomatoes
-: There's no "e" in tomatoe.
-
-Again, text is indented 4 spaces. (Put a blank line betfoot
-
-| Line one
-| Line too
-| Line tree
-
-and images can be specified like so:
-
-Inline math equations go in like so: $\omega = d\phi / dt$. Display
-math should get its own line and be put in in double-dollarsigns:
-
-$$I = \int \rho R^{2} dV$$
-
-And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
-
-![](https://picsum.photos/200/300){width=200px}
+On dit alors que $b$ est un **diviseur** de $a$.
 
 \newpage
 
-# h1 Heading 8-)
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
+> **Ex. :**
+>
+> - $15~$ est **multiple** de $~3~$ car $~15=5\times 3\qquad$ ...et $~3$ est un **diviseur** de $15$
+>
+> - $7~$ est un **diviseur** de $~21~$ car $~21=7\times 3\qquad$ ...et $~21$ est **multiple** de $7$
+>
+> - $5~$ n'est pas un **multiple** de $~17~$ car il n'existe pas **d'entier** $k$ tel que $17=k\times 5$
+
+![Tables du $3$ et du $5$](img/tables3et5.png){width=4cm}
+
+## Somme de deux multiples
+
+**Prop :** La **somme** de deux multiples d'un entier $a$ est un multiple de $a$.
+
+Ex. :
+
+- $15$ est multiple de $3\quad(3\times 5=15)$
+- $21$ est multiple de $3\quad(3\times 7=21)$
+
+Donc $(15+21)=36$ est multiple de $3\quad(3\times 12=36)$
+
+$~$
+
+> **Démonstration**
+>
+> Soit $b$ et $c$ deux multiples de $a$.
+>
+> - $b$ est un multiple de $a$ donc il existe un **entier** $k_1$ tel que $b = a\times k_1$
+> - $c$ est un multiple de $a$ donc il existe un **entier** $k_2$ tel que $c = a\times k_2$
+>
+> On a :
+>
+> $$\begin{aligned}(b + c)&= a\times k_1 +a\times k_2\\&=a\times (k_1 + k_2)\\&=a\times k\qquad\quad\text{où }~k=k_1+k_2\end{aligned}$$
+>
+> Or, $k = k_1+k_2$ est un entier car somme de deux entiers
+>
+> Donc $(b+c)=a\times k\quad$ avec $k$ entier $\Rightarrow (b + c)$ est donc un multiple de $a$.
+
+> **Méthode : Résoudre un problème avec des multiples ou des diviseurs**
+>
+> Montrons que la somme de **trois entiers consécutifs** est un **multiple de 3**.
+>
+> Soit **trois entiers consécutifs** : $\textcolor{blue}{(n)}$, $\textcolor{red}{(n+1)}$ et $\textcolor{green!30!black!50}{(n+2)}$, où $n$ est un entier quelconque.
+>
+> Leur somme est :
+>
+> $$\begin{aligned}
+> S&=\textcolor{blue}{n}+(\textcolor{red}{n+1})+(\textcolor{green!30!black!50}{n+2})\\
+> &=n+n+1+n+2\\
+> &= 3n+3\qquad=3(n + 1)
+> \end{aligned}$$
+>
+> Soit $k$ l'entier tel que $k=n+1$.
+>
+> Donc $S = 3k$, avec $k$ entier $\quad\Rightarrow S$ est un multiple 3.
+
+\newpage
+
+# Nombres pairs, impairs
+
+## Définition : pair / impair
+
+- Un nombre **pair** est un multiple de 2.
+- Un nombre **impair** est un nombre qui n'est pas pair.
+
+![Pair / impair](img/02.png){width=2cm}
+
+> **Ex. :**
+>
+> - $34$, $68$, $9756786$ et $0$ sont des nombres **pairs**.
+> - $567$, $871$ et $1$ sont des nombres **impairs**.
+
+## Propriétés : pair / impair
+
+**Prop :**
+
+- Un nombre **pair** s'écrit sous la forme $~(2k)~$, avec $k$ entier.
+- Un nombre **impair** s'écrit sous la forme $~(2k+1)~$, avec $k$ entier.
+
+## Propriété : Carré d'un nombre impair
+
+**Prop :** Le **carré** d'un nombre **impair** est **impair**.
+
+> **Ex. :** $\quad 13^2=169\qquad 5^2=25\qquad ...$
 
-Alternatively, for H1 and H2, an underline-ish style:
+$~$
 
-Alt-H1
-======
-
-Alt-H2
-------
-
-# Emphasis
-
-```
-Emphasis, aka italics, with *asterisks* or _underscores_.
-
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
-
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
-
-**This is bold text**
-
-__This is bold text__
-
-*This is italic text*
-
-_This is italic text_
-
-~~Strikethrough~~
-```
-
-Emphasis, aka italics, with *asterisks* or _underscores_.
-
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
-
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
-
-**This is bold text**
-
-__This is bold text__
-
-*This is italic text*
-
-_This is italic text_
-
-~~Strikethrough~~
-
-------
-
-# Lists
-
-```
-1. First ordered list item
-2. Another item
-  * Unordered sub-list.
-1. Actual numbers don't matter, just that it's a number
-  1. Ordered sub-list
-4. And another item.
-
-   You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
-
-   To have a line break without a paragraph, you will need to use two trailing spaces.  
-   Note that this line is separate, but within the same paragraph.  
-   (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
-
-* Unordered list can use asterisks
-- Or minuses
-+ Or pluses
-
-1. Make my changes
-    1. Fix bug
-    2. Improve formatting
-        - Make the headings bigger
-2. Push my commits to GitHub
-3. Open a pull request
-    * Describe my changes
-    * Mention all the members of my team
-        * Ask for feedback
-
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
-    + Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-+ Very easy!
-```
-
-1. First ordered list item
-2. Another item
-  * Unordered sub-list.
-1. Actual numbers don't matter, just that it's a number
-  1. Ordered sub-list
-4. And another item.
-
-   You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
-
-   To have a line break without a paragraph, you will need to use two trailing spaces.  
-   Note that this line is separate, but within the same paragraph.  
-   (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
-
-* Unordered list can use asterisks
-- Or minuses
-+ Or pluses
-
-1. Make my changes
-    1. Fix bug
-    2. Improve formatting
-        - Make the headings bigger
-2. Push my commits to GitHub
-3. Open a pull request
-    * Describe my changes
-    * Mention all the members of my team
-        * Ask for feedback
-
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
-    + Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-+ Very easy!
-
-------
-
-# Task lists
-
-```
-- [x] Finish my changes
-- [ ] Push my commits to GitHub
-- [ ] Open a pull request
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
-```
-
-- [x] Finish my changes
-- [ ] Push my commits to GitHub
-- [ ] Open a pull request
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [ ] this is a complete item
-- [ ] this is an incomplete item
-
-------
-
-# Ignoring Markdown formatting
-
-You can tell GitHub to ignore (or escape) Markdown formatting by using \ before the Markdown character.
-
-```
-Let's rename \*our-new-project\* to \*our-old-project\*.
-```
-
-Let's rename \*our-new-project\* to \*our-old-project\*.
-
-------
-
-# Links
-
-```
-[I'm an inline-style link](https://www.google.com)
-
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
-
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
-[You can use numbers for reference-style link definitions][1]
-
-Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links.
-http://www.example.com or <http://www.example.com> and sometimes
-example.com (but not on Github, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
-[1]: http://slashdot.org
-[link text itself]: http://www.reddit.com
-```
-
-[I'm an inline-style link](https://www.google.com)
-
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
-
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
-[You can use numbers for reference-style link definitions][1]
-
-Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links.
-http://www.example.com or <http://www.example.com> and sometimes
-example.com (but not on Github, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
-[1]: http://slashdot.org
-[link text itself]: http://www.reddit.com
-
-------
-
-# Images
-
-```
-Here's our logo (hover to see the title text):
-
-Inline-style:
-
-Reference-style:
-
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-Like links, Images also have a footnote style syntax
-
-With a reference later in the document defining the URL location:
-```
-
-Here's our logo (hover to see the title text):
-
-Inline-style:
-
-Reference-style:
-
-
-![Minion](https://octodex.github.com/images/minion.png)
-
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-Like links, Images also have a footnote style syntax
-
-
-------
-
-# [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
-
-```
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Inline footnote^[Text of inline footnote] definition.
-
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text.
-```
-
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Inline footnote^[Text of inline footnote] definition.
-
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text.
-
-------
-
-# Code and Syntax Highlighting
-
-```
-Inline `code` has `back-ticks around` it.
-```
-
-Inline `code` has `back-ticks around` it.
-
-```c#
-using System.IO.Compression;
-
-#pragma warning disable 414, 3021
-
-namespace MyApplication
-{
-    [Obsolete("...")]
-    class Program : IInterface
-    {
-        public static List<int> JustDoIt(int count)
-        {
-            Console.WriteLine($"Hello {Name}!");
-            return new List<int>(new int[] { 1, 2, 3 })
-        }
-    }
-}
-```
-
-```css
-@font-face {
-  font-family: Chunkfive; src: url('Chunkfive.otf');
-}
-
-body, .usertext {
-  color: #F0F0F0; background: #600;
-  font-family: Chunkfive, sans;
-}
-
-@import url(print.css);
-@media print {
-  a[href^=http]::after {
-    content: attr(href)
-  }
-}
-```
-
-```javascript
-function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/\bno\-highlight\b/) != -1)
-      return process(block, true, 0x0F) +
-             ` class="${cls}"`;
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i < classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      console.log('undefined');
-  }
-}
-
-export  $initHighlight;
-```
-
-```php
-require_once 'Zend/Uri/Http.php';
-
-namespace Location\Web;
-
-interface Factory
-{
-    static function _factory();
-}
-
-abstract class URI extends BaseURI implements Factory
-{
-    abstract function test();
-
-    public static $st1 = 1;
-    const ME = "Yo";
-    var $list = NULL;
-    private $var;
-
-    /**
-     * Returns a URI
-     *
-     * @return URI
-     */
-    static public function _factory($stats = array(), $uri = 'http')
-    {
-        echo __METHOD__;
-        $uri = explode(':', $uri, 0b10);
-        $schemeSpecific = isset($uri[1]) ? $uri[1] : '';
-        $desc = 'Multi
-line description';
-
-        // Security check
-        if (!ctype_alnum($scheme)) {
-            throw new Zend_Uri_Exception('Illegal scheme');
-        }
-
-        $this->var = 0 - self::$st;
-        $this->list = list(Array("1"=> 2, 2=>self::ME, 3 => \Location\Web\URI::class));
-
-        return [
-            'uri'   => $uri,
-            'value' => null,
-        ];
-    }
-}
-
-echo URI::ME . URI::$st1;
-
-__halt_compiler () ; datahere
-datahere
-datahere */
-datahere
-```
-
-------
-
-# Tables
-
-```
-Colons can be used to align columns.
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the
-raw Markdown line up prettily. You can also use inline Markdown.
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
-| Command | Description |
-| --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
-
-| Command | Description |
-| --- | --- |
-| `git status` | List all *new or modified* files |
-| `git diff` | Show file differences that **haven't been** staged |
-
-| Left-aligned | Center-aligned | Right-aligned |
-| :---         |     :---:      |          ---: |
-| git status   | git status     | git status    |
-| git diff     | git diff       | git diff      |
-
-| Name     | Character |
-| ---      | ---       |
-| Backtick | `         |
-| Pipe     | \|        |
-```
-
-Colons can be used to align columns.
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the
-raw Markdown line up prettily. You can also use inline Markdown.
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
-| Command | Description |
-| --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
-
-| Command | Description |
-| --- | --- |
-| `git status` | List all *new or modified* files |
-| `git diff` | Show file differences that **haven't been** staged |
-
-| Left-aligned | Center-aligned | Right-aligned |
-| :---         |     :---:      |          ---: |
-| git status   | git status     | git status    |
-| git diff     | git diff       | git diff      |
-
-| Name     | Character |
-| ---      | ---       |
-| Backtick | `         |
-| Pipe     | \|        |
-
-------
-
-# Blockquotes
-
-```
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
-
-Quote break.
-
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
-
-> Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
-> > > ...or with spaces between arrows.
-```
-
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
-
-Quote break.
-
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
-
-> Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
-> > > ...or with spaces between arrows.
-
-------
-
-# Inline HTML
-
-```
-<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-```
-
-<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-
-------
-
-# Horizontal Rules
-
-```
-Three or more...
-
----
-
-Hyphens
-
-***
-
-Asterisks
-
-___
-
-Underscores
-```
-
-Three or more...
-
----
-
-Hyphens
-
-***
-
-Asterisks
-
-___
-
-Underscores
-
-------
-
-# YouTube Videos
-
-```
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE" target="_blank">
-<img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10">
-</a>
-```
-
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE" target="_blank">
-<img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10">
-</a>
-
-```
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
-```
-
+> **Démonstration**
+>
+> Soit $a$ est un nombre **impair**.
+>
+> On peut l'écrire sous la forme $a=2k+1$, avec $k$ entier.
+>
+> On a :
+>
+> $$\begin{aligned}
+> a^2&= (2k + 1)^2\\
+>    &= 4k^2 +4k + 1\\
+>    &= 2\textcolor{blue}{(2k^2 + 2k)} + 1\\
+>    &= 2\textcolor{blue}{k'} + 1\qquad\text{avec}~\textcolor{blue}{k'=2k^2+2k}
+> \end{aligned}$$
+>
+> $k'$ est **entier** car **somme** de **deux entiers**
+>
+> $a^2$ s'écrit sous la forme $~a^2=2k'+1\qquad\Rightarrow a^2$ est **impair**.
+
+> **Méthode : Résoudre un problème avec des nombres pairs ou impairs**
+>
+> Montrons que le produit de deux entiers consécutifs est un nombre pair.
+>
+> Soit deux entiers consécutifs $~\textcolor{red}{n}~$ et $~\textcolor{blue}{n+1}~$.
+>
+> \underline{1\up{er} cas : $n$ pair}
+>
+> > Si $n$ est **pair**, alors il s'écrit sous la forme $~n=2k~$, avec $k$ entier.
+> >
+> > Alors le produit des deux entiers consécutifs s'écrit :
+> >
+> > $$\begin{aligned}\textcolor{red}{n}(\textcolor{blue}{n+1})&=2k(2k+1)\\&=2k_1\qquad\text{avec }~k_1 =k(2k+1)~\text{ entier}\end{aligned}$$
+> >
+> > Donc $n(n+1)$ est pair.
+>
+> \underline{2\up{ème} cas : $n$ impair}
+>
+> > Si $n$ est **impair**, alors il s'écrit sous la forme $~n = 2k+1~$, avec $k$ entier.
+> >
+> > Alors le produit des deux entiers consécutifs s'écrit :
+> >
+> > $$\begin{aligned}\textcolor{red}{n}(\textcolor{blue}{n+1})&=(2k+1)(2k+2)\\&=2(2k+1)(k+1)\\&=2k_2\qquad\text{avec }~k_2 =(2k+1)(k+1)~\text{ entier}\end{aligned}$$
+> >
+> > Donc $n(n+1)$ est pair.
+>
+> Dans tous les cas, le **produit** de **deux entiers consécutifs** est un **nombre pair**.
+
+\newpage
+
+# Nombres premiers
+
+## Définition : Nombre premier
+
+Un nombre est **premier** s'il possède exactement deux diviseurs qui sont $1$ et **lui-même**.
+
+> **Ex. :** $\quad 2$, $3$, $5$, $7$, $11$, $13$, $17$, $19$, $23$, ...
+
+![Les nombres premiers de 1 à 100 :](img/03.png){width=7cm}
+
+Un très grand nombre premier :\par\noindent22 989 432 637 682 048 935 578 359 759 258 512 929 075 458 593 285 426 151 563 351 225 878 608 019 921 960 174 786 937 174 324 066 918 557 552 262 283 220 478 419 095 917 521 791 323 874 771 300 201 334 066 843 810 139 337 069 250 339 905 576 793 882 539 603 587 327 037 857 904 876 391 811 440 492 908 489 972 485 276 368 673 701 887
+
+$\quad$
+
+> **Rem. :**  Le nombre $1$ n'est pas premier car il n'a qu'**un seul diviseur**.
+
+## Définition : Deux nombre premiers entre-eux
+
+On dit que deux nombres sont **premiers entre eux** lorsque leur seul **diviseur** commun est $1$.
+
+> **Ex. :**
+> $20$ et $21$ sont **premier** entre-eux car :
+>
+> - $20=5\times 2\times 2\times \textcolor{red}{1}$
+> - $21=7\times 3\times \textcolor{red}{1}$
+
+## Propriété : Décomposition d'un nombre
+
+Tout nombre **non premier** peut se décomposer en **produits** de facteurs premiers.
+
+Cette décomposition est unique (à l'ordre des facteurs près).
+
+> **Ex. :** Décomposons $420$ en facteurs premiers
+> $$\begin{array}{l|r}420 & 2\\210 & 2\\105 & 3\\35 & 5\\7 & 7\\1 &~\end{array}$$
+> Donc $\quad 420\quad=2\times 2\times 3\times 5\times 7\quad=2^2\times 3^1\times 5^1\times 7^1$
+
+> **Ex. :** Décomposons $150$, $729$, $1485$, $378$ et $1260$ en facteurs premiers
+>
+
+\newpage
+
+![Méthode de décomposition en facteurs premiers](img/04.png){width=18cm}
+
+## Définition : Fraction irréductible
+
+On dit qu'une fraction est **irréductible**, lorsque son **numérateur** et son **dénominateur** sont **premiers entre eux**.
+
+$\quad$
+
+> **Ex. :**
+>
+> - $\frac{7}{5}$ est irréductible
+> - $\frac{21}{144}$ n'est pas irréductible car $\frac{21}{144}=\frac{7\times 3}{48\times 3}=\frac{7}{48}\qquad\Rightarrow\frac{7}{48}$ est irréductible.
+
+> **Méthode : Rendre une fraction irréductible**
+>
+> Rendons irréductible la fraction $\dfrac{60}{126}$.
+>
+> Pour rendre une fraction irréductible, il faut décomposer son **numérateur** et son **dénominateur** en produits de **facteurs premiers**.
+>
+> $$\begin{array}{l|r}60 & 2\\30 & 2\\15 & 3\\5 & 5\\1 &~\end{array}
+> \qquad\begin{array}{l|r}126 & 2\\63 & 3\\21 & 3\\7 & 7\\1 &~\end{array}$$
+>
+> On ainsi les décompositions de $60$ et $126$ :
+>
+> $$60 = 2\times 2\times 3\times 5\qquad 126 = 2\times 3\times 3\times 7$$
+
+> On a :
+>
+> $$\frac{60}{126}\quad= \frac{\textcolor{red}{2} \times 2 \times \textcolor{red}{3} \times 5}{\textcolor{red}{2} \times 3 \times \textcolor{red}{3} \times 7}\quad= \frac{2 \times 5}{3 \times 7}\quad=\frac{10}{21}$$
+>
+> $10$ et $21$ sont **premiers entre eux**, donc:
+>
+> $\dfrac{10}{21}$ est la fraction irréductible égale à $\dfrac{60}{126}$

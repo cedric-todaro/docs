@@ -25,7 +25,7 @@
 ]{$documentclass$}
 \let\nc\newcommand
 \let\rnc\renewcommand
-\nc{\m}[1]{\ensuremath{#1}\xspace}
+\nc{\m}[1]{\ensuremath{#1}}
 \nc{\euro}{€}
 \vbadness=10000
 \hbadness=10000
@@ -350,6 +350,7 @@ $endif$
 \usepackage{amsfonts,amsmath,amssymb,xfp}
 \usepackage[T1]{fontenc}
 \usepackage{lxfonts}
+\usepackage{soul}
 \rnc{\familydefault}{lmtt}
 %\usepackage[a4paper,margin=1.5cm,headheight=1.5cm,headsep=0.2cm,footskip=0.7cm]{geometry}
 \usepackage{wrapfig2,graphicx,tabularx}
@@ -395,6 +396,10 @@ $if(title)$\def\Titre{$title$}$else$\def\Titre{TITRE}$endif$
 \titleformat{\section}{\large\bfseries}{\ul{\thesection.~}}{0em}{\ul}
 \titleformat{\subsection}{\normalsize\bfseries}{\ul{\thesubsection.~}}{0em}{\ul}
 \titleformat{\subsubsection}{\normalsize}{\ul{\thesubsubsection.~}}{0em}{\ul}
+
+\setlength\parskip{.5mm}
+\setlength\parindent{0pt}
+
 
 %%%% Math stuff
 \let\le\leqslant\let\ge\geqslant\let\l\left\let\r\right

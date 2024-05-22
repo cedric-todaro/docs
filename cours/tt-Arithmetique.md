@@ -6,6 +6,10 @@ toc: true
 
 # Nombres entiers
 
+
+\includegraphics{img/n_et_z.png}
+
+
 ## Entier naturel
 
 **Def :** Un nombre **entier naturel** est un nombre entier qui est **positif**.

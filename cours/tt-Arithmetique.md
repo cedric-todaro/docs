@@ -6,10 +6,6 @@ toc: true
 
 # Nombres entiers
 
-
-\includegraphics{img/n_et_z.png}
-
-
 ## Entier naturel
 
 **Def :** Un nombre **entier naturel** est un nombre entier qui est **positif**.
@@ -42,7 +38,6 @@ $$a = k\times b$$
 
 On dit alors que $b$ est un **diviseur** de $a$.
 
-\newpage
 
 > **Ex. :**
 >

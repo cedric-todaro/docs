@@ -151,7 +151,8 @@ $endif$
 \usepackage{mdframed}
 \newmdenv[rightline=false,bottomline=false,topline=false,linewidth=3pt,linecolor=blockquote-border,skipabove=\parskip]{customblockquote}
 \renewenvironment{quote}{\begin{customblockquote}\list{}{\rightmargin=0em\leftmargin=0em}\item\relax\color{blockquote-text}\ignorespaces}{\unskip\unskip\endlist\end{customblockquote}}
-\newenvironment{Shaded}{\begin{customblockquote}\list{}{\rightmargin=0em\leftmargin=0em}\item\relax\color{blockquote-text}\ignorespaces}{\unskip\unskip\endlist\end{customblockquote}}
+
+% \newenvironment{Shaded}{\begin{customblockquote}\list{}{\rightmargin=0em\leftmargin=0em}\item\relax\color{blockquote-text}\ignorespaces}{\unskip\unskip\endlist\end{customblockquote}}
 
 %%%%%%%%%%%%%%%%
 \usepackage{enumitem, array}
@@ -190,6 +191,7 @@ $endif$
 \newcommand\mntxt[1]{\marginnote{#1}}
 \newcommand\snimg[2]{\sidenote{#1\par\noindent\includegraphics[width=5cm]{#2}\par~}}
 \newcommand\mnimg[2]{\marginnote{#1\par\noindent\includegraphics[width=5cm]{#2}\par~}}
+\newcommand\mnimgs[3]{\marginnote{#1\par\noindent\includegraphics[width=#3]{#2}\par~}}
 \newcommand\cimg[2]{\begin{center}\includegraphics[#1]{#2}\end{center}}
 
 $if(image-title)$

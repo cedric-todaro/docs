@@ -32,11 +32,15 @@ $endif$
 %%%%%%%%%%%%%%%%
 \usepackage{silence}
 \usepackage{setspace}
-\usepackage{amsmath,amsfonts,amssymb,nccmath,unicode-math}
+\usepackage{amsmath,amsfonts,amssymb,nccmath,unicode-math,pifont}
 \usepackage{xcolor,pgf,tikz,tkz-tab,pgfplots,xfp}
 \pgfplotsset{compat=1.15}
 \usetikzlibrary{arrows,backgrounds,calc}
 \newcommand\cbox[2]{\colorbox{#1}{\ensuremath{#2}}}
+\newcommand{\club}{\text{\ding{168}}}
+\renewcommand{\diamond}{\text{\ding{169}}}
+\newcommand{\heart}{\text{\ding{170}}}
+\newcommand{\spade}{\text{\ding{171}}}
 
 %%%%%%%%%%%%%%%%
 \usepackage[fontsize=12pt]{fontsize}
@@ -151,8 +155,7 @@ $endif$
 \usepackage{mdframed}
 \newmdenv[rightline=false,bottomline=false,topline=false,linewidth=3pt,linecolor=blockquote-border,skipabove=\parskip]{customblockquote}
 \renewenvironment{quote}{\begin{customblockquote}\list{}{\rightmargin=0em\leftmargin=0em}\item\relax\color{blockquote-text}\ignorespaces}{\unskip\unskip\endlist\end{customblockquote}}
-
-% \newenvironment{Shaded}{\begin{customblockquote}\list{}{\rightmargin=0em\leftmargin=0em}\item\relax\color{blockquote-text}\ignorespaces}{\unskip\unskip\endlist\end{customblockquote}}
+\newenvironment{Shaded}{\begin{customblockquote}\list{}{\rightmargin=0em\leftmargin=0em}\item\relax\color{blockquote-text}\ignorespaces}{\unskip\unskip\endlist\end{customblockquote}}
 
 %%%%%%%%%%%%%%%%
 \usepackage{enumitem, array}
@@ -191,7 +194,6 @@ $endif$
 \newcommand\mntxt[1]{\marginnote{#1}}
 \newcommand\snimg[2]{\sidenote{#1\par\noindent\includegraphics[width=5cm]{#2}\par~}}
 \newcommand\mnimg[2]{\marginnote{#1\par\noindent\includegraphics[width=5cm]{#2}\par~}}
-\newcommand\mnimgs[3]{\marginnote{#1\par\noindent\includegraphics[width=#3]{#2}\par~}}
 \newcommand\cimg[2]{\begin{center}\includegraphics[#1]{#2}\end{center}}
 
 $if(image-title)$

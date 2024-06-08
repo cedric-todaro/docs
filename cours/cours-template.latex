@@ -194,6 +194,7 @@ $endif$
 \newcommand\mntxt[1]{\marginnote{#1}}
 \newcommand\snimg[2]{\sidenote{#1\par\noindent\includegraphics[width=5cm]{#2}\par~}}
 \newcommand\mnimg[2]{\marginnote{#1\par\noindent\includegraphics[width=5cm]{#2}\par~}}
+\newcommand\mnimgs[3]{\marginnote{#1\par\noindent\includegraphics[width=#3]{#2}\par~}}
 \newcommand\cimg[2]{\begin{center}\includegraphics[#1]{#2}\end{center}}
 \newcommand\nimg[2]{\includegraphics[#1]{#2}}
 

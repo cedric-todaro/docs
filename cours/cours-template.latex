@@ -41,6 +41,7 @@ $endif$
 \renewcommand{\diamond}{\text{\ding{169}}}
 \newcommand{\heart}{\text{\ding{170}}}
 \newcommand{\spade}{\text{\ding{171}}}
+\newcommand\cmath[1]{\begin{center}\ensuremath{#1}\end{center}}
 
 %%%%%%%%%%%%%%%%
 \usepackage[fontsize=12pt]{fontsize}

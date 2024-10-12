@@ -1,5 +1,5 @@
 ---
-title : "Dérivation (1) : Nombre dérivé"
+title: "Dérivation (1) : Nombre dérivé"
 image-title: img/00
 mainfont: Asap
 ---
@@ -105,7 +105,7 @@ $$\boxed{f'(a)=\lim\limits_{h\to 0}\left(\dfrac{f(a+h)-f(a)}{h}\right)}$$
 
 Soit $f$ définie sur $\mathbb{R}$ par $f(x)=x^2+2x-3$.
 
-Pour démontrer que $f$ est dérivable en $x=2$, calculons $\left(\frac{f(2+h)-f(2)}{h}\right)$  pour $h\neq 0$ :
+Pour démontrer que $f$ est dérivable en $x=2$, calculons $\left(\frac{f(2+h)-f(2)}{h}\right)$ pour $h\neq 0$ :
 
 $\begin{aligned}
 \frac{f(2+h)-f(2)}{h}&=\frac{\left((2+h)^2+2(2+h)-3\right)-\left(2^2+2\times 2-3\right)}{h}\\

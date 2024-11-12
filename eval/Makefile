@@ -15,7 +15,7 @@ else
     EC = echo
 endif
 
-SRC = $(wildcard eval-*.tex) $(wildcard qcm-*.tex) $(wildcard IR-*.tex)
+SRC = $(wildcard eval-*.tex) $(wildcard qcm-*.tex) $(wildcard IR-*.tex) $(wildcard ds-*.tex)
 SRCBAC = $(wildcard bac-*.tex)
 INC = $(wildcard *.latex)
 PDF = $(SRC:.tex=.pdf)

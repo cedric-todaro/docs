@@ -48,6 +48,7 @@
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
 %%%% Math stuff
+\nc{\cmath}[1]{\begin{center}\ensuremath{#1}\end{center}}
 \nc{\np}[1]{\ensuremath{\numprint{#1}}}
 \let\le\leqslant\let\ge\geqslant\let\l\left\let\r\right
 \def\be{\begin{enumerate}}\def\ee{\end{enumerate}}

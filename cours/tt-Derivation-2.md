@@ -11,7 +11,7 @@ image-title: img/10
 
 Démontrons que pour tout $x\in\mathbb{R}$ , on : $f'(x)=2x$.
 
-Pour cela, calculons le **nombre dérivé**![Représentation de $f(x)=x^2$](img/courbe01) de $f$ en un nombre réel quelconque $a$.
+Pour cela, calculons le **nombre dérivé**![Représentation de $f(x)=x^2$](img/courbe01.png) de $f$ en un nombre réel quelconque $a$.
 
 Pour $h\neq 0$ :
 
@@ -360,7 +360,7 @@ Soit une fonction $f$ définie et dérivable sur $I$.
 - Si $f'(x)\leq 0$, alors $f$ est **décroissante** sur $I$.
 - Si $f'(x)\geq 0$, alors $f$ est **croissante** sur $I$.
 
-**Ex. :** Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=2x^2-8x+1$.![Représentation de $f$](img/courbe02)
+**Ex. :** Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=2x^2-8x+1$.![Représentation de $f$](img/courbe02.png)
 
 - \underline{Calcul de $f'(x)$}
 
@@ -464,7 +464,7 @@ $h'$ est une fonction du 2$^{nd}$ degré :
 
 Donc $h'(x)$ est du signe de $a=3>0$
 
-$h'(x)>0 \Rightarrow h$ est strictement **croissante**![Tableau de variations de $f$](img/08) sur $\left[2~;~+\infty\right[$
+$h'(x)>0 \Rightarrow h$ est strictement **croissante**![Tableau de variations de $f$](img/08.png) sur $\left[2~;~+\infty\right[$
 
 De plus, on a : $h(2)=(2)^3+5\times (2)-18=0$
 

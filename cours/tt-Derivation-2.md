@@ -1,8 +1,6 @@
 ---
 title: "Dérivation (2) : Fonctions dérivées"
-mainfont: Asap
-mathfont: Cambria Math
-image-title: img/10
+toc: true
 ---
 
 # Dérivées des fonctions usuelles
@@ -11,7 +9,9 @@ image-title: img/10
 
 Démontrons que pour tout $x\in\mathbb{R}$ , on : $f'(x)=2x$.
 
-Pour cela, calculons le **nombre dérivé**![Représentation de $f(x)=x^2$](img/courbe01.png) de $f$ en un nombre réel quelconque $a$.
+Pour cela, calculons le **nombre dérivé** de $f$ en un nombre réel quelconque $a$.
+
+![Représentation de $f(x)=x^2$](img/courbe01.png){width=5cm}
 
 Pour $h\neq 0$ :
 
@@ -31,32 +31,39 @@ On a donc défini sur $\mathbb{R}$ une fonction, notée $f'$, tel que $f'(x)=2x$
 
 Cette fonction s'appelle la **fonction dérivée** de $f$.
 
+\newpage
+
 **\ul{Déf. :}**
 
 Soit $f$ une fonction définie sur $I$.
 
 On dit que $f$ est dérivable sur $I$ si elle est dérivable en tout réel $x\in I$.
 
-Dans ce cas, la fonction qui à tout $x\in I$ associe le **nombre dérivé** de $f$ en $x$ est appelée **fonction dérivée**![C'est au mathématicien français \textbf{Joseph-Louis Lagrange} (1736-1813) que l'on doit la notation $f'(x)$ au nom de "dérivée" pour désigner ce concept mathématique.](img/42-Lagrange.jpg) de $f$ et se note $f'$.
+Dans ce cas, la fonction qui à tout $x\in I$ associe le **nombre dérivé** de $f$ en $x$ est appelée **fonction dérivée** de $f$ et se note $f'$.
+
+![C'est au mathématicien français \textbf{Joseph-Louis Lagrange} (1736-1813) que l'on doit la notation $f'(x)$ au nom de "dérivée" pour désigner ce concept mathématique.](img/42-Lagrange.jpg){width=6cm}
 
 ## Formules de dérivation des fonctions usuelles$^{\text{\faHeart}}$
 
-| $f$                   | $\mathcal{D}_f$            | $f'$                         | $\mathcal{D}_{f'}$         |
-| :-------------------- | :------------------------- | :--------------------------- | :------------------------- |
-| $f(x)=a$              | $\mathbb{R}$               | $f'(x)=0$                    | $\mathbb{R}$               |
-| avec $a\in\mathbb{R}$ |                            |                              |                            |
-|                       |                            |                              |                            |
-| $f(x)=ax$             | $\mathbb{R}$               | $f'(x)=a$                    | $\mathbb{R}$               |
-| avec $a\in\mathbb{R}$ |                            |                              |                            |
-|                       |                            |                              |                            |
-| $f(x)=x^2$            | $\mathbb{R}$               | $f'(x)=2x$                   | $\mathbb{R}$               |
-|                       |                            |                              |                            |
-| $f(x)=\frac{1}{x}$    | $\mathbb{R}-\{0\}$         | $f'(x)=\frac{-1}{x^2}$       | $\mathbb{R}-\{0\}$         |
-|                       |                            |                              |                            |
-| $f(x)=\frac{1}{x^n}$  | $\mathbb{R}-\{0\}$         | $f'(x)=\frac{-n}{x^{(n+1)}}$ | $\mathbb{R}-\{0\}$         |
-| avec $n\ge 1$         |                            |                              |                            |
-|                       |                            |                              |                            |
-| $f(x)=\sqrt{x}$       | $\left[0~;~+\infty\right[$ | $f'(x)=\frac{1}{2\sqrt{x}}$  | $\left]0~;~+\infty\right[$ |
+| $f$                            | $\mathcal{D}_f$            | $f'$                         | $\mathcal{D}_{f'}$         |
+| :----------------------------- | :------------------------- | :--------------------------- | :------------------------- |
+| $f(x)=a\qquad$ avec $a\in\mathbb{R}$ | $\mathbb{R}$               | $f'(x)=0$                    | $\mathbb{R}$               |
+|                                |                            |                              |                            |
+| avec $a\in\mathbb{R}$          |                            |                              |                            |
+|                                |                            |                              |                            |
+| $f(x)=ax$                      | $\mathbb{R}$               | $f'(x)=a$                    | $\mathbb{R}$               |
+|                                |                            |                              |                            |
+| avec $a\in\mathbb{R}$          |                            |                              |                            |
+|                                |                            |                              |                            |
+| $f(x)=x^2$                     | $\mathbb{R}$               | $f'(x)=2x$                   | $\mathbb{R}$               |
+|                                |                            |                              |                            |
+| $f(x)=\frac{1}{x}$             | $\mathbb{R}-\{0\}$         | $f'(x)=\frac{-1}{x^2}$       | $\mathbb{R}-\{0\}$         |
+|                                |                            |                              |                            |
+| $f(x)=\frac{1}{x^n}$           | $\mathbb{R}-\{0\}$         | $f'(x)=\frac{-n}{x^{(n+1)}}$ | $\mathbb{R}-\{0\}$         |
+|                                |                            |                              |                            |
+| avec $n\ge 1$                  |                            |                              |                            |
+|                                |                            |                              |                            |
+| $f(x)=\sqrt{x}$                | $\left[0~;~+\infty\right[$ | $f'(x)=\frac{1}{2\sqrt{x}}$  | $\left]0~;~+\infty\right[$ |
 
 **Ex. :**
 
@@ -403,7 +410,6 @@ x_2=\dfrac{-b-\sqrt{\Delta}}{2a}=\dfrac{-9-\sqrt{225}}{2\times 3}=-4
 On a : $~a=3>0~$ donc $~f'(x)=(3x^2+9x-12)<0~$ pour $~x\in\left[-4~;~1\right]$
 
 - Tableau de variations de $f$.
-
 
 ![](img/05.png){width=7cm}
 

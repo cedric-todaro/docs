@@ -1,12 +1,29 @@
 SUBDIRS := $(wildcard */.)
-TOPTARGETS = all clean mrproper
 
-$(TOPTARGETS): $(SUBDIRS)
+all: $(SUBDIRS)
 
 $(SUBDIRS):
-	echo ">> $@"
-	$(MAKE) -s -k -C $@ $(MAKECMDGOALS)
+	echo "\n> ---------------------------------------- $@" 
+	$(MAKE) -s -C $@
+	echo "." 
 
-.PHONY: $(TOPTARGETS) $(SUBDIRS)
+.PHONY: all clean mrproper $(SUBDIRS)
+
+clean :
+	for dir in $(SUBDIRS); do \
+		$(MAKE) -s -k -C $$dir clean; \
+	done
+
+mrproper :
+	for dir in $(SUBDIRS); do \
+		$(MAKE) -s -k -C $$dir mrproper; \
+	done
+
+push: all
+	git add .
+	/usr/bin/date > /tmp/commit_msg
+	git commit -F /tmp/commit_msg --allow-empty
+	git push
+
 
 .SILENT:

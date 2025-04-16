@@ -1,9 +1,6 @@
 ---
 title: "Dérivation (2) : Fonctions dérivées"
 classe: 1spé
-mainfont: Asap
-mathfont: Cambria Math
-image-title: img/10
 toc: true
 ---
 

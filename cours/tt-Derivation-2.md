@@ -1,5 +1,12 @@
 ---
 title: "Dérivation (2) : Fonctions dérivées"
+<<<<<<< HEAD
+=======
+classe: 1spé
+mainfont: Asap
+mathfont: Cambria Math
+image-title: img/10
+>>>>>>> eea5911 (mer. 16 avril 2025 06:47:04 CEST)
 toc: true
 ---
 

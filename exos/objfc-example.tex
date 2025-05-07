@@ -1,0 +1,29 @@
+\input{_inc.latex}
+
+% --- Largeurs des colonnes
+\def\LargColOne{10cm}
+\def\LargColTwo{1.5cm}
+\def\LargColThree{5.5cm}
+
+% 
+% --- Variables du doc.
+% 
+\def\Titre{Suites numériques}
+\def\Classe{Term. Complémentaire}
+\def\PageDebut{39}
+\def\NbParPage{3}
+% --- Le doc...
+\begin{document}
+\foreach \nb in {1,...,\NbParPage}{
+		\ifnum\nb>1\dotfill\fi
+		\begin{center}\LARGE\bfseries \Titre~(p\PageDebut+)\end{center}
+		\begin{MonTableau}\hline
+			Notion de limite d'une suite, opérations sur les limites de suites & 21 à 45\\ \hline
+			Passage à la limite dans les inégalités. Théorème des gendarmes & 46 à 50\\ \hline
+			Limite d'une suite géométrique de raison $>0$\par Limite de la somme des termes d'une suite géo. de raison $<1$ & 51 à 63\\ \hline
+			Suites arithmético-géométriques : modéliser un problème par une suite donnée par une formule de récurrence & 64-65\par 67 à 71\\ \hline
+			Représenter graphiquement une suite donnée par une relation de récurrence & 66-102\\ \hline
+		\end{MonTableau}
+		\begin{flushright}\small Nathan - Hyperbole Math Complémentaire (313-3-09-118098-0)\end{flushright}
+	}
+\end{document}

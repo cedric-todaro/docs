@@ -1,0 +1,77 @@
+\documentclass[columns=2]{cheatsheet}
+\geometry{paperheight=60mm,paperwidth=90mm, margin=1mm}
+\usepackage[fontsize=9pt]{scrextend}
+\usepackage{tikz}
+\usepackage{lmodern}
+\usetikzlibrary{through}
+\title{Dérivation}
+\renewcommand{\maketitle}{
+  \begin{mdframed}[
+    linecolor=secondaryColor,linewidth=1pt,%
+    leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm
+    ]
+    {\hfill\color{primaryColor}\Large\textsf{\textbf{\thetitle}}\hfill}
+  \end{mdframed}
+}
+
+\begin{document}
+\columnseprule=0.4pt
+\maketitle
+\section{Nombre Dérivé}
+\begin{center}
+    \resizebox{2.5cm}{2.5cm}{
+        \begin{tikzpicture}[declare function={f(\x)=\x*\x;}]
+            \draw[-latex] (-2,0)--(2,0) node[below] {$x$};
+            \draw[-latex] (0,-1.5)--(0,2.5) node[left] {$y$};
+            \draw plot[smooth,samples=100,domain=-1.5:1.5] (\x,{f(\x)});
+            \path (0,0) node[below left] {$0$};
+            \fill (0.5,{f(0.5)}) coordinate (p) circle (1pt);
+            \coordinate (x) at (0,{0.5/(8*f(0.5))});
+            \node[circle through={(p)}] (cir) at (x) {};
+            \draw[shorten >=-1.5cm,shorten <=-1cm] (cir.south)--(p);
+        \end{tikzpicture}
+    }
+\end{center}
+\begin{description}
+    \item[$f'(a)$] Pente de la tangente en $x=a$
+\end{description}
+$f'(a)=\lim\limits_{h\rightarrow 0}\dfrac{f(a+h)-f(a)}{h}$
+
+~
+\section{Dérivées usuelles}
+\begin{description}
+    \item[$k$] $\rightarrow~0$
+    \item[$x$] $\rightarrow~1$
+    \item[$x^2$] $\rightarrow~2x$
+    \item[$x^3$] $\rightarrow~3x^2$
+    \item[$x^n$] $\rightarrow~nx^{n-1}$
+    \item[$\frac{1}{x}$] $\rightarrow~\frac{-1}{x^2}$
+    \item[$\sqrt{x}$] $\rightarrow~\frac{1}{2\sqrt{x}}$
+    \item[$e^x$] $\rightarrow~e^x$
+\end{description}
+
+\section{Propriétés}
+\begin{description}
+    \item[$u+v$] $\rightarrow~u'+v'$
+    \item[$k u$] $\rightarrow~k u'$
+    \item[$uv$] $\rightarrow~u'v+ uv'$
+    \item[$\dfrac{u}{v}$] $\rightarrow~\dfrac{u'v-uv'}{v^2}$
+    \item[$e^u$] $\rightarrow~u'e^u$
+\end{description}
+~
+\section{Variations}
+\begin{description}
+    \item[$f'>0$] $\Leftrightarrow f \nearrow$ 
+    \item[$f'<0$] $\Leftrightarrow f \searrow$ 
+    \item[$f'=0$] $\Leftrightarrow f \rightarrow$ 
+\end{description}
+\section{Équation de la tangente}
+$y=f'(a)(x-a)+f(a)$
+~
+
+~
+
+~
+
+~
+\end{document}

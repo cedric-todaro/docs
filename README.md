@@ -10,7 +10,9 @@ git clone https://www.github.com/cedric-todaro/docs
 
 ## Évaluation
 
-## Cours / Diapo
+## Cours
+
+## Diapo
 
 ## Objectifs fin de chapitre / Exos
 

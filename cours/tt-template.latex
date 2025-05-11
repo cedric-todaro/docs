@@ -453,6 +453,7 @@ $if(title)$\def\Titre{$title$}$else$\def\Titre{TITRE}$endif$
 \nc{\Cg}{\m{\mathcal{C}_g}}
 \rnc{\vec}[1]{\m{\overrightarrow{#1}}}
 \rnc{\iff}{\m{\Lrarr}}
+\rnc{\bar}[1]{\overline{#1}}
 \nc{\determinant}[1]{\m{\left|\mat{#1}\right|}}
 \nc\norm[1]{\m{\left\lVert#1\right\rVert}}
 \nc{\eqv}{\Leftrightarrow}

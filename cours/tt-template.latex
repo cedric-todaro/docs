@@ -489,6 +489,7 @@ $if(title)$\def\Titre{$title$}$else$\def\Titre{TITRE}$endif$
 \nc{\smat}[1]{\m{\begin{smallmatrix}#1\end{smallmatrix}} }
 \nc{\psmat}[1]{\m{\pa{\smat{#1}}}}
 \nc{\bsmat}[1]{\m{\bra{\smat{#1}}}}
+\nc{\dint}{\m{\displaystyle\int}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Des couleurs : http://latexcolor.com/
 \definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}

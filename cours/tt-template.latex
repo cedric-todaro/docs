@@ -31,6 +31,7 @@
 \hbadness=10000
 \tolerance=10000
 \usepackage{amsfonts,amsmath,amssymb,xfp}
+\usepackage{eurosym}
 \usepackage{pifont}
 \usepackage{relsize}
 \usepackage{epsdice,yhmath}

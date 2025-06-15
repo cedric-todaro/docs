@@ -457,6 +457,7 @@ $if(title)$\def\Titre{$title$}$else$\def\Titre{TITRE}$endif$
 \rnc{\bar}[1]{\overline{#1}}
 \nc{\determinant}[1]{\m{\left|\mat{#1}\right|}}
 \nc\norm[1]{\m{\left\lVert#1\right\rVert}}
+\nc\abs[1]{\m{\left\lvert#1\right\rvert}}
 \nc{\eqv}{\Leftrightarrow}
 \nc{\rarr}{\rightarrow}\nc{\larr}{\leftarrow}
 \nc{\Rarr}{\Rightarrow}\nc{\Larr}{\Leftarrow}

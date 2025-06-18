@@ -420,7 +420,7 @@ $if(title)$\def\Titre{$title$}$else$\def\Titre{TITRE}$endif$
 \nc{\bw}{\begin{wrapfigure}}
 \nc{\ew}{\end{wrapfigure}}
 \let\ms\medskip
-\let\np\numprint
+\nc{\np}[1]{\m{\numprint{#1}}}
 \nc{\club}{\text{\ding{168}}}
 \nc{\spade}{\text{\ding{171}}}
 \rnc{\diamond}{\color{red}\text{\ding{169}}}
@@ -439,7 +439,7 @@ $if(title)$\def\Titre{$title$}$else$\def\Titre{TITRE}$endif$
 \nc{\methode}{\medskip\textbf{\ul{Méthode :}}~}
 \nc{\demo}{\medskip\textbf{\ul{Démonstration :}}~}
 \nc{\preuve}{\medskip\textbf{\ul{Preuve :}}~}
-\nc{\correction}{\medskip\faCaretSquareORight\quad\textbf{\ul{Correction :}}~}
+\nc{\correction}{\medskip\faCaretSquareORight\quad\textbf{Correction :}~}
 \let\le\leqslant\let\ge\geqslant\let\l\left\let\r\right
 \nc{\less}{<}\nc{\more}{>}
 \def\be{\begin{enumerate}}\def\ee{\end{enumerate}}

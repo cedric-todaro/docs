@@ -1,70 +1,80 @@
-LATEXPRG = latexmk
-LATEXFLAGS = -pdfxe -silent -quiet -rules- -rc-report- -no-shell-escape -f -bibtex-
-LATEXCLEANFLAGS = -c -silent -quiet -rules- -rc-report- -no-shell-escape -f
-PDOC_PRG = pandoc
-PDOC_FLAGS = -f markdown -t latex -s --template cours-template
-PDOC_FLAGS2 = -s --template tt-template
-MARP_PRG = marp
-DIAPO_FLAGS = --pdf --allow-local-files
-DIAPO_HTML_FLAGS = --html --allow-local-files
+LATEXMK = latexmk
+#
+PDOC = pandoc
+FLAGS = -s --template _tt
+#
+MARP = marp
+PDF_FLAGS = --pdf --allow-local-files
+HTML_FLAGS = --html --allow-local-files
 
 ifeq ($(OS),Windows_NT)
     RM =  del /f /q
     NOOUTPUT = >nul 2>&1
-    EC = echo
 else
     RM =  rm -f -r
     NOOUTPUT = > /dev/null
-    EC = echo
 endif
 
-SRC = $(wildcard cours-*.md)
-SRC2 = $(wildcard tt-*.md)
-INC = $(wildcard cours-*.latex)
-INC2 = $(wildcard tt-*.latex)
-TEX = $(SRC:.md=.tex)
+EC = echo
+
+SRC = $(wildcard tt-*.md) $(wildcard cours-*.md)
+INC = $(wildcard _tt.latex)
 PDF = $(SRC:.md=.pdf)
-PDF2 = $(SRC2:.md=.pdf)
+TEX = $(SRC:.md=.tex)
 
-DIAPOSRC = $(wildcard diapo-*.md)
-DIAPOPDF = $(DIAPOSRC:.md=.pdf)
-DIAPOHTML = $(DIAPOSRC:.md=.html)
+DIAPO_SRC = $(wildcard diapo-*.md)
+DIAPO_PDF = $(DIAPO_SRC:.md=.pdf)
+DIAPO_HTML = $(DIAPO_SRC:.md=.html)
 
-all : $(PDF) $(PDF2) $(DIAPOPDF) $(DIAPOHTML)
+all : cours diapo 
+cours : $(PDF) 
+diapo : $(DIAPO_PDF) $(DIAPO_HTML)
+
+####
+
+tt-%.pdf: tt-%.md $(INC)
+	$(EC) "... [Cours] : $<"
+	$(PDOC) -i $< -o $@ $(FLAGS)
+
+tt-%.tex: tt-%.md $(INC)
+	$(EC) "... [Cours (latex)] : $<"
+	$(PDOC) -i $< -t latex -o $@ $(FLAGS)
+
+##
+
+cours-%.pdf: cours-%.md $(INC)
+	$(EC) "... [Cours] : $<"
+	$(PDOC) -i $< -o $@ $(FLAGS)
 
 cours-%.tex: cours-%.md $(INC)
-	$(EC) "... [Pandoc] : $<"
-	$(PDOC_PRG) -i $< -o $@ $(PDOC_FLAGS)
-	
-cours-%.pdf: cours-%.tex
-	$(EC) "... [Latex] : $<"
-	$(LATEXPRG) $< $(LATEXFLAGS)
-	$(LATEXPRG) $(LATEXCLEANFLAGS) $(NOOUTPUT)
+	$(EC) "... [Cours (latex)] : $<"
+	$(PDOC) -i $< -t latex -o $@ $(FLAGS)
 
-tt-%.pdf: tt-%.md $(INC2)
-	$(EC) "... [Latex (tt)] : $<"
-	$(PDOC_PRG) -i $< -o $@ $(PDOC_FLAGS2)
+##
 
 diapo-%.pdf: diapo-%.md
-	$(EC) "... [Marp] : $<"
-	$(MARP_PRG) $< -o $@ $(DIAPO_FLAGS)
+	$(EC) "... [Diapo (pdf)] : $<"
+	$(MARP) $< -o $@ $(PDF_FLAGS)
 
 diapo-%.html: diapo-%.md
-	$(EC) "... [Marp] : $<"
-	$(MARP_PRG) $< -o $@ $(DIAPO_HTML_FLAGS)
+	$(EC) "... [Diapo (html)] : $<"
+	$(MARP) $< -o $@ $(HTML_FLAGS)
 
-.PHONY: all clean mrproper
+##
+
+.PHONY: all clean mrproper tt diapo
+
+##
 
 clean :
 	$(EC) "... [Clean]"
-	$(LATEXPRG) $(LATEXCLEANFLAGS) $(NOOUTPUT)
+	$(LATEXMK) -c -silent -quiet -rules- -rc-report- -no-shell-escape -f $(NOOUTPUT)
+	$(RM) $(TEX) $(NOOUTPUT)
 
 mrproper :
 	$(EC) "... [MrProper]"
 	$(RM) $(PDF) $(NOOUTPUT)
-	$(RM) $(PDF2) $(NOOUTPUT)
-	$(RM) $(TEX) $(NOOUTPUT)
-	$(RM) $(DIAPOPDF) $(NOOUTPUT)
-	$(RM) $(DIAPOHTML) $(NOOUTPUT)
+	$(RM) $(DIAPO_PDF) $(NOOUTPUT)
+	$(RM) $(DIAPO_HTML) $(NOOUTPUT)
 
 .SILENT:

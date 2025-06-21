@@ -1,0 +1,170 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass{article}
+\let\nc\newcommand
+\let\rnc\renewcommand
+\nc{\m}[1]{\ensuremath{#1}}
+\nc{\euro}{€}
+\vbadness=10000
+\hbadness=10000
+\tolerance=10000
+\usepackage{setspace}
+\usepackage{mathrsfs}
+\usepackage{iftex}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{upquote}
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+  \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+\KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{xurl}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{pdftitle={},pdflang={fr},hidelinks,pdfcreator={pdflatex}}
+\urlstyle{same}
+\usepackage[a4paper,margin=1.5cm,left=1cm,right=1cm,headheight=1.5cm,headsep=0.2cm,footskip=0.7cm,]{geometry}
+\usepackage{listings}
+\newcommand{\passthrough}[1]{#1}
+\lstset{defaultdialect=[5.3]Lua}
+\lstset{defaultdialect=[x86masm]Assembler}
+\providecommand{\tightlist}{\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}}
+\usepackage{wrapfig2}
+\usepackage[bidi=default]{babel}
+\babelprovide[main,import]{french}
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts,amsmath,amssymb,xfp}
+\usepackage[T1]{fontenc}
+\usepackage{lxfonts}
+\usepackage{soul}
+\rnc{\familydefault}{lmtt}
+\usepackage{graphicx,tabularx}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{xcolor,pgf,tikz,tkz-tab,pgfplots,xfp}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows,backgrounds,calc,shapes}
+\rnc\text\texttt
+
+\rnc{\headrulewidth}{0pt}\rnc{\footrulewidth}{0pt}
+\pagestyle{fancy}
+\nc{\raisedrule}[2][0.2em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+
+\fancyhead[L]{}\fancyhead[R]{}\fancyfoot[L]{}\fancyfoot[R]{}
+\fancyhead[C]{\Titre~\raisedrule{1pt}~\Classe}
+\fancyfoot[C]{ \raisedrule{1pt} \thepage/\pageref{LastPage}}
+
+\usepackage{contour,ulem}
+\rnc{\ULdepth}{3pt}\rnc{\ULthickness}{1pt}\contourlength{1pt}
+\rnc{\underline}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+\def\ul{\underline}
+\usepackage{enumitem}
+\setitemize{label=$\bullet$}
+
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+
+\usepackage{fontawesome}
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\usepackage{lipsum}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\ul{\thesection.~}}{0em}{\ul}
+\titleformat{\subsection}{\normalsize\bfseries}{\ul{\thesubsection.~}}{0em}{\ul}
+\titleformat{\subsubsection}{\normalsize}{\ul{\thesubsubsection.~}}{0em}{\ul}
+
+\setlength\parskip{.5mm}
+\setlength\parindent{0pt}
+
+\nc\DoTitle{\begin{center}\LARGE\underline{\textbf{\Titre}}\end{center}}
+\title{\Titre}
+\author{}
+\date{}
+
+%%%% Some stuff
+\nc{\printtoc}{{\setcounter{tocdepth}{3}\tableofcontents\hligne}}
+\nc{\nd}{\textsuperscript{nd}~}
+\nc{\nde}{\textsuperscript{nde}~}
+\nc{\er}{\textsuperscript{er}~}
+\nc{\ere}{\textsuperscript{ere}~}
+\nc{\eme}{\textsuperscript{eme}~}
+\nc{\hligne}{\begin{center}\rule{0.5\textwidth}{1pt}\end{center}}
+\nc{\cimg}[2]{\begin{center}\includegraphics[#1]{#2}\end{center}}
+\nc{\up}[1]{\m{^\text{#1}}}
+\nc{\cbox}[2]{\colorbox{#1}{\m{#2}}}
+\nc{\wfig}[2]{\begin{wrapfigure}{r}{#1}\includegraphics[width=#1]{#2}\end{wrapfigure}}
+
+%%%% Math stuff
+\nc{\definition}{\ul{\textbf{Def. :}}~}
+\nc{\propriete}{\ul{\textbf{Prop. :}}~}
+\nc{\remarque}{\ul{\textbf{Rem. :}}~}
+\nc{\theoreme}{\ul{\textbf{Th. :}}~}
+\nc{\lemme}{\ul{\textbf{Lem. :}}~}
+\nc{\exemple}{\ul{\textbf{Ex. :}}~}
+\nc{\methode}{\ul{\textbf{Méthode :}}~}
+\let\le\leqslant\let\ge\geqslant\let\l\left\let\r\right
+\def\be{\begin{enumerate}}\def\ee{\end{enumerate}}
+\def\bi{\begin{itemize}}\def\ei{\end{itemize}}
+\nc{\eqn}[1]{\begin{align*}#1\end{align*}}
+\nc{\R}{\m{\mathbb{R}}}
+\nc{\D}{\m{\mathbb{D}}}
+\nc{\Q}{\m{\mathbb{Q}}}
+\nc{\Z}{\m{\mathbb{Z}}}
+\nc{\N}{\m{\mathbb{N}}}
+\nc{\C}{\m{\mathbb{C}}}
+\nc{\Cf}{\m{\mathcal{C}_f}}
+\nc{\Cg}{\m{\mathcal{C}_g}}
+\rnc{\vec}[1]{\m{\overrightarrow{#1}}}
+\nc{\determinant}[1]{\m{\left|\mat{#1}\right|}}
+\nc\norm[1]{\m{\left\lVert#1\right\rVert}}
+\nc{\eqv}{\Leftrightarrow}
+\nc{\rarr}{\rightarrow}\nc{\larr}{\leftarrow}
+\nc{\Rarr}{\Rightarrow}\nc{\Larr}{\Leftarrow}
+\nc{\Lrarr}{\Leftrightarrow}\nc{\lrarr}{\leftrightarrow}
+\nc{\coord}[2]{\m{\begin{pmatrix}#1\\#2\end{pmatrix}}}
+\nc{\coordl}[2]{\m{\left(#1~;~#2\right)}}
+\nc{\OIJ}{\m{\left(O;I,J\right)}}
+\nc{\vOIJ}{\m{\left(O;\vec{i},\vec{j}\right)}}
+\nc{\pd}{\partial}
+\nc{\pdx}[1]{\m{\frac{\pd #1}{\pd x}}}
+\nc{\pdy}[1]{\m{\frac{\pd #1}{\pd y}}}
+\nc{\pdz}[1]{\m{\frac{\pd #1}{\pd z}}}
+\nc{\pdt}[1]{\m{\frac{\pd #1}{\pd t}}}
+\nc{\delw}{\m{\delta w}}\nc{\Delw}{\m{\Delta w}}
+\nc{\delu}{\m{\delta u}}\nc{\Delu}{\m{\Delta u}}
+\nc{\delv}{\m{\delta v}}\nc{\Delv}{\m{\Delta v}}
+\nc{\delx}{\m{\delta x}}\nc{\Delx}{\m{\Delta x}}
+\nc{\dely}{\m{\delta y}}\nc{\Dely}{\m{\Delta y}}
+\nc{\delz}{\m{\delta z}}\nc{\Delz}{\m{\Delta z}}
+\nc{\varep}{\varepsilon}
+\nc{\pa}[1]{\m{\left(#1\right)}}
+\nc{\bra}[1]{\m{\left[#1\right]}}
+\nc{\mat}[1]{\m{\begin{matrix}#1\end{matrix}}}
+\nc{\pmat}[1]{\m{\pa{\mat{#1}}}}
+\nc{\bmat}[1]{\m{\bra{\mat{#1}}}}
+\nc{\pfrac}[2]{\m{\pa{\frac{#1}{#2}}}}
+\nc{\bfrac}[2]{\m{\bra{\frac{#1}{#2}}}}
+\nc{\psfrac}[2]{\m{\pa{\sfrac{#1}{#2}}}}
+\nc{\bsfrac}[2]{\m{\bra{\sfrac{#1}{#2}}}}
+\nc{\smat}[1]{\m{\begin{smallmatrix}#1\end{smallmatrix}} }
+\nc{\psmat}[1]{\m{\pa{\smat{#1}}}}
+\nc{\bsmat}[1]{\m{\bra{\smat{#1}}}}
+

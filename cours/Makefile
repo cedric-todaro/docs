@@ -1,5 +1,3 @@
-LATEXMK = latexmk
-#
 PDOC = pandoc
 FLAGS = -s --template _tt
 #
@@ -8,37 +6,29 @@ PDF_FLAGS = --pdf --allow-local-files
 HTML_FLAGS = --html --allow-local-files
 
 ifeq ($(OS),Windows_NT)
-    RM =  del /f /q
-    NOOUTPUT = >nul 2>&1
+	RM =  del /f /q
+	NOOUTPUT = >nul 2>&1
 else
-    RM =  rm -f -r
-    NOOUTPUT = > /dev/null
+	RM =  rm -f -r
+	NOOUTPUT = > /dev/null
 endif
 
 EC = echo
 
-SRC = $(wildcard tt-*.md) $(wildcard cours-*.md)
+SRC = $(wildcard cours-*.md)
 INC = $(wildcard _tt.latex)
 PDF = $(SRC:.md=.pdf)
 TEX = $(SRC:.md=.tex)
+	LOG = $(wildcard *.log)
 
 DIAPO_SRC = $(wildcard diapo-*.md)
 DIAPO_PDF = $(DIAPO_SRC:.md=.pdf)
 DIAPO_HTML = $(DIAPO_SRC:.md=.html)
 
-all : cours diapo 
-cours : $(PDF) 
+all : cours diapo
+cours : $(PDF)
+tex : $(TEX)
 diapo : $(DIAPO_PDF) $(DIAPO_HTML)
-
-####
-
-tt-%.pdf: tt-%.md $(INC)
-	$(EC) "... [Cours] : $<"
-	$(PDOC) -i $< -o $@ $(FLAGS)
-
-tt-%.tex: tt-%.md $(INC)
-	$(EC) "... [Cours (latex)] : $<"
-	$(PDOC) -i $< -t latex -o $@ $(FLAGS)
 
 ##
 
@@ -68,8 +58,8 @@ diapo-%.html: diapo-%.md
 
 clean :
 	$(EC) "... [Clean]"
-	$(LATEXMK) -c -silent -quiet -rules- -rc-report- -no-shell-escape -f $(NOOUTPUT)
 	$(RM) $(TEX) $(NOOUTPUT)
+	$(RM) $(LOG) $(NOOUTPUT)
 
 mrproper :
 	$(EC) "... [MrProper]"

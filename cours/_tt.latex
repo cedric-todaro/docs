@@ -38,6 +38,7 @@
 \usepackage{setspace}
 \usepackage{mathrsfs}
 \usepackage{numprint}
+\usepackage{mathtools}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}

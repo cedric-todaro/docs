@@ -12,7 +12,7 @@ toc: true
 
 L'ensemble des nombres **entiers naturels** est noté $\N$.
 
-$$\N=\left\{0 ;1 ;2 ;3 ;4 ;...\right\}$$
+$$\N=\left\{0;\abs{1};2;3;\norm{\vec{v}};4;\coloneqq;\ldots\right\}$$
 
 **Ex. :** $\qquad 4\in\N\qquad\qquad-2 \notin \N$
 
@@ -38,13 +38,10 @@ $$a = k\times b$$
 
 On dit alors que $b$ est un **diviseur** de $a$.
 
-
 > **Ex. :**
 >
 > - $15~$ est **multiple** de $~3~$ car $~15=5\times 3\qquad$ ...et $~3$ est un **diviseur** de $15$
->
 > - $7~$ est un **diviseur** de $~21~$ car $~21=7\times 3\qquad$ ...et $~21$ est **multiple** de $7$
->
 > - $5~$ n'est pas un **multiple** de $~17~$ car il n'existe pas **d'entier** $k$ tel que $17=k\times 5$
 
 ![Tables du $3$ et du $5$](img/tables3et5.png){width=4cm}
@@ -85,11 +82,13 @@ $~$
 >
 > Leur somme est :
 >
-> $$\begin{aligned}
+> $$
+> \begin{aligned}
 > S&=\textcolor{blue}{n}+(\textcolor{red}{n+1})+(\textcolor{green!30!black!50}{n+2})\\
 > &=n+n+1+n+2\\
 > &= 3n+3\qquad=3(n + 1)
-> \end{aligned}$$
+> \end{aligned}
+> $$
 >
 > Soit $k$ l'entier tel que $k=n+1$.
 >
@@ -134,12 +133,14 @@ $~$
 >
 > On a :
 >
-> $$\begin{aligned}
+> $$
+> \begin{aligned}
 > a^2&= (2k + 1)^2\\
 >    &= 4k^2 +4k + 1\\
 >    &= 2\textcolor{blue}{(2k^2 + 2k)} + 1\\
 >    &= 2\textcolor{blue}{k'} + 1\qquad\text{avec}~\textcolor{blue}{k'=2k^2+2k}
-> \end{aligned}$$
+> \end{aligned}
+> $$
 >
 > $k'$ est **entier** car **somme** de **deux entiers**
 >
@@ -189,14 +190,13 @@ Un très grand nombre premier :\par\noindent22 989 432 637 682 048 935 578 359 7
 
 $\quad$
 
-> **Rem. :**  Le nombre $1$ n'est pas premier car il n'a qu'**un seul diviseur**.
+> **Rem. :** Le nombre $1$ n'est pas premier car il n'a qu'**un seul diviseur**.
 
 ## Définition : Deux nombres premiers entre-eux
 
 On dit que deux nombres sont **premiers entre eux** lorsque leur seul **diviseur** commun est $1$.
 
-> **Ex. :**
-> $20$ et $21$ sont **premier** entre-eux car :
+> **Ex. :** > $20$ et $21$ sont **premier** entre-eux car :
 >
 > - $20=5\times 2\times 2\times \textcolor{red}{1}$
 > - $21=7\times 3\times \textcolor{red}{1}$
@@ -212,7 +212,6 @@ Cette décomposition est unique (à l'ordre des facteurs près).
 > Donc $\quad 420\quad=2\times 2\times 3\times 5\times 7\quad=2^2\times 3^1\times 5^1\times 7^1$
 
 > **Ex. :** Décomposons $150$, $729$, $1485$, $378$ et $1260$ en facteurs premiers
->
 
 \newpage
 
@@ -235,8 +234,10 @@ $\quad$
 >
 > Pour rendre une fraction irréductible, il faut décomposer son **numérateur** et son **dénominateur** en produits de **facteurs premiers**.
 >
-> $$\begin{array}{l|r}60 & 2\\30 & 2\\15 & 3\\5 & 5\\1 &~\end{array}
-> \qquad\begin{array}{l|r}126 & 2\\63 & 3\\21 & 3\\7 & 7\\1 &~\end{array}$$
+> $$
+> \begin{array}{l|r}60 & 2\\30 & 2\\15 & 3\\5 & 5\\1 &~\end{array}
+> \qquad\begin{array}{l|r}126 & 2\\63 & 3\\21 & 3\\7 & 7\\1 &~\end{array}
+> $$
 >
 > On ainsi les décompositions de $60$ et $126$ :
 >

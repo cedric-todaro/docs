@@ -4,6 +4,15 @@ classe: 2^nde^
 toc: true
 ---
 
+# plop
+
+$$
+S:
+\begin{cases}
+c \\ p \textrm{ plop }
+\end{cases}\text{plop}
+$$
+
 # Somme de termes et produit de facteurs
 
 \exemple Somme de terme

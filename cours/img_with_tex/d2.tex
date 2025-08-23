@@ -1,0 +1,13 @@
+% Conversion avec : convert -density 300 -flatten img.pdf img.png
+\documentclass{standalone}
+\usepackage{xcolor,pgf,tikz,tkz-tab,pgfplots,xfp}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows,backgrounds,calc}
+\begin{document}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45]
+\begin{axis}[x=0.625cm,y=0.625cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,xmin=-3.9,xmax=3.9,ymin=-4.5,ymax=2.5,xtick={-4,-3,...,4},ytick={-6,-5,...,3},yticklabels=\empty,xticklabels=\empty,]
+\draw (-3.9,1.4) node[fill=white,anchor=north west] {$(d) : 2x+3y+6=0$};
+\draw [line width=2pt,color=red,domain=-4:4] plot(\x,{(-6.-2.*\x)/3.});
+\end{axis}
+\end{tikzpicture}
+\end{document}

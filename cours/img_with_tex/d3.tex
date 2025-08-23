@@ -1,0 +1,17 @@
+% Conversion avec : convert -density 300 -flatten img.pdf img.png
+\documentclass{standalone}
+\usepackage{xcolor,pgf,tikz,tkz-tab,pgfplots,xfp}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows,backgrounds,calc}
+\begin{document}
+\definecolor{c1}{HTML}{814DA8}
+\definecolor{c2}{HTML}{B8714D}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+	\begin{axis}[x=0.83cm,y=0.83cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,xmin=-2.4,xmax=3.5,ymin=-3.5,ymax=3.5,xtick={-2.0,-1.0,...,3.0},ytick={-3.0,-2.0,...,3.0},yticklabels=\empty,xticklabels=\empty]
+		\draw[color=black] (-0.5,2.6)    node[fill=white, anchor=south west] {$d_1:3x+2y=4$};
+		\draw[color=black] (2,-2.9) node[fill=white, anchor=north east] {$d_2:-6x-4y=1$};
+		\draw [color=c1,line width=2.pt,domain=-2.5:3.5] plot(\x,{(--4.-3.*\x)/2.});
+		\draw [color=c2,line width=2.pt,domain=-2.5:3.5] plot(\x,{(--1.--6.*\x)/-4.});
+	\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,31 @@
+% Conversion avec : convert -density 300 -flatten img.pdf img.png
+\documentclass{standalone}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+    \node {Expérience}
+        child { node {D} 
+            child { node {D} [grow=right] }
+            child { node {/D} [grow=right] }
+        }
+        child { node {/D} 
+            child { node {D} [grow=right] }
+            child { node {/D} [grow=right] }
+        };
+\end{tikzpicture}% \begin{tikzpicture}
+%     \begin{axis}[
+%         axis lines=middle,
+%         x=1cm,y=1cm,
+%         xmin=-0.9, xmax=4.9,
+%         ymin=-1.9, ymax=3.9,
+%         xlabel={$x$},
+%         ylabel={$y$},
+%         grid=both,
+%         samples=200,
+%         ]
+%         % \addplot[domain=-1:4, blue]{x^3 - 3*x^2 + 2*x};
+%         \addplot[domain=-1:5, red,line width=1.5pt]{x^2 - 4*x + 3};
+%     \end{axis}
+% \end{tikzpicture}
+\end{document}

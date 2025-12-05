@@ -1,0 +1,20 @@
+% Conversion avec : convert -density 300 -flatten img.pdf img.png
+\documentclass{standalone}
+\usepackage{xcolor,pgf,tikz,tkz-tab,pgfplots,xfp}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows,backgrounds,calc}
+\begin{document}
+\begin{tikzpicture}[>=triangle 45]
+\begin{axis}[x=1.5cm,y=2.0cm,axis lines=middle,xmin=0.5,xmax=9.5,ymin=-2,ymax=2,xtick={1.0,2.0,...,9.0}, axis y line=none,ytick=\empty,ylabel={}]
+\draw [<->,line width=2pt] (2.,0.4) -- (5.,0.4);
+\draw [<->,line width=2pt] (5.,0.4) -- (8.,0.4);
+\draw (3.5,0.5) node[anchor=south] {$3$};
+\draw (6.5,0.5) node[anchor=south] {$3$};
+\draw (2.6,-.1) node[anchor=north] {$x$};
+\draw [fill=blue] (2.,0) circle (2.5pt);
+\draw [fill=blue] (5.,0) circle (2.5pt);
+\draw [fill=blue] (8.,0) circle (2.5pt);
+\draw [fill=red] (2.6,0) circle (2.5pt);
+\end{axis}
+\end{tikzpicture}
+\end{document}

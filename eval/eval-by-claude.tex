@@ -1,0 +1,117 @@
+\documentclass[a4paper,11pt]{scrartcl}
+\usepackage{amsmath,amsfonts,amssymb,polyglossia,xcolor,setspace,pgf,tikz,tkz-tab,pgfplots,lastpage,fancyhdr,mdframed,enumitem, array,cellspace,tabularx,multicol,multirow,makecell,longtable,booktabs,wrapfig,xspace,xfrac,fontawesome5,lipsum,upquote,graphicx,grffile,contour,parskip,colortbl,numprint}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=1cm, right=1cm}
+\usepackage{enumitem}
+\usepackage{eurosym,lastpage}
+\usepackage{fancyhdr}
+\pgfplotsset{compat=1.18}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{titling}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Nom - Prénom :}
+\lfoot{\thetitle}
+\rhead{2GT9}
+\rfoot{\thepage~/~\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{Évaluation : Proportions / évolutions}
+\date{}
+\author{}
+
+
+% Commande pour créer des carreaux (grille)
+\newcommand{\carreaux}[1]{% #1 = hauteur en cm, #2 = largeur en cm
+\begin{tikzpicture}
+  \draw[step=5mm,black!50!white, dotted] (0,0) grid (18cm,#1);
+    \end{tikzpicture}
+}
+
+\begin{document}
+
+\fbox{\huge\thetitle}\hfill\Large /20
+\normalsize
+
+\thispagestyle{fancy}
+
+\vspace{5mm}
+
+
+\section*{Exercice 1 : Calculs de base \hfill $3$ points}
+
+Calculer les valeurs suivantes :
+
+\begin{enumerate}[label=\alph*)]
+	\item Une quantité augmente de $15$\%. Quel est son coefficient multiplicateur ? \hfill \textit{(0,75 pt)}
+	      \carreaux{3}
+	\item Une quantité diminue de $30$\%. Quel est son coefficient multiplicateur ? \hfill \textit{(0,75 pt)}
+	      \carreaux{3}
+	\item Une quantité passe de $80$ à $100$. Calculer le taux d'évolution en pourcentage. \hfill \textit{(0,75 pt)}
+	      \carreaux{3}
+	\item Une quantité subit une évolution de $+25$\% puis de $-20\%$. Quel est le coefficient multiplicateur global ? \hfill \textit{(0,75 pt)}
+	      \carreaux{3}
+\end{enumerate}
+\newpage
+\section*{Exercice 2 : Abonnements streaming \hfill $4$ points}
+
+Une plateforme de streaming compte $2~400~000$ abonnés en janvier 2024.
+
+\begin{enumerate}[label=\alph*)]
+	\item En février, le nombre d'abonnés augmente de $8$\%. Combien d'abonnés compte la plateforme en février ? \hfill \textit{(1 pt)}
+	      \carreaux{4}
+	\item En mars, la plateforme perd $5$\% de ses abonnés par rapport à février. Combien d'abonnés reste-t-il en mars ? \hfill \textit{(1 pt)}
+	      \carreaux{4}
+	\item Calculer le taux d'évolution global entre janvier et mars. \hfill \textit{(1 pt)}
+	      \carreaux{4}
+	\item La plateforme souhaite retrouver son nombre d'abonnés de janvier d'ici avril.\\ De quel pourcentage doit-elle augmenter ses abonnés entre mars et avril ? (arrondir au dixième) \hfill \textit{(1 pt)}
+	      \carreaux{5}
+\end{enumerate}
+\newpage
+\section*{Exercice 3 : Magasin d'électronique \hfill $6$ points}
+Un magasin vend des smartphones. Le prix initial d'un modèle est de $850$~\EUR.
+\begin{enumerate}[label=\alph*)]
+	\item Pendant les soldes d'hiver, le magasin applique une réduction de $20$\%. Quel est le nouveau prix ? \hfill \textit{(1 pt)}
+	      \carreaux{4}
+	\item Après les soldes, le magasin augmente tous ses prix de $15$\% par rapport au prix soldé. Quel est alors le prix du smartphone ? \hfill \textit{(1 pt)}
+	      \carreaux{4}
+	\item Le gérant affirme : "Avec la baisse puis la hausse, on revient au prix initial"{}.\\ A-t-il raison ? Justifier par un calcul. \hfill \textit{(1,5 pt)}
+	      \carreaux{6}
+	\item De quel pourcentage faudrait-il augmenter le prix soldé pour retrouver exactement le prix initial de $850$~\EUR{} ? \hfill \textit{(1 pt)}
+	      \carreaux{5}
+\end{enumerate}
+\newpage
+\begin{enumerate}[label=\alph*), resume]
+	\item En septembre, une nouvelle version du smartphone sort au prix de $920$~\EUR.\\ En octobre, ce prix baisse de $12$\%, puis en novembre il baisse encore de $8$\%.\\ Calculer le prix final et le taux d'évolution global entre septembre et novembre. \hfill \textit{(1,5 pt)}
+	      \carreaux{7}
+\end{enumerate}
+
+\section*{Exercice 4 : Évolution démographique \hfill $7$ points}
+Une petite ville comptait $15~600$ habitants en 2020.
+\begin{enumerate}[label=\alph*)]
+	\item Entre 2020 et 2021, la population augmente de $4$\%. Combien d'habitants compte la ville en 2021 ? \hfill \textit{(0,75 pt)}
+	      \carreaux{4}
+	\item Entre 2021 et 2022, la population diminue de $2,5$\%. Calculer la population en 2022. \hfill \textit{(0,75 pt)}
+	      \carreaux{4}
+\end{enumerate}
+\newpage
+\begin{enumerate}[label=\alph*), resume]
+	\item Entre 2022 et 2023, la ville gagne $780$ habitants.\\ Quel est le taux d'évolution entre 2022 et 2023 ? (arrondir au centième) \hfill \textit{(1 pt)}
+	      \carreaux{5}
+	\item Calculer le taux d'évolution global de la population entre 2020 et 2023. \hfill \textit{(1,5 pt)}
+	      \carreaux{6}
+	\item \textbf{Question de réflexion :}\\ Un journaliste écrit : "En $3$ ans, la ville a connu une évolution de $+4$\%, $-2,5\%$ puis $+5$\%, soit une évolution totale de $+6,5$\%"{}. Expliquer pourquoi ce raisonnement est incorrect et calculer l'erreur commise. \hfill \textit{(2 pts)}
+	      \carreaux{9}
+\end{enumerate}
+\newpage
+\begin{enumerate}[label=\alph*), resume]
+	\item Si la ville continue à évoluer au même taux annuel moyen que celui calculé sur la période 2020--2023, quelle serait sa population en 2025 ? (on considérera le taux d'évolution global de la question d) réparti uniformément) \hfill \textit{(1 pt)}
+	      \carreaux{7}
+\end{enumerate}
+
+\end{document}

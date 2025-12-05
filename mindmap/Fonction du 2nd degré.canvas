@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"cdbb63ec74dd9170","type":"text","text":"$x=2$ \nOH\n$$\\sum_{n=1}^{+\\infty}\\frac{x^n}{n!}$$\n","x":89,"y":-285,"width":250,"height":149,"color":"6"},
+		{"id":"6c52829378bbbe06","type":"text","text":"Fonctions du 2nd degré","x":-280,"y":-136,"width":250,"height":60},
+		{"id":"928657cd920610b8","type":"text","text":"","x":-437,"y":-315,"width":250,"height":60},
+		{"id":"334aeba37b86a60d","type":"text","text":"# plop\n## plopplop\n- plop\n- plopppp","x":-113,"y":-671,"width":250,"height":283},
+		{"id":"373db8f2d764832d","type":"text","text":"","x":-113,"y":57,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"420cb6148a7b019a","fromNode":"6c52829378bbbe06","fromSide":"right","toNode":"cdbb63ec74dd9170","toSide":"left"},
+		{"id":"5bd4c5030a071cf6","fromNode":"6c52829378bbbe06","fromSide":"top","toNode":"334aeba37b86a60d","toSide":"bottom"},
+		{"id":"00a96a68f729e835","fromNode":"6c52829378bbbe06","fromSide":"top","toNode":"928657cd920610b8","toSide":"bottom"},
+		{"id":"cfefd0f426ead84e","fromNode":"6c52829378bbbe06","fromSide":"bottom","toNode":"373db8f2d764832d","toSide":"top"}
+	]
+}

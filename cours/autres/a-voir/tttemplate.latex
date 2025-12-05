@@ -1,0 +1,163 @@
+\PassOptionsToPackage{unicode$for(hyperrefoptions)$,$hyperrefoptions$$endfor$}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names,table}{xcolor}
+
+\documentclass[a4paper,10pt]{article}
+\let\nc\newcommand\let\rnc\renewcommand\nc{\m}[1]{\ensuremath{#1}\xspace}\nc{\euro}{€}
+\vbadness=10000
+\hbadness=10000
+\tolerance=10000
+\usepackage{amsfonts,amsmath,amssymb,xfp}
+\usepackage[T1]{fontenc}
+\usepackage{lxfonts}
+\renewcommand{\familydefault}{lmtt}
+\usepackage[french]{babel}
+\usepackage[a4paper,margin=1.5cm,headheight=1.5cm,headsep=0.2cm,footskip=0.7cm]{geometry}
+\usepackage{wrapfig2,graphicx,tabularx}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{longtable,booktabs,array}
+\usepackage{xcolor,pgf,tikz,tkz-tab,pgfplots,xfp}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows,backgrounds,calc,shapes}
+\rnc\text\texttt
+\rnc{\up}[1]{\m{\text{#1}}}
+\nc\cbox[2]{\colorbox{#1}{\m{#2}}}
+
+%\rnc{\headrulewidth}{0.5pt}\rnc{\footrulewidth}{0.5pt}
+\rnc{\headrulewidth}{0pt}\rnc{\footrulewidth}{0pt}
+\pagestyle{fancy}
+\nc{\raisedrule}[2][0em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+%\fancyhead[L]{$if(header-left)$$header-left$$else$$title$$endif$}
+%\fancyhead[C]{$if(header-center)$$header-center$$else$$endif$}
+%\fancyhead[R]{$if(header-right)$$header-right$$else$$date$$endif$}
+%\fancyfoot[L]{$if(footer-left)$$footer-left$$else$$for(author)$$author$$sep$, $endfor$$endif$}
+%\fancyfoot[C]{$if(footer-center)$$footer-center$$else$$endif$}
+%\fancyfoot[R]{$if(footer-right)$$footer-right$$else$\thepage/\pageref{LastPage}$endif$}
+
+\fancyhead[L]{}
+\fancyhead[R]{}
+\fancyfoot[L]{}
+\fancyfoot[R]{}
+\fancyhead[C]{$if(header-left)$$header-left$ $else$$title$ $endif$\raisedrule[0.2em]{1pt}$if(header-right)$ $header-right$$else$$if(date)$ $date$$endif$$endif$}
+\fancyfoot[C]{$if(footer-left)$$footer-left$$else$$for(author)$$author$$sep$, $endfor$ $endif$\raisedrule[0.2em]{1pt}$if(footer-right)$ $footer-right$$else$ \thepage/\pageref{LastPage}$endif$}
+
+%%%% debug
+\usepackage{lipsum}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\ul{\thesection.~}}{0em}{\ul}
+\titleformat{\subsection}{\normalsize\bfseries}{\ul{\thesubsection.~}}{0em}{\ul}
+\titleformat{\subsubsection}{\normalsize}{\ul{\thesubsubsection.~}}{0em}{\ul}
+
+\usepackage{contour,ulem}
+\rnc{\ULdepth}{3pt}\rnc{\ULthickness}{1pt}\contourlength{1pt}
+\rnc{\underline}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+\def\ul{\underline}
+\usepackage{enumitem}
+%\setitemize{label=\scriptsize\m{\bullet}}
+\setitemize{label=-}
+
+\nc\DoTitle{\normalsize~\par\LARGE\hfill{\underline{\textbf{\Titre}}}\hfill\normalsize}
+
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+
+\usepackage{hyperref}
+\usepackage{xurl}
+
+\hypersetup{
+$if(title-meta)$
+  pdftitle={$title-meta$},
+$endif$
+$if(author-meta)$
+  pdfauthor={$author-meta$},
+$endif$
+$if(lang)$
+  pdflang={$lang$},
+$endif$
+$if(subject)$
+  pdfsubject={$subject$},
+$endif$
+$if(keywords)$
+  pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
+$endif$
+$if(colorlinks)$
+  colorlinks=true,
+  linkcolor={$if(linkcolor)$$linkcolor$$else$default-linkcolor$endif$},
+  filecolor={$if(filecolor)$$filecolor$$else$default-filecolor$endif$},
+  citecolor={$if(citecolor)$$citecolor$$else$default-citecolor$endif$},
+  urlcolor={$if(urlcolor)$$urlcolor$$else$default-urlcolor$endif$},
+$else$
+  hidelinks,
+$endif$
+  breaklinks=true,
+  pdfcreator={LaTeX via pandoc with the Eisvogel template}
+}
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%%%% Math stuff
+\let\le\leqslant\let\ge\geqslant\let\l\left\let\r\right
+\def\be{\begin{enumerate}}\def\ee{\end{enumerate}}
+\def\bi{\begin{itemize}}\def\ei{\end{itemize}}
+\nc{\eqn}[1]{\begin{align*}#1\end{align*}}
+\nc{\R}{\m{\mathbb{R}}}
+\nc{\D}{\m{\mathbb{D}}}
+\nc{\Q}{\m{\mathbb{Q}}}
+\nc{\Z}{\m{\mathbb{Z}}}
+\nc{\N}{\m{\mathbb{N}}}
+\nc{\C}{\m{\mathbb{C}}}
+\nc{\Cf}{\m{\mathcal{C}_f}}
+\nc{\Cg}{\m{\mathcal{C}_g}}
+\rnc{\vec}[1]{\overrightarrow{#1}}
+\nc\norm[1]{\left\lVert#1\right\rVert}
+\nc{\eqv}{\Leftrightarrow}
+\nc{\rarr}{\rightarrow}\nc{\larr}{\leftarrow}
+\nc{\Rarr}{\Rightarrow}\nc{\Larr}{\Leftarrow}
+\nc{\Lrarr}{\Leftrightarrow}\nc{\lrarr}{\leftrightarrow}
+\nc{\coord}[2]{\m{\begin{pmatrix}#1\\#2\end{pmatrix}}}
+\nc{\coordl}[2]{\m{\left(#1~;~#2\right)}}
+\nc{\OIJ}{\m{\left(O;I,J\right)}}
+\nc{\vOIJ}{\m{\left(O;\vec{i},\vec{j}\right)}}
+\nc{\pd}{\partial}
+\nc{\pdx}[1]{\m{\frac{\pd #1}{\pd x}}}
+\nc{\pdy}[1]{\m{\frac{\pd #1}{\pd y}}}
+\nc{\pdz}[1]{\m{\frac{\pd #1}{\pd z}}}
+\nc{\pdt}[1]{\m{\frac{\pd #1}{\pd t}}}
+\nc{\delw}{\m{\delta w}}\nc{\Delw}{\m{\Delta w}}
+\nc{\delu}{\m{\delta u}}\nc{\Delu}{\m{\Delta u}}
+\nc{\delv}{\m{\delta v}}\nc{\Delv}{\m{\Delta v}}
+\nc{\delx}{\m{\delta x}}\nc{\Delx}{\m{\Delta x}}
+\nc{\dely}{\m{\delta y}}\nc{\Dely}{\m{\Delta y}}
+\nc{\delz}{\m{\delta z}}\nc{\Delz}{\m{\Delta z}}
+\nc{\varep}{\varepsilon}
+\nc{\pa}[1]{\m{\left(#1\right)}}
+\nc{\bra}[1]{\m{\left[#1\right]}}
+\nc{\mat}[1]{\m{\begin{matrix}#1\end{matrix}}}
+\nc{\pmat}[1]{\m{\pa{\mat{#1}}}}
+\nc{\bmat}[1]{\m{\bra{\mat{#1}}}}
+\nc{\pfrac}[2]{\m{\pa{\frac{#1}{#2}}}}
+\nc{\bfrac}[2]{\m{\bra{\frac{#1}{#2}}}}
+\nc{\psfrac}[2]{\m{\pa{\sfrac{#1}{#2}}}}
+\nc{\bsfrac}[2]{\m{\bra{\sfrac{#1}{#2}}}}
+\nc{\smat}[1]{\m{\begin{smallmatrix}#1\end{smallmatrix}} }
+\nc{\psmat}[1]{\m{\pa{\smat{#1}}}}
+\nc{\bsmat}[1]{\m{\bra{\smat{#1}}}}
+
+$if(title)$
+\def\Titre{$title$}
+$else$
+\def\Titre{TITRE}
+$endif$
+\begin{document}
+\DoTitle{}
+$if(toc)$
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+\par\noindent\hfill\rule{0.5\textwidth}{1pt}\hfill
+$endif$
+$body$
+\end{document}

@@ -1,0 +1,118 @@
+% --- actp preambule
+\documentclass[a4paper,10pt]{article}
+
+% --- General Package
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{calc,blindtext,lastpage,lipsum,wrapfig2}
+\usepackage{amsmath,amsfonts,amssymb,nccmath,unicode-math}
+\let\nc\newcommand\let\rnc\renewcommand\nc{\m}[1]{\ensuremath{#1}\xspace}\nc{\euro}{€}
+
+% --- Polices
+\usepackage{fontspec,fontawesome5,pifont}
+\setmainfont{Asap}
+\setmathfont{Cambria Math}
+\usepackage{contour,ulem,enumitem}
+\setitemize[0]{label=$\bullet$}
+\rnc{\ULdepth}{1.5pt}
+\rnc{\ULthickness}{0.5pt}
+\contourlength{0.6pt}
+\nc{\myuline}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+\setlength{\parindent}{0pt}
+\usepackage{parskip}
+\setlength{\parskip}{3pt}
+% \usepackage{mlmodern}
+% \renewcommand{\familydefault}{\sfdefault}
+
+
+% --- Macros diverses
+\nc{\btt}[1]{\textbf{\texttt{#1}}}
+\let\hs\hspace
+\nc{\cbox}[2]{\colorbox{#1}{\ensuremath{#2}}}
+\nc{\tbox}[1]{\fbox{\texttt{#1}}}
+\def\be{\begin{enumerate}}\def\ber{\begin{enumerate}[resume]}\def\ee{\end{enumerate}}
+\def\bi{\begin{itemize}}\def\ei{\end{itemize}}
+\def\btab{\begin{tabular}}\def\etab{\end{tabular}}
+\usepackage{tabularx}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+
+
+% --- Geometry
+\usepackage[left=1cm,right=1cm,top=1.35cm,bottom=1.75cm]{geometry}
+\setlength{\headheight}{1.30cm}
+\setlength{\headsep}{0.35cm}
+\setlength{\footskip}{0.5cm}
+\setlength{\fboxrule}{1pt}
+
+% --- Graphics
+\usepackage{xcolor,graphicx,tikz,pgf,pgfplots}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows,backgrounds}
+\usepackage{array,multirow,makecell,colortbl,multicol}
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{black}}
+\nc\img[2]{\begin{wrapfigure}{r}{#1}\vspace{-4mm}\begin{center}\includegraphics[width=#1]{#2}\end{center}\end{wrapfigure}}
+
+% --- Headers et footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rnc{\headrulewidth}{1pt}
+%\fancyhead[L]{\small Nom - Prénom :\hfill\Classe}\fancyhead[C]{}\fancyhead[R]{}
+\fancyhead[L]{\ \hfill\Classe}\fancyhead[C]{}\fancyhead[R]{}
+\rnc{\footrulewidth}{1pt}
+\fancyfoot[L]{\small\Titre}\fancyfoot[C]{}\fancyfoot[R]{\small\thepage/\pageref{LastPage}}
+
+% --- macro titre / section
+\newcommand\MonTitre[1]{\begin{center}\LARGE\bfseries\myuline{#1}\end{center}}
+\rnc{\section}[1]{\large\textbf{\uline{#1}}\normalsize\par}
+
+%%%% Math stuff
+\let\le\leqslant\let\ge\geqslant\let\l\left\let\r\right
+\def\be{\begin{enumerate}}\def\ee{\end{enumerate}}
+\def\bi{\begin{itemize}}\def\ei{\end{itemize}}
+\nc{\eqn}[1]{\begin{align*}#1\end{align*}}
+\nc{\R}{\m{\mathbb{R}}}
+\nc{\D}{\m{\mathbb{D}}}
+\nc{\Q}{\m{\mathbb{Q}}}
+\nc{\Z}{\m{\mathbb{Z}}}
+\nc{\N}{\m{\mathbb{N}}}
+\nc{\C}{\m{\mathbb{C}}}
+\nc{\Cf}{\m{\mathcal{C}_f}}
+\nc{\Cg}{\m{\mathcal{C}_g}}
+\rnc{\vec}[1]{\overrightarrow{#1}}
+\nc\norm[1]{\left\lVert#1\right\rVert}
+\nc{\eqv}{\Leftrightarrow}
+\nc{\rarr}{\rightarrow}\nc{\larr}{\leftarrow}
+\nc{\Rarr}{\Rightarrow}\nc{\Larr}{\Leftarrow}
+\nc{\Lrarr}{\Leftrightarrow}\nc{\lrarr}{\leftrightarrow}
+\nc{\coord}[2]{\m{\begin{pmatrix}#1\\#2\end{pmatrix}}}
+\nc{\coordl}[2]{\m{\left(#1~;~#2\right)}}
+\nc{\OIJ}{\m{\left(O;I,J\right)}}
+\nc{\vOIJ}{\m{\left(O;\vec{i},\vec{j}\right)}}
+\nc{\pd}{\partial}
+\nc{\pdx}[1]{\m{\frac{\pd #1}{\pd x}}}
+\nc{\pdy}[1]{\m{\frac{\pd #1}{\pd y}}}
+\nc{\pdz}[1]{\m{\frac{\pd #1}{\pd z}}}
+\nc{\pdt}[1]{\m{\frac{\pd #1}{\pd t}}}
+\nc{\delw}{\m{\delta w}}\nc{\Delw}{\m{\Delta w}}
+\nc{\delu}{\m{\delta u}}\nc{\Delu}{\m{\Delta u}}
+\nc{\delv}{\m{\delta v}}\nc{\Delv}{\m{\Delta v}}
+\nc{\delx}{\m{\delta x}}\nc{\Delx}{\m{\Delta x}}
+\nc{\dely}{\m{\delta y}}\nc{\Dely}{\m{\Delta y}}
+\nc{\delz}{\m{\delta z}}\nc{\Delz}{\m{\Delta z}}
+\nc{\varep}{\varepsilon}
+\nc{\pa}[1]{\m{\left(#1\right)}}
+\nc{\bra}[1]{\m{\left[#1\right]}}
+\nc{\mat}[1]{\m{\begin{matrix}#1\end{matrix}}}
+\nc{\pmat}[1]{\m{\pa{\mat{#1}}}}
+\nc{\bmat}[1]{\m{\bra{\mat{#1}}}}
+\nc{\pfrac}[2]{\m{\pa{\frac{#1}{#2}}}}
+\nc{\bfrac}[2]{\m{\bra{\frac{#1}{#2}}}}
+\nc{\psfrac}[2]{\m{\pa{\sfrac{#1}{#2}}}}
+\nc{\bsfrac}[2]{\m{\bra{\sfrac{#1}{#2}}}}
+\nc{\smat}[1]{\m{\begin{smallmatrix}#1\end{smallmatrix}} }
+\nc{\psmat}[1]{\m{\pa{\smat{#1}}}}
+\nc{\bsmat}[1]{\m{\bra{\smat{#1}}}}

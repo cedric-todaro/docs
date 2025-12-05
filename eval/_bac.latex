@@ -1,0 +1,67 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage[scaled=0.875]{helvet}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage{makeidx}
+\makeindex
+\usepackage{amsmath,amssymb}
+\usepackage{fancybox}
+\usepackage[normalem]{ulem}
+\usepackage{pifont}
+\usepackage{lscape}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage{tabularx,array}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{enumitem}  
+\newcommand{\euro}{\eurologo{}}
+\usepackage{graphicx}
+\usepackage{pst-bezier,pst-all,pst-func,pstricks-add}
+\usepackage{pst-eucl}
+\usepackage{tikz,lipsum}
+\usepackage{lastpage}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\usepackage{diagbox}
+\usepackage[left=1.5cm, right=1.5cm, top=2cm, bottom=1.7cm,headsep=2mm,footskip=7mm]{geometry}
+\newcommand{\cg}{\texttt{]}}% crochet gauche
+\newcommand{\cd}{\texttt{[}}% crochet droit
+\newcommand{\pg}{\geqslant}%  plus grand ou égal
+\newcommand{\pp}{\leqslant}%  plus petit ou égal
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\textbf{\alph{enumii}}}
+\renewcommand{\labelenumii}{\textbf{\theenumii.}}
+\def\Oij{$\left(\text{O}~;~\vect{\imath},~\vect{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}~;~\vect{\imath},~\vect{\jmath},~\vect{k}\right)$}
+\def\Ouv{$\left(\text{O}~;~\vect{u},~\vect{v}\right)$}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{.5pt}
+\renewcommand{\footrulewidth}{.5pt}
+\pagestyle{fancy}
+\usepackage[french]{babel}
+\DecimalMathComma
+\usepackage[np]{numprint}
+\usepackage[dvips,colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{%
+pdfauthor = {},
+pdfsubject = {},
+pdftitle = {},
+allbordercolors = white,
+pdfstartview=FitH} 
+\newcommand{\e}{\,\text{e\,}}%%%    le e de l'exponentielle
+\renewcommand{\d}{\,\text d}%%%     le d de l'intégration
+\renewcommand{\i}{\,\text{i}\,}%%%  le i des complexes
+\newcommand{\ds}{\displaystyle}
+\setlength\parindent{0mm}
+

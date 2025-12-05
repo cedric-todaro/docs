@@ -1,0 +1,103 @@
+\documentclass[nothmnum,use boldface,runin]{lebhart}
+\usepackage{ProjLib}
+\UseLanguage{French}
+\title{Banane}
+\author{Prout}
+\date{\today}
+
+\geometry{a4paper,margin=1.5cm}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{tikzducks}
+\usepackage{listings}
+
+\lstset{%
+  language=Python,
+  basicstyle   = \ttfamily,
+  keywordstyle =    \color{magenta},
+  keywordstyle = [2]\color{orange},
+  commentstyle =    \color{gray}\itshape,
+  stringstyle  =    \color{cyan},
+  numbers      = left,
+  frame        = single,
+  framesep     = 2pt,
+  aboveskip    = 1ex
+}
+
+\begin{document}
+\maketitle
+
+\section{Prout}
+\noindent\begin{minipage}{12cm}
+    \begin{definition}\lipsum[1]\end{definition}
+\end{minipage}\hfill
+\begin{minipage}{5cm}
+    \centering
+    \begin{tikzpicture}
+        \duck[think={Blub},bubblecolour=white!65!black]
+    \end{tikzpicture}
+\end{minipage}
+
+\section{Prout}
+\begin{assumption}\lipsum[1]\end{assumption}
+\begin{axiom}\lipsum[1]\end{axiom}
+\begin{conjecture}\lipsum[1]\end{conjecture}
+\begin{convention}\lipsum[1]\end{convention}
+\begin{corollary}\lipsum[1]\end{corollary}
+\begin{definition}\lipsum[1]\end{definition}
+\begin{definition-proposition}\lipsum[1]\end{definition-proposition}
+\begin{definition-theorem}\lipsum[1]\end{definition-theorem}
+\begin{example}\lipsum[1]\end{example}
+\begin{exercise}\lipsum[1]\end{exercise}
+\begin{fact}\lipsum[1]\end{fact}
+\begin{hypothesis}\lipsum[1]\end{hypothesis}
+\begin{lemma}\lipsum[1]\end{lemma}
+\begin{notation}\lipsum[1]\end{notation}
+\begin{observation}\lipsum[1]\end{observation}
+\begin{problem}\lipsum[1]\end{problem}
+\begin{property}\lipsum[1]\end{property}
+\begin{proposition}\lipsum[1]\end{proposition}
+\begin{question}\lipsum[1]\end{question}
+\begin{remark}\lipsum[1]\end{remark}
+\begin{theorem}\lipsum[1]\end{theorem}
+
+\newpage
+\section{Patate}
+\lipsum[1]
+\subsection{super Patate}
+\lipsum[1]
+\begin{itemize}
+    \item plopdfsa
+    \item plopdfsa 1
+          \begin{enumerate}
+              \item plopdfsa 2
+              \item \begin{enumerate}
+                        \item plosa 2
+                        \item \begin{itemize}
+                                  \item plosa 2
+                                  \item plsdaafdsosa 2
+                              \end{itemize}
+                        \item plosa 2
+                    \end{enumerate}
+              \item plofsa 2
+          \end{enumerate}
+    \item plopdfsa 3
+\end{itemize}
+\lipsum[1]
+
+\subsubsection{super Patate}
+\lipsum[1]
+
+\DNF
+
+\DNF{vite vite vite}
+
+\begin{lstlisting}
+    from random import randint
+
+    for i range(12):
+        print(i)
+\end{lstlisting}
+
+\end{document}

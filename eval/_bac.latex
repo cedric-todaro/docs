@@ -2,7 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{fourier}
-\usepackage[scaled=0.875]{helvet}
+\usepackage[scaled=1.875]{helvet}
 \renewcommand{\ttdefault}{lmtt}
 \usepackage{makeidx}
 \makeindex

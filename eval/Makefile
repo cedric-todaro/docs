@@ -4,6 +4,7 @@ LATEXFLAGS = -pdfxe -silent -quiet -rules- -rc-report- -no-shell-escape
 LATEXFLAGS2 = -pdfps -silent -quiet -rules- -rc-report- -no-shell-escape
 LATEXCLEANFLAGS = -c -silent -quiet -rules- -rc-report- -no-shell-escape
 LIFLAGS = -s -w
+ARARA = arara
 
 ifeq ($(OS),Windows_NT)
     RM =  del /f /q
@@ -46,6 +47,10 @@ bac-%.pdf: bac-%.tex $(SRCBAC)
 clean :
 	$(EC) "... [Clean]"
 	$(LATEXPRG) $(LATEXCLEANFLAGS) $(NOOUTPUT)
+
+ds :
+	$(EC) "... [DS (Arara)]"
+	$(ARARA) ds-*.tex
 
 mrproper :
 	$(EC) "... [MrProper]"

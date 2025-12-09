@@ -1,0 +1,94 @@
+\documentclass[a4paper,11pt]{article}
+
+\let\nc\newcommand\let\rnc\renewcommand
+
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[left=0.9cm,right=0.9cm,top=1.35cm,bottom=1.35cm,headheight=1.35cm,headsep=0.5pt, footskip=0pt]{geometry}
+\setlength\parindent{0mm}
+
+\usepackage{tgbonum,fourier}
+\rnc{\ttdefault}{lmtt}
+
+\usepackage[normalem]{ulem}
+\usepackage{fancybox,lscape,multicol,mathrsfs,tabularx,array,colortbl,textcomp,enumitem,contour,pst-bezier,pst-all,pst-func,pstricks-add,pst-eucl,blindtext,lipsum,parskip,esvect,epsdice,numprint,xcolor,setspace,pgf,tikz,tkz-tab,pgfplots,lastpage,fancyhdr,makecell,longtable,booktabs,wrapfig,xspace,xfrac,fontawesome5,lipsum,upquote,graphicx,transparent}
+\usepackage{hyphenat}\hyphenation{mate-mática recu-perar}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\hypersetup{pdfauthor={},pdfsubject={},pdftitle={},allbordercolors=white,pdfstartview=FitH}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Some Stuff
+\pagestyle{fancy}\rnc{\headrulewidth}{0.5pt}\rnc{\footrulewidth}{0.5pt}
+\fancyhead[C]{}\fancyhead[R]{}\fancyfoot[L]{}\fancyfoot[C]{}
+\fancyhead[L]{\small Nom - Prénom :\hfill\Classe}
+\fancyfoot[R]{\small\thepage/\pageref{LastPage}}
+\DecimalMathComma
+%
+\nc{\euro}{\eurologo{}}
+%
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+%
+\contourlength{0.5pt}\rnc{\ULdepth}{2.0pt}\rnc{\ULthickness}{1.0pt}
+\rnc{\underline}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+\nc{\ul}[1]{\underline{#1}}
+%
+\nc{\wbox}{\colorbox{white}}
+%
+\setlength{\fboxsep}{2pt}\setlength{\fboxrule}{0pt}
+\newlength{\DefaultParskip}\setlength{\DefaultParskip}{\parskip}
+\nc{\DoTitle}{\wbox{\begin{minipage}{17cm}\hspace{2cm}\LARGE{\ul{\textbf{\Titre}}}\end{minipage}\hfill\begin{minipage}{2cm}\vspace*{5mm}\raggedleft{\Large{/\NoterSur}}\vspace*{5mm}\end{minipage}}\setlength{\parskip}{-1pt}\par\setlength{\DefaultParskip}{\parskip}}
+%
+\usepackage[placement=center,opacity=1,angle=0,scale=1]{background}
+\backgroundsetup{contents={\includegraphics[width=19cm,height=27cm]{back.jpg}}}
+%
+\nc{\WhiteBox}[1]{\wbox{\begin{minipage}{19cm}#1\vspace{1mm}\end{minipage}}}
+\newcounter{exon}\setcounter{exon}{0}
+\nc{\exo}[2]{\addtocounter{exon}{1}\WhiteBox{\vspace*{1mm}\ul{\textbf{Exercice n°\theexon : #1}}\par\vspace*{1mm}#2\vspace*{1mm}}}
+\nc{\img}[2]{\begin{wrapfigure}{r}{#1}\vspace{-7mm}\begin{center}\includegraphics[width=#1]{#2}\end{center}\end{wrapfigure}}
+\nc{\exosur}[1]{\hspace{3cm}/#1}
+\nc{\quest}[1]{\item (/#1)\qquad}\let\q\quest
+%
+\pgfplotsset{compat=1.15}\usetikzlibrary{arrows,backgrounds}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Math Stuff
+\nc{\m}[1]{\ensuremath{#1}\xspace}
+\nc{\cmath}[1]{\begin{center}\ensuremath{#1}\end{center}}
+\nc{\np}[1]{\ensuremath{\numprint{#1}}}
+\let\le\leqslant\let\ge\geqslant\let\l\left\let\r\right
+\def\be{\begin{enumerate}}\def\ee{\end{enumerate}}
+\def\ber{\begin{enumerate}[resume]}\def\beresume{\begin{enumerate}[resume]}
+\def\bi{\begin{itemize}}\def\ei{\end{itemize}}
+\nc{\eqn}[1]{\begin{align*}#1\end{align*}}
+\nc{\R}{\m{\mathbb{R}}}
+\nc{\D}{\m{\mathbb{D}}}
+\nc{\Q}{\m{\mathbb{Q}}}
+\nc{\Z}{\m{\mathbb{Z}}}
+\nc{\N}{\m{\mathbb{N}}}
+\nc{\C}{\m{\mathbb{C}}}
+\nc{\Cf}{\m{\mathcal{C}_f}}
+\nc{\Cg}{\m{\mathcal{C}_g}}
+\rnc{\vec}[1]{\vv{#1}}
+\nc\norm[1]{\m{\left\lVert#1\right\rVert}}
+\nc{\eqv}{\Leftrightarrow}
+\nc{\rarr}{\rightarrow}\nc{\larr}{\leftarrow}\nc{\Rarr}{\Rightarrow}\nc{\Larr}{\Leftarrow}
+\nc{\Lrarr}{\Leftrightarrow}\nc{\lrarr}{\leftrightarrow}\rnc\iff\Lrarr
+\nc{\coord}[2]{\m{\pmat{#1\\#2}}}
+\nc{\coordl}[2]{\m{\pa{#1~;~#2}}}
+\nc{\OIJ}{\m{\pa{O;I,J}}}
+\nc{\vOIJ}{\m{\left(O;\vec{i},\vec{j}\right)}}
+\nc{\pd}{\partial}\nc{\varep}{\varepsilon}
+\nc{\pdx}[1]{\m{\frac{\pd #1}{\pd x}}}\nc{\pdy}[1]{\m{\frac{\pd #1}{\pd y}}}\nc{\pdz}[1]{\m{\frac{\pd #1}{\pd z}}}\nc{\pdt}[1]{\m{\frac{\pd #1}{\pd t}}}
+\nc{\delw}{\m{\delta w}}\nc{\Delw}{\m{\Delta w}}\nc{\delu}{\m{\delta u}}\nc{\Delu}{\m{\Delta u}}\nc{\delv}{\m{\delta v}}\nc{\Delv}{\m{\Delta v}}\nc{\delx}{\m{\delta x}}\nc{\Delx}{\m{\Delta x}}\nc{\dely}{\m{\delta y}}\nc{\Dely}{\m{\Delta y}}\nc{\delz}{\m{\delta z}}\nc{\Delz}{\m{\Delta z}}
+\nc{\pa}[1]{\m{\left(#1\right)}}
+\nc{\bra}[1]{\m{\left[#1\right]}}
+\nc{\mat}[1]{\m{\begin{matrix}#1\end{matrix}}}
+\nc{\pmat}[1]{\m{\pa{\mat{#1}}}}
+\nc{\bmat}[1]{\m{\bra{\mat{#1}}}}
+\nc{\pfrac}[2]{\m{\pa{\frac{#1}{#2}}}}
+\nc{\bfrac}[2]{\m{\bra{\frac{#1}{#2}}}}
+\nc{\psfrac}[2]{\m{\pa{\sfrac{#1}{#2}}}}
+\nc{\bsfrac}[2]{\m{\bra{\sfrac{#1}{#2}}}}
+
+

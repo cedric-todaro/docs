@@ -1,0 +1,59 @@
+% vim: set ft=tex :
+% arara: pdflatex
+% arara: pdflatex
+% arara: latexmk: { clean: partial }
+% arara: clean: { files: [indent.log] }
+
+\input{_ds.latex}
+
+% ---------------------------------------------
+\def\Classe{2nde}
+\def\Titre{Évaluation n$^{\circ}$6: Calcul numérique / algébrique}
+\def\NoterSur{20}
+
+% ---------------------------------------------
+\begin{document}
+\DoTitle
+
+\exo{Calcul numérique \exosur{4}}{
+	\begin{enumerate}
+		\q{4} Effectuer, \textbf{en détaillant}, les calculs suivants :
+	\end{enumerate}
+	$$A = 3 + 6 \times 2 - 1 \hspace{2cm} B =\cfrac{1}{9}+\cfrac{5}{6} \hspace{2cm} C = 1 - \cfrac{3}{8}\left( 1 -\frac{2}{3} \right) \hspace{2cm} D =\cfrac{\sqrt{32}}{\sqrt{2}}$$
+}
+
+\newpage
+
+\exo{Calcul algébrique \exosur{5}}{
+	\begin{enumerate}
+		\q{3} Développer les expressions suivantes :
+		$$A=3\left( 2x - 1 \right) \hspace{2cm} B = 5\left( 2x + 3 \right)- 2\left( x + 1 \right) \hspace{2cm} C=\left( x + 5 \right)\left( 2x - 5 \right)$$
+		\q{2} Factoriser les expressions suivantes :
+		$$D = 5\left( 3x + 1 \right)-5(x - 1)\hspace{2cm}E = 3\pa{x+1}+x\pa{x+1}$$
+	\end{enumerate}
+}
+
+\newpage
+
+\exo{ \exosur{3}}{
+	On considère l'expression algébrique suivante : $\quad A = x^{2} - 6x + 5$
+	\begin{enumerate}
+		\q{1} Démontrer, en développant l'expression suivante, que : $\quad A = (x - 3)^{2} - 4$
+		\q{1} Démontrer, en développant l'expression suivante, que : $\quad A = (x - 1)(x - 5)$
+		\q{1} En choisissant la forme la plus adaptée, calculer la valeur de $A$ pour $x=3$, $x=1$ et $x=0$
+	\end{enumerate}
+}
+
+\newpage
+
+\exo{\exosur{3}}{
+	\img{5cm}{img/image3.png}
+	On considère la figure ci-contre.
+	\begin{enumerate}
+		\q{1} Exprimer l'aire du rectangle $A$ en fonction de $x$.
+		\q{1} Exprimer l'aire du rectangle $B$ en fonction de $x$.
+		\q{1} Calculer l'aire de $A$ et $B$ pour $x=0.5$
+	\end{enumerate}
+	\vspace{2.45cm}
+}
+\end{document}

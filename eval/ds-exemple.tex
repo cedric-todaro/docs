@@ -17,7 +17,7 @@
 
 \exo{Calcul numérique \exosur{4}}{
 	\begin{enumerate}
-		\q{4} Effectuer, \textbf{en détaillant}, les calculs suivants :
+		\q{4} Effectuer, \textbf{en détaillant}, les \np{1234} calculs suivants :
 	\end{enumerate}
 	$$A = 3 + 6 \times 2 - 1 \hspace{2cm} B =\cfrac{1}{9}+\cfrac{5}{6} \hspace{2cm} C = 1 - \cfrac{3}{8}\left( 1 -\frac{2}{3} \right) \hspace{2cm} D =\cfrac{\sqrt{32}}{\sqrt{2}}$$
 }
@@ -56,4 +56,127 @@
 	\end{enumerate}
 	\vspace{2.45cm}
 }
+
+\newpage
+
+\exo{Fonctions du 2nd degré : reconnaissance graphique \exosur{2}}{
+
+	\be
+	\q{2} Relier chaque fonction à sa représentation graphique en justifiant brièvement votre choix.
+	\ee
+
+	\textbf{Fonctions :}
+
+	\bi
+	\item \textbf{Fonction A :\quad} $f(x) = 2x^2 - 8$
+	\item \textbf{Fonction B :\quad} $g(x) = -(x + 1)(x - 3)$
+	\item \textbf{Fonction C :\quad} $h(x) = -(x + 3)(x - 1)$
+	\item \textbf{Fonction D :\quad} $k(x) = (x + 1)(x - 3)$
+	\ei
+
+	\vspace{0.5cm}
+
+	\textbf{Représentations graphiques :}
+	\begin{center}
+		\begin{tabular}{|m{4cm}|m{4cm}|m{4cm}|m{4cm}|}\hline
+			1                                      & 2 & 3 & 4 \\ \hline
+			\includegraphics[width=4cm]{img/2.png} &
+			\includegraphics[width=4cm]{img/4.png} &
+			\includegraphics[width=4cm]{img/1.png} &
+			\includegraphics[width=4cm]{img/3.png}
+			\\ \hline
+		\end{tabular}
+	\end{center}
+}
+
+\newpage
+
+\exo{Étude d'une fonction du second degré \exosur{5}}{
+
+	Soit $f$ la fonction définie sur $\mathbb{R}$ par : $$f(x) = -2(x + 1)(x + 5)$$
+
+	\be
+	\q{1} Résoudre l'équation $f(x) = 0$.
+	\q{1} En déduire le tableau de signes de $f(x)$.
+	\q{1} Déterminer les coordonnées du sommet $S$ de la parabole représentant $f$.
+	\q{1} Dresser le tableau de variations de la fonction $f$.
+	\q{1} Représenter l'allure de la courbe de $f$ dans un repère orthogonal en indiquant les éléments caractéristiques (sommet, points d'intersection avec l'axe des abscisses).
+	\ee
+}
+
+\newpage
+
+\exo{Optimisation du bénéfice d'une entreprise \exosur{5}}{
+
+	Une entreprise fabrique et vend des objets. On note $x$ le nombre d'objets produits et vendus, avec $0 \leqslant x \leqslant 130$.
+
+	Le coût de production de $x$ objets, en euros, est modélisé par la fonction : $$C(x) = x^2 + 20x + \np{2000}$$
+
+	Le prix de vente unitaire est de $140$\euro~donc la recette obtenue par la vente de $x$ objets, en euros, est donnée par : $$R(x) = 140x$$
+
+	La fonction bénéfice $B(x)$ permet de modéliser le bénéfice réalisé par l'entreprise pour $x$ objets vendu et son expression est obtenu à l'aide de : $$B(x) = R(x) - C(x)$$
+	\vspace*{2mm}
+	\be
+	\q{1} Démontrer que $B(x) = - x^2 + 120x - \np{2000}$.
+	\ee
+
+	On admet que la fonction bénéfice peut s'écrire sous la forme factorisée : $\quad B(x) = -(x - 20)(x - 100)$
+
+	\ber
+	\q{1} Démontrer par le calcul que cette forme factorisée correspond bien à l'expression de $B(x)$ trouvée à la question 1.
+	\q{1} Résoudre l'équation $B(x) = 0$ et interpréter les solutions dans le contexte de l'entreprise.
+	\q{1} Déterminer le tableau de variations de $B(x)$.
+	\q{1} En tenant compte de la contrainte $0 \leqslant x \leqslant 130$, combien d'objets l'entreprise doit-elle produire et vendre pour réaliser le bénéfice maximum ? Quel est son montant ? Justifier votre réponse.
+	\ee
+}
+
+\newpage
+
+\exo{Probabilités \exosur{6}}{
+
+	\textbf{Partie A : Lancer d'un dé à $4$ faces}
+
+	On lance un dé équilibré à $4$ faces numérotées de $1$ à $4$.
+
+	\be
+	\q{0.5} Décrire l'univers $\Omega$ de cette expérience aléatoire.
+	\q{0.5} Donner la loi de probabilité de cette expérience.
+	\q{1} Calculer la probabilité de l'événement $A$ : « Obtenir un nombre strictement plus petit que $2$ ».
+	\ee
+
+	\vspace*{4mm}
+
+	\textbf{Partie B : Somme de deux dés à $4$ faces}
+
+	On lance simultanément \textbf{deux} dés équilibrés à $4$ faces numérotées de $1$ à $4$.
+
+	On s'intéresse à la somme des résultats obtenus sur les deux dés.
+
+	\ber
+	\q{1} Compléter le tableau suivant qui permet de déterminer toutes les sommes possibles :
+	\vspace*{1mm}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|} \hline
+			                                       & \textbf{Dé 2 : 1} & \textbf{Dé 2 : 2} & \textbf{Dé 2 : 3} & \textbf{Dé 2 : 4} \\ \hline
+			\rule[-4mm]{0mm}{9mm}\textbf{Dé 1 : 1} &                   &                   &                   &                   \\ \hline
+			\rule[-4mm]{0mm}{9mm}\textbf{Dé 1 : 2} &                   &                   &                   &                   \\ \hline
+			\rule[-4mm]{0mm}{9mm}\textbf{Dé 1 : 3} &                   &                   &                   &                   \\ \hline
+			\rule[-4mm]{0mm}{9mm}\textbf{Dé 1 : 4} &                   &                   &                   &                   \\ \hline
+		\end{tabular}
+	\end{center}
+	\vspace*{2mm}
+	\q{1} En déduire l'univers $\Omega$ de cette expérience aléatoire.
+	\q{1} Établir la loi de probabilité de la somme obtenue.
+	\vspace*{1mm}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+			\textbf{Somme}                            & 2            & 3            & 4            & 5            & 6            & 7            & 8            \\ \hline
+			\rule[-3mm]{0mm}{8mm}\textbf{Probabilité} & \hspace{1cm} & \hspace{1cm} & \hspace{1cm} & \hspace{1cm} & \hspace{1cm} & \hspace{1cm} & \hspace{1cm} \\ \hline
+		\end{tabular}
+	\end{center}
+	\vspace*{2mm}
+	\q{1} Calculer la probabilité de l'événement $B$ : « Obtenir une somme strictement plus petite que $7$ ».
+	\ee
+}
+
 \end{document}

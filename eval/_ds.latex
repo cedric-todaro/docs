@@ -10,6 +10,7 @@
 
 \usepackage{tgbonum,fourier}
 \rnc{\ttdefault}{lmtt}
+% \rnc{\familydefault}{\sfdefault}
 
 \usepackage[normalem]{ulem}
 \usepackage{fancybox,lscape,multicol,mathrsfs,tabularx,array,colortbl,textcomp,enumitem,contour,pst-bezier,pst-all,pst-func,pstricks-add,pst-eucl,blindtext,lipsum,parskip,esvect,epsdice,numprint,xcolor,setspace,pgf,tikz,tkz-tab,pgfplots,lastpage,fancyhdr,makecell,longtable,booktabs,wrapfig,xspace,xfrac,fontawesome5,lipsum,upquote,graphicx,transparent}

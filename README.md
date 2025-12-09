@@ -10,6 +10,8 @@ git clone https://www.github.com/cedric-todaro/docs
 
 ## Évaluation
 
+pleins ...
+
 ## Cours
 
 ## Diapo

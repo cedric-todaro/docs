@@ -1,6 +1,3 @@
-% arara: xelatex
-% arara: xelatex
-% arara: clean: { extensions: [aux, log] }
 \input{_eval.latex}
 %%%%%%%%%%%%%%%%
 \def\Classe{1STMG}
@@ -8,25 +5,23 @@
 \def\NoterSur{20}
 %%%%%%%%%%%%%%%%
 \begin{document}
-\DoTitle
+% \DoTitle
 
-\exo{Automatisme\exosur{6}}{
-	\begin{tabular}{|c|l|l|}\hline
-		~ & Énoncé                                                                                      & Réponse\hspace*{3.8cm}               \\ \hline
-		1 & Calculer $20\%$ de $150$.                                                                   & \rule[-6mm]{0cm}{1.4cm}\hspace*{2cm} \\ \hline
-		2 & Par combien faut-il multiplier une quantité positive pour que celle-ci augmente de $15\%$ ? & \rule[-8mm]{0cm}{1.4cm}\hspace*{2cm} \\ \hline
-		3 & Le prix d’un vélo électrique est de $1\ 500$ euros.                                         &                                      \\
-		~ & Lors d’une promotion de fin d’année, ce prix est baissé de $20\%$.                          &                                      \\
-		~ & Quel est le prix de cet article après la réduction ?                                        &                                      \\ \hline
-		4 & Calculer l'image de $4$ par $g$ définie par : $\qquad g(x)=2x^2+1$                          & \rule[-6mm]{0cm}{1.4cm}\hspace*{2cm} \\ \hline
-		5 & Soit $f$ la fonction représentée ci-dessous :                                               &                                      \\
-		  & \qquad\qquad \includegraphics[width=8cm]{img/1.png}                                         &                                      \\
-		  & Déterminer l'image de $0$ par $f$                                                           & \rule[-6mm]{0cm}{1.4cm}\hspace*{2cm} \\ \hline
-		6 & Déterminer les antécédents de $8$                                                           & \rule[-6mm]{0cm}{1.4cm}\hspace*{2cm} \\ \hline
-		7 & Résoudre $f(x)=0$                                                                           & \rule[-6mm]{0cm}{1.4cm}\hspace*{2cm} \\ \hline
-		9 & Développer et réduire l'expression : $\qquad 2(x+1)(x-10)$                                  & \rule[-6mm]{0cm}{1.4cm}\hspace*{2cm} \\ \hline
-	\end{tabular}
+\begin{tabular}{|p{2cm}|p{3cm}|p{3cm}|}
+	\hline
+	\centering $x$ & \centering $f(x)$ & \centering $g(x)$ \arraybackslash \\
+	\hline
+	\centering -2  & \centering 4      & \centering -1 \arraybackslash     \\
+	\hline
+	\centering -1  & \centering 1      & \centering 0 \arraybackslash      \\
+	\hline
+	\centering 0   & \centering 0      & \centering 1 \arraybackslash      \\
+	\hline
+	\centering 1   & \centering 1      & \centering 2 \arraybackslash      \\
+	\hline
+	\centering 2   & \centering 4      & \centering 3 \arraybackslash      \\
+	\hline
+\end{tabular}
 
-}
 
 \end{document}

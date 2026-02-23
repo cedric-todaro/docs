@@ -1,18 +1,19 @@
 \documentclass[french,a4paper,11pt]{scrartcl}
 \usepackage{amsmath,amsfonts,amssymb,nccmath,unicode-math,polyglossia}
 \usepackage{xcolor,setspace,pgf,tikz,tkz-tab,pgfplots,lastpage,fancyhdr}
-\usepackage{mdframed,enumitem, array,cellspace,tabularx,multicol,multirow}
+\usepackage{mdframed,enumitem,array,tabularx,multicol,multirow}
+% \usepackage{cellspace,tabularx}
 \usepackage{makecell,longtable,booktabs,wrapfig,xspace,xfrac}
 \usepackage{fontspec,fontawesome5,lipsum,upquote,graphicx,transparent}
 \usepackage{eso-pic,grffile,contour,parskip,tocloft,colortbl,pifont,numprint,esvect,epsdice}
 \usepackage[left=1cm,right=1cm,top=1.35cm,bottom=1.35cm,headheight=1.35cm,headsep=0.5pt, footskip=0pt]{geometry}
 \usepackage[normalem]{ulem}
 \PassOptionsToPackage{usenames,dvipsnames}{xcolor}
-%%%% Shortcuts
+% %%%% Shortcuts
 \let\nc\newcommand\let\rnc\renewcommand\nc{\m}[1]{\ensuremath{#1}\xspace}\nc{\euro}{€}
-%%%% Tikz
+% %%%% Tikz
 \pgfplotsset{compat=1.15}\usetikzlibrary{arrows,backgrounds}
-%%%% Fancy headers
+% %%%% Fancy headers
 \pagestyle{fancy}\rnc{\headrulewidth}{0.5pt}\rnc{\footrulewidth}{0.5pt}
 \fancyhead[C]{}\fancyhead[R]{}\fancyfoot[L]{}\fancyfoot[C]{}
 \fancyhead[L]{\small Nom - Prénom :\hfill\Classe}
@@ -34,8 +35,8 @@
 \setcounter{secnumdepth}{2}
 %%%% Background
 \ifx\mydebug\undefined
-\usepackage[placement=center,opacity=1,angle=0,scale=1]{background}
-\backgroundsetup{contents={\includegraphics[width=189.95mm,height=270mm]{back}}}
+	\usepackage[placement=center,opacity=1,angle=0,scale=1]{background}
+	\backgroundsetup{contents={\includegraphics[width=189.95mm,height=270mm]{back}}}
 \fi
 %%%% Stuff
 \nc{\cbox}[2]{\colorbox{#1}{\ensuremath{#2}}}

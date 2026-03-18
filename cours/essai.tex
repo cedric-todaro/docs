@@ -1,0 +1,113 @@
+% arara: xelatex: { synctex: yes, shell: yes, interaction: nonstopmode }
+% arara: xelatex: { synctex: yes, shell: yes, interaction: nonstopmode }
+% arara: clean: { extensions: [aux, log, toc, out, lof, lot, synctex.gz, fls, fdb_latexmk, xdv] }
+\documentclass[10pt,a4paper]{article}
+
+\def\Classe{2nde}
+\def\Titre{Probabilité}
+
+\let\nc\newcommand\let\rnc\renewcommand\nc{\m}[1]{\ensuremath{#1}\xspace}\nc{\euro}{€}
+\usepackage[french]{babel}
+\usepackage{geometry}\geometry{top=1.7cm, bottom=1.7cm, left=1.0cm, right=1.0cm}
+
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\fancyhead{}\fancyfoot{}\rnc{\headrulewidth}{0.4pt}\rnc{\footrulewidth}{0.4pt}
+\fancyhead[R]{\small\Classe}\fancyfoot[L]{\small\Titre}\fancyfoot[R]{\small\thepage{}/\pageref{LastPage}}
+\makeatletter\fancypagestyle{plain}{\fancyhf{}\rnc{\headrulewidth}{0pt}\rnc{\footrulewidth}{0pt}}\makeatother
+
+\usepackage{fontspec,unicode-math}
+\usepackage{hyperref}\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+
+\setmainfont{Lato}
+% \setmainfont{Asap}
+\setmathfont{Latin Modern Math}
+% \setmathfont{Cambria Math}
+
+\usepackage{xcolor}
+\definecolor{mainblue}{RGB}{120,160,220}
+\definecolor{softblue}{RGB}{245,248,255}
+\definecolor{maingreen}{RGB}{120,180,140}
+\definecolor{softgreen}{RGB}{245,252,247}
+\definecolor{mainorange}{RGB}{240,180,120}
+\definecolor{softorange}{RGB}{255,250,245}
+\definecolor{mainred}{RGB}{220,140,140}
+\definecolor{softred}{RGB}{255,245,245}
+
+\usepackage{tocloft}\rnc{\cftdotsep}{1}\rnc{\cftsecdotsep}{\cftdotsep}\rnc{\cftsubsecdotsep}{\cftdotsep}\rnc{\cftsubsubsecdotsep}{\cftdotsep}
+
+\usepackage[most]{tcolorbox}
+\tcbset{enhanced,boxrule=0.8pt,arc=4pt,outer arc=4pt,colback=white,coltitle=black,coltext=black,fonttitle=\bfseries,left=6pt,right=6pt,top=6pt,bottom=6pt}
+\newtcolorbox{definition}{colframe=mainblue,colback=softblue,coltext=black,title=Définition}
+\newtcolorbox{theoreme}{colframe=mainred,colback=softred,coltext=black,title=Théorème}
+\newtcolorbox{propriete}{colframe=maingreen,colback=softgreen,coltext=black,title=Propriété}
+\newtcolorbox{exemple}{colframe=mainorange,colback=softorange,coltext=black,title=Exemple}
+
+\usepackage{ulem,contour}\rnc{\ULdepth}{1.5pt}\rnc{\ULthickness}{0.5pt}\nc{\ul}[1]{\uline{#1}}
+\usepackage{titling}\setlength{\droptitle}{-1.5cm}
+\title{\Huge\textbf{\Titre}}\author{}\date{}
+
+\usepackage{titlesec}\titleformat{\section}{\normalfont\Large\bfseries}{\thesection.}{0.5em}{}\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection.}{0.5em}{}\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection.}{0.5em}{}
+
+\nc{\prob}{\mathbb{P}}
+\nc{\esp}{\mathbb{E}}
+\nc{\var}{\mathrm{Var}}
+
+\begin{document}
+\maketitle\vspace{-2cm}\tableofcontents\vspace{1cm}
+
+\section{Variables aléatoires}
+\subsection{Définition / Propriétés}
+
+\begin{definition}
+  Une variable aléatoire est une fonction qui associe un nombre réel à chaque issue d'une expérience aléatoire.
+\end{definition}
+
+\begin{exemple}
+  On lance un dé équilibré. La variable aléatoire $X$ donne le résultat obtenu.
+\end{exemple}
+
+\begin{propriete}
+  Si $X$ est une variable aléatoire discrète, alors :
+  $$
+  \sum_i \prob(X = x_i) = 1
+  $$
+\end{propriete}
+
+On peut aussi calculer les prix des pâtes.
+
+
+\begin{theoreme}
+  (Loi des grands nombres) \\
+  Lorsque le \ul{nombre d'expériences} augmente, la moyenne empirique converge vers l'espérance.
+\end{theoreme}
+
+\section{Espérance}
+
+\begin{definition}
+  L'espérance d'une variable aléatoire discrète est définie par :
+  $$
+  \esp(X) = \sum_i x_i \prob(X = x_i)
+  $$
+\end{definition}
+
+\begin{exemple}
+  Pour un dé équilibré :
+  $$
+  \esp(X) = \frac{1+2+3+4+5+6}{6} = 3.5
+  $$
+\end{exemple}
+
+\section{Variance}
+
+\begin{definition}
+  La variance d'une variable aléatoire est :
+  $$\var(X) = \esp\big((X - \esp(X))^2\big)$$
+\end{definition}
+
+\begin{propriete}
+  On a aussi :
+  $$\var(X) = \esp(X^2) - \esp(X)^2$$
+\end{propriete}
+
+\end{document}

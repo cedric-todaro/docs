@@ -1,7 +1,9 @@
-% arara: xelatex: { synctex: yes, shell: yes, interaction: nonstopmode }
-% arara: xelatex: { synctex: yes, shell: yes, interaction: nonstopmode }
-% arara: clean: { extensions: [aux, log, toc, out, lof, lot, synctex.gz, fls, fdb_latexmk, xdv] }
-\documentclass[11pt,a4paper]{article}
+% !TEX program = lualatex
+% arara: indent: { overwrite: yes }
+% arara: lualatex: { interaction: nonstopmode }
+% arara: lualatex: { interaction: nonstopmode }
+% arara: clean: { extensions: [aux, log, toc, out] }
+\documentclass[10pt,a4paper]{article}
 
 \def\Classe{2nde}
 \def\Titre{Probabilité}
@@ -9,22 +11,25 @@
 \let\nc\newcommand\let\rnc\renewcommand\nc{\m}[1]{\ensuremath{#1}\xspace}\nc{\euro}{€}
 \usepackage[french]{babel}
 \usepackage{geometry}\geometry{top=2cm, bottom=2cm, left=1.0cm, right=1.0cm}
-\usepackage{tikz,pgf}
+\setlength{\headheight}{14pt}
+\usepackage{xcolor,pgf,tikz,tkz-tab,pgfplots,xfp}
+\nc{\showcolor}[1]{\tikz[baseline=0.5ex] \fill[#1] (0,0) rectangle (1em,1em);~#1}
 
-\usepackage{fancyhdr,lastpage,wrapfig2,enumitem,lipsum}
+\usepackage{fancyhdr,lastpage,wrapfig2,enumitem,lipsum,pifont,emoji}
 \setlist[itemize]{label=\textbullet}
 \pagestyle{fancy}
 \fancyhead{}\fancyfoot{}\rnc{\headrulewidth}{0.4pt}\rnc{\footrulewidth}{0.4pt}
-\fancyhead[R]{\normalsize\Classe}\fancyfoot[L]{\normalsize\Titre}\fancyfoot[R]{\normalsize\thepage{}~/~\pageref*{LastPage}}
+\fancyhead[R]{\small\Classe}\fancyfoot[L]{\small\Titre}\fancyfoot[R]{\small\thepage{}~/~\pageref*{LastPage}}
 \makeatletter\fancypagestyle{plain}{\fancyhf{}\rnc{\headrulewidth}{0pt}\rnc{\footrulewidth}{0pt}}\makeatother
 
-\usepackage{fontspec,unicode-math,fontawesome5}
+\usepackage{fontspec,unicode-math,fontawesome5,numprint,esvect,multicol,listings}
 \usepackage{hyperref}\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+
+\lstset{language=Python,basicstyle=\ttfamily\normalsize,keywordstyle=\color{blue},stringstyle=\color{red},commentstyle=\color{gray},numbers=left,numberstyle=\tiny\color{gray},stepnumber=1,showstringspaces=false,frame=,framesep=5pt,framerule=1pt,breaklines=true,xleftmargin=1cm,xrightmargin=1cm}
 
 \setmainfont{Lato}
 \setmathfont{Latin Modern Math}
 
-\usepackage{xcolor}
 \definecolor{mainblue}{RGB}{120,160,220}
 \definecolor{softblue}{RGB}{245,248,255}
 \definecolor{maingreen}{RGB}{120,180,140}
@@ -33,6 +38,34 @@
 \definecolor{softorange}{RGB}{255,250,245}
 \definecolor{mainred}{RGB}{220,140,140}
 \definecolor{softred}{RGB}{255,245,245}
+\definecolor{skyblue}{rgb}{0.53,0.81,0.98}
+\definecolor{forestgreen}{rgb}{0.13,0.55,0.13}
+\definecolor{crimsonred}{rgb}{0.86,0.08,0.24}
+\definecolor{sunflower}{rgb}{1.0,0.82,0.0}
+\definecolor{royalblue}{rgb}{0.25,0.41,0.88}
+\definecolor{turquoise}{rgb}{0.25,0.88,0.82}
+\definecolor{amethyst}{rgb}{0.6,0.4,0.8}
+\definecolor{coral}{rgb}{1.0,0.5,0.31}
+\definecolor{goldenrod}{rgb}{0.85,0.65,0.13}
+\definecolor{limegreen}{rgb}{0.2,0.8,0.2}
+\definecolor{magenta}{rgb}{1.0,0.0,1.0}
+\definecolor{peach}{rgb}{1.0,0.85,0.73}
+\definecolor{navy}{rgb}{0.0,0.0,0.5}
+\definecolor{plum}{rgb}{0.87,0.63,0.87}
+\definecolor{salmon}{rgb}{0.98,0.5,0.45}
+\definecolor{olive}{rgb}{0.5,0.5,0.0}
+\definecolor{chocolate}{rgb}{0.82,0.41,0.12}
+\definecolor{teal}{rgb}{0.0,0.5,0.5}
+\definecolor{indigo}{rgb}{0.29,0.0,0.51}
+\definecolor{violet}{rgb}{0.93,0.51,0.93}
+\definecolor{cerulean}{rgb}{0.0,0.48,0.65}
+\definecolor{rose}{rgb}{1.0,0.0,0.5}
+\definecolor{mint}{rgb}{0.6,1.0,0.6}
+\definecolor{amber}{rgb}{1.0,0.75,0.0}
+\definecolor{brick}{rgb}{0.8,0.25,0.33}
+\definecolor{cobalt}{rgb}{0.0,0.28,0.67}
+\definecolor{periwinkle}{rgb}{0.8,0.8,1.0}
+\definecolor{ivory}{rgb}{1.0,1.0,0.94}
 
 \usepackage{tocloft}\rnc{\cftdotsep}{1}\rnc{\cftsecdotsep}{\cftdotsep}\rnc{\cftsubsecdotsep}{\cftdotsep}\rnc{\cftsubsubsecdotsep}{\cftdotsep}
 \usepackage[most]{tcolorbox}
@@ -40,9 +73,12 @@
 \newtcolorbox{defi}[1][]{ borderline west={2pt}{0pt}{mainblue}, title={\normalsize\faLightbulb[regular]}~\normalfont\ul{\textbf{Définition :\if\relax\detokenize{#1}\relax\else~#1\fi}} }
 \newtcolorbox{theo}[1][]{ borderline west={2pt}{0pt}{mainred}, title={\normalsize\faThumbtack}~\ul{\textbf{Théorème :\if\relax\detokenize{#1}\relax\else~#1\fi}} }
 \newtcolorbox{prop}[1][]{ borderline west={2pt}{0pt}{maingreen}, title={\normalsize\faCheck}~\ul{\textbf{Propriété :\if\relax\detokenize{#1}\relax\else~#1\fi}} }
+\newtcolorbox{meth}[1][]{ borderline west={2pt}{0pt}{mainorange}, title=\normalsize\faWrench~\ul{\textbf{Méthode :\if\relax\detokenize{#1}\relax\else~#1\fi}} }
 \newtcolorbox{ex}[1][]{ left=-5pt, title=\ul{\textbf{Exemple :\if\relax\detokenize{#1}\relax\else~#1\fi}} }
 \newtcolorbox{rem}[1][]{ left=-5pt, title=\ul{\textbf{Remarque :\if\relax\detokenize{#1}\relax\else~#1\fi}} }
 \newtcolorbox{void}{ left=-5pt }
+
+\newenvironment{correction}{\par\medskip\noindent\textbf{Correction.} }{\par\medskip}
 
 \usepackage{ulem,contour}\rnc{\ULdepth}{1.5pt}\rnc{\ULthickness}{0.5pt}\contourlength{0.8pt}\nc{\ul}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
 \usepackage{titling}\setlength{\droptitle}{-2cm}
@@ -52,10 +88,90 @@
 
 \usepackage{titlesec}\titleformat{\section}{\normalfont\Large\bfseries}{\thesection.}{0.5em}{\ul}\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection.}{0.5em}{\ul}\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection.}{0.5em}{\ul}
 
+% ==========================================================
+\nc{\nd}{\textsuperscript{nd}~}
+\nc{\nde}{\textsuperscript{nde}~}
+\nc{\er}{\textsuperscript{er}~}
+\nc{\ere}{\textsuperscript{ere}~}
+\nc{\eme}{\textsuperscript{eme}~}
+\nc{\hligne}{\begin{center}\rule{0.5\textwidth}{1pt}\end{center}}
+\nc{\cimg}[2]{\begin{center}\includegraphics[width=#1]{#2}\end{center}}
+\nc{\up}[1]{\m{^\text{#1}}}
+\nc{\cbox}[2]{\colorbox{#1}{\m{#2}}}
+\nc{\mtc}[2]{\textcolor{#1}{\ensuremath{#2}}}
+\nc{\wfig}[2]{\begin{wrapfigure}{r}{#1}\includegraphics[width=#1]{#2}\end{wrapfigure}}
+\nc{\bw}{\begin{wrapfigure}}
+\nc{\ew}{\end{wrapfigure}}
+\nc{\barr}[2]{\def\arraystretch{#1}\begin{array}{#2}}
+\nc{\earr}{\end{array}}
+\let\ms\medskip
+\let\tc\textcolor
+\nc{\np}[1]{\m{\numprint{#1}}}
+\nc{\club}{\text{\ding{168}}}
+\nc{\spade}{\text{\ding{171}}}
+\rnc{\diamond}{\color{red}\text{\ding{169}}}
+\nc{\heart}{\text{\color{red}\ding{170}}}
+
+
+%%%% Math stuff
+\let\le\leqslant\let\ge\geqslant\let\l\left\let\r\right
+\nc{\less}{<}\nc{\more}{>}
+\def\be{\begin{enumerate}}\def\ee{\end{enumerate}}
+\def\bi{\begin{itemize}}\def\ei{\end{itemize}}
+\nc{\eqn}[1]{\begin{align*}#1\end{align*}}
+\nc{\R}{\m{\mathbb{R}}}
+\nc{\D}{\m{\mathbb{D}}}
+\nc{\Q}{\m{\mathbb{Q}}}
+\nc{\Z}{\m{\mathbb{Z}}}
+\nc{\N}{\m{\mathbb{N}}}
+\nc{\C}{\m{\mathbb{C}}}
+\nc{\Cf}{\m{\mathcal{C}_f}}
+\nc{\Cg}{\m{\mathcal{C}_g}}
+\rnc{\vec}[1]{\m{\vv{#1}}}
+\rnc{\iff}{\m{\Lrarr}}
+\rnc{\bar}[1]{\overline{#1}}
+\nc{\determinant}[1]{\m{\left|\mat{#1}\right|}}
+\nc\norm[1]{\m{\left\lVert#1\right\rVert}}
+\nc\abs[1]{\m{\left\lvert#1\right\rvert}}
+\nc{\eqv}{\Leftrightarrow}
+\nc{\rarr}{\rightarrow}\nc{\larr}{\leftarrow}
+\nc{\Rarr}{\Rightarrow}\nc{\Larr}{\Leftarrow}
+\nc{\Lrarr}{\Leftrightarrow}\nc{\lrarr}{\leftrightarrow}
+\nc{\coord}[2]{\m{\begin{pmatrix}#1\\#2\end{pmatrix}}}
+\nc{\coordl}[2]{\m{\left(#1~;~#2\right)}}
+\nc{\OIJ}{\m{\left(O;I,J\right)}}
+\nc{\vOIJ}{\m{\left(O;\vv{i},\vv{j}\right)}}
+\nc{\pd}{\partial}
+\nc{\pdx}[1]{\m{\frac{\pd #1}{\pd x}}}
+\nc{\pdy}[1]{\m{\frac{\pd #1}{\pd y}}}
+\nc{\pdz}[1]{\m{\frac{\pd #1}{\pd z}}}
+\nc{\pdt}[1]{\m{\frac{\pd #1}{\pd t}}}
+\nc{\delw}{\m{\delta w}}\nc{\Delw}{\m{\Delta w}}
+\nc{\delu}{\m{\delta u}}\nc{\Delu}{\m{\Delta u}}
+\nc{\delv}{\m{\delta v}}\nc{\Delv}{\m{\Delta v}}
+\nc{\delx}{\m{\delta x}}\nc{\Delx}{\m{\Delta x}}
+\nc{\dely}{\m{\delta y}}\nc{\Dely}{\m{\Delta y}}
+\nc{\delz}{\m{\delta z}}\nc{\Delz}{\m{\Delta z}}
+\nc{\varep}{\varepsilon}
+\nc{\pa}[1]{\m{\left(#1\right)}}
+\nc{\bra}[1]{\m{\left[#1\right]}}
+\nc{\brac}[1]{\m{\left\{#1\right\}}}
+\nc{\mat}[1]{\m{\begin{matrix}#1\end{matrix}}}
+\nc{\pmat}[1]{\m{\pa{\mat{#1}}}}
+\nc{\bmat}[1]{\m{\bra{\mat{#1}}}}
+\nc{\pfrac}[2]{\m{\pa{\frac{#1}{#2}}}}
+\nc{\bfrac}[2]{\m{\bra{\frac{#1}{#2}}}}
+\nc{\psfrac}[2]{\m{\pa{\sfrac{#1}{#2}}}}
+\nc{\bsfrac}[2]{\m{\bra{\sfrac{#1}{#2}}}}
+\nc{\smat}[1]{\m{\begin{smallmatrix}#1\end{smallmatrix}} }
+\nc{\psmat}[1]{\m{\pa{\smat{#1}}}}
+\nc{\bsmat}[1]{\m{\bra{\smat{#1}}}}
+\nc{\dint}{\m{\displaystyle\int}}
 \nc{\prob}{\mathbb{P}}
 \nc{\esp}{\mathbb{E}}
 \nc{\var}{\mathrm{Var}}
 
+% ==========================================================
 \begin{document}
 \maketitle
 \vspace{-3cm}
@@ -71,7 +187,7 @@
 		\includegraphics[width=\linewidth]{img/image.png}
 		\vspace{-1cm}
 	\end{wrapfigure}
-	Une variable aléatoire est une fonction qui associe un nombre réel à chaque issue d'une expérience aléatoire.
+	Une variable aléatoire \vec{u} est une fonction $f$ qui associe un nombre réel à chaque issue d'une expérience aléatoire.
 
 	$$\Omega \mapsto X(\Omega)$$
 
@@ -129,6 +245,8 @@
 	$\esp(X) = \dfrac{1+2+3+4+5+6}{6} = 3.5$
 \end{rem}
 
+\newpage
+
 \section{Variance}
 
 \begin{defi}
@@ -140,5 +258,373 @@
 	On a aussi :
 	$$\var(X) = \esp(X^2) - \esp(X)^2$$
 \end{prop}
+
+\section{Quoi qu'on peut faire ?}
+
+\subsection{Plop}
+
+\begin{void}
+	Plop \heart\spade\club\diamond
+\end{void}
+
+\subsection{Aperçu de tous les environnements}
+
+\begin{defi}[Variable aléatoire]
+	Ceci est un exemple d'environnement \texttt{defi}.
+\end{defi}
+
+\begin{theo}[Loi des grands nombres]
+	Ceci est un exemple d'environnement \texttt{theo}.
+\end{theo}
+
+\begin{prop}[Relation fonctionnelle]
+	Ceci est un exemple d'environnement \texttt{prop}.
+\end{prop}
+
+\begin{meth}[Établir un tableau de signes]
+	Ceci est un exemple d'environnement \texttt{meth}.
+\end{meth}
+
+\begin{ex}[Fonction paire/impaire]
+	Ceci est un exemple d'environnement \texttt{ex}.
+\end{ex}
+
+\begin{rem}[prout]
+	Ceci est un exemple d'environnement \texttt{rem}.
+\end{rem}
+
+\begin{void}
+	Ceci est un exemple d'environnement \texttt{void} (sans bordure ni titre).
+\end{void}
+
+\subsubsection{la sub sub section ... pas plus}
+
+\begin{meth}
+	Un petit programme en python, histoire de ...
+
+	\begin{lstlisting}
+import time
+start_time = time.time()
+a,b = 5,10
+c = a+b
+end_time = time.time()
+time_taken = (end_time - start_time)*(10**6)
+for i in range(10):
+    print("Temps écoulé en microsecondes :", time_taken)
+# Temps écoulé en microsecondes : 39.577484130859375
+    \end{lstlisting}
+	... se la raconter un peu
+	\emoji{spades}
+	\emoji{cupid}
+	\emoji{joy}
+	\emoji{joy}
+	\emoji{joy}
+	\emoji{+1}
+	\emoji{+1}
+	\emoji{family-man-woman-girl-boy}
+	\emoji{woman-and-man-holding-hands-light-skin-tone-medium-dark-skin-tone}
+\end{meth}
+
+\newpage
+
+\subsection{Palette de couleurs}
+
+\begin{multicols}{5}
+	\ul{\textbf{Couleurs}}\\ \showcolor{mainblue}\\ \showcolor{softblue}\\ \showcolor{maingreen}\\ \showcolor{softgreen}\\ \showcolor{mainorange}\\ \showcolor{softorange}\\ \showcolor{mainred}\\ \showcolor{softred}\\ \showcolor{skyblue}\\ \showcolor{forestgreen}\\ \showcolor{crimsonred}\\ \showcolor{sunflower}\\ \showcolor{royalblue}\\ \showcolor{turquoise}\\ \showcolor{amethyst}\\ \showcolor{coral}\\ \showcolor{goldenrod}\\ \showcolor{limegreen}\\ \showcolor{magenta}\\ \showcolor{peach}\\ \showcolor{navy}\\ \showcolor{plum}\\ \showcolor{salmon}\\ \showcolor{olive}\\ \showcolor{chocolate}\\ \showcolor{teal}\\ \showcolor{indigo}\\ \showcolor{violet}\\ \showcolor{cerulean}\\ \showcolor{rose}\\ \showcolor{mint}\\ \showcolor{amber}\\ \showcolor{brick}\\ \showcolor{cobalt}\\ \showcolor{periwinkle}\\ \showcolor{ivory}\\
+\end{multicols}
+
+\subsection{ploum}
+\begin{meth}[Exemple d'utilisation des macros]
+	Voici quelques démonstrations de macros que nous avons définies :
+
+	\bi
+	\item Les nombres naturels et entiers :
+	$$
+		\N = \{0,1,2,\dots\}, \quad \Z = \{\dots,-2,-1,0,1,2,\dots\}
+	$$
+
+	\item Vecteurs et coordonnées :
+	$$
+		\vec{u} = \coord{3}{4}, \quad
+		\coordl{x}{y} = (x~;~y)
+	$$
+
+	\item Dérivées partielles :
+	$$
+		\pdx{f} = \frac{\pd f}{\pd x}, \quad
+		\pdy{f} = \frac{\pd f}{\pd y}
+	$$
+
+	\item Matrices et normes :
+	$$
+		A = \pmat{1 & 2 \\ 3 & 4}, \quad
+		\norm{A} = \sqrt{\sum_{i,j} a_{ij}^2}
+	$$
+
+	\item Probabilité et espérance :
+	$$
+		\prob(A) = 0.5, \quad \esp[X] = \sum x_i p_i
+	$$
+
+	\item Couleurs et boîtes :
+	$$
+		\cbox{yellow}{Attention !} \quad
+		\mtc{red}{\text{Erreur}}
+	$$
+	\ei
+
+	Ces macros permettent de simplifier la rédaction et de garder une notation homogène et jolie dans tout le document.
+\end{meth}
+
+
+\section{Relation de récurrence (Rappel)}
+
+\begin{ex}
+	\begin{enumerate}
+		\item[a)] Considérons la suite $(u_n)$ où l'on passe d'un terme au suivant en ajoutant $5$.
+		      Si le premier terme est égal à $3$, les termes suivants sont :
+		      $$
+			      u_0 = 3, \quad u_1 = 8, \quad u_2 = 13, \quad u_3 = 18.
+		      $$
+		      Une telle suite est appelée une \textbf{suite arithmétique} de raison $5$ et de premier terme $3$.
+		      La suite est donc définie par :
+		      $$
+			      \begin{cases}
+				      u_0 = 3 \\
+				      u_{n+1} = u_n + 5
+			      \end{cases}
+		      $$
+
+		\item[b)] Soit la suite arithmétique $(v_n)$ de premier terme $5$ et de raison $-2$.
+		      Les premiers termes successifs sont :
+		      $$
+			      v_0 = 5, \quad v_1 = 3, \quad v_2 = 1, \quad v_3 = -1.
+		      $$
+		      La suite est donc définie par :
+		      $$
+			      \begin{cases}
+				      v_0 = 5 \\
+				      v_{n+1} = v_n - 2
+			      \end{cases}
+		      $$
+	\end{enumerate}
+\end{ex}
+
+\begin{defi}
+	Une suite $(u_n)$ est une \textbf{suite arithmétique} s'il existe un nombre $r$ tel que :
+	$$
+		u_{n+1} = u_n + r.
+	$$
+	Le nombre $r$ est appelé \textbf{raison} de la suite.
+\end{defi}
+
+\section{Forme explicite en fonction de $n$}
+
+\begin{meth}[Exprimer une suite arithmétique en fonction de $n$]
+
+	Pour préparer une course, un athlète décide de s'entraîner de façon progressive.
+
+	Il commence son entraînement au « jour~0 » par un footing de $3\,000$~m.
+
+	Au « jour~1 », il court $3\,150$~m. Au « jour~2 », il court $3\,300$~m,
+
+	puis ainsi de suite en parcourant chaque jour $150$~m de plus que la veille.
+
+	On note $u_n$ la distance parcourue au « jour~$n$ » d'entraînement.
+
+	\begin{enumerate}
+		\item[a)] Calculer $u_3$ et $u_4$.
+		\item[b)] Quelle est la nature de la suite $(u_n)$ ? On donnera son premier terme et sa raison.
+		\item[c)] Exprimer $u_{n+1}$ en fonction de $u_n$.
+		\item[d)] Exprimer $u_n$ en fonction de $n$.
+	\end{enumerate}
+
+	\begin{correction}
+		\begin{enumerate}
+			\item[a)] $u_0 = 3\,000$, $u_1 = 3\,150$, $u_2 = 3\,300$, $u_3 = 3\,450$, $u_4 = 3\,600$.
+
+			\item[b)] $(u_n)$ est une suite arithmétique de premier terme $u_0 = 3\,000$ et de raison $r = 150$.
+			      On parle ici de \textbf{croissance linéaire}.
+
+			\item[c)] $u_{n+1} = u_n + 150$.
+
+			\item[d)] Après $1$ jour : $u_1 = 3\,000 + 150 \times 1$. \\
+			      Après $2$ jours : $u_2 = 3\,000 + 150 \times 2$. \\
+			      Après $3$ jours : $u_3 = 3\,000 + 150 \times 3$. \\
+			      De manière générale : $u_n = 3\,000 + 150n$.
+		\end{enumerate}
+	\end{correction}
+\end{meth}
+
+\begin{prop}
+	Si $(u_n)$ est une suite arithmétique de raison $r$ et de premier terme $u_0$, alors :
+	$$
+		u_n = u_0 + nr.
+	$$
+\end{prop}
+
+\begin{meth}[Déterminer une expression en fonction de $n$ d'une suite arithmétique]
+
+	\begin{enumerate}
+		\item[a)] Déterminer l'expression en fonction de $n$ de la suite arithmétique définie par :
+		      $$
+			      \begin{cases}
+				      u_0 = 7 \\
+				      u_{n+1} = u_n - 4
+			      \end{cases}
+		      $$
+
+		\item[b)] Déterminer l'expression en fonction de $n$ de la suite arithmétique définie par :
+		      $$
+			      \begin{cases}
+				      u_1 = 5 \\
+				      u_{n+1} = u_n + 3
+			      \end{cases}
+		      $$
+	\end{enumerate}
+
+	\begin{correction}
+		\begin{enumerate}
+			\item[a)] On a $u_0 = 7$ et $r = -4$, donc :
+			      $$
+				      u_n = u_0 + nr = 7 + n \times (-4) = 7 - 4n.
+			      $$
+
+			\item[b)] On a $u_1 = 5$ et $r = 3$. Le terme $u_0$ n'est pas donné, mais on peut le calculer :
+			      $u_0 = u_1 - 3 = 2$. Donc :
+			      $$
+				      u_n = u_0 + nr = 2 + 3n.
+			      $$
+		\end{enumerate}
+	\end{correction}
+
+\end{meth}
+\begin{rem}
+	Il peut être pratique d'appliquer directement la formule : $\boxed{u_n = u_1 + (n-1)r}$
+\end{rem}
+
+\section{Sens de variation et représentation graphique (Rappel)}
+
+\subsection{Sens de variation}
+
+\begin{prop}
+	Soit $(u_n)$ une suite arithmétique de raison $r$.
+	\begin{itemize}
+		\item Si $r > 0$, alors la suite $(u_n)$ est \textbf{croissante}.
+		\item Si $r < 0$, alors la suite $(u_n)$ est \textbf{décroissante}.
+	\end{itemize}
+\end{prop}
+
+\begin{meth}[Déterminer le sens de variation d'une suite arithmétique]
+
+	Étudier les variations des suites arithmétiques $(u_n)$ et $(v_n)$ définies par :
+	\begin{enumerate}
+		\item[a)] $u_n = 3 + 5n$
+		\item[b)] $\begin{cases} v_0 = -3 \\ v_{n+1} = v_n - 4 \end{cases}$
+	\end{enumerate}
+
+	\begin{correction}
+		\begin{enumerate}
+			\item[a)] $(u_n)$ est croissante car de raison positive $r = 5$.
+			\item[b)] On passe d'un terme au suivant en ajoutant $-4$. $(v_n)$ est décroissante car de raison négative $r = -4$.
+		\end{enumerate}
+	\end{correction}
+\end{meth}
+
+\subsection{Représentation graphique}
+
+Les points de la représentation graphique d'une suite arithmétique sont \textbf{alignés}.
+
+\section{Somme des termes d'une suite arithmétique}
+
+\begin{prop}
+	La somme de termes consécutifs d'une suite arithmétique est égale au nombre de termes multiplié par la moyenne du premier et du dernier terme :
+	$$
+		u_p + u_{p+1} + \cdots + u_q = (q - p + 1) \times \frac{u_p + u_q}{2}.
+	$$
+	En notation sigma :
+	$$
+		\sum_{k=p}^{q} u_k = (q - p + 1) \times \frac{u_p + u_q}{2}.
+	$$
+\end{prop}
+
+\begin{meth}[Calculer la somme des termes d'une suite arithmétique]
+
+	On reprend le contexte de la méthode de la partie~2 : $u_n = 3\,000 + 150n$.
+
+	\begin{enumerate}
+		\item[a)] Quelle distance aura-t-il parcourue au total lorsqu'il sera au « jour~15 » ?
+		\item[b)] Quelle distance aura-t-il parcourue au total entre le « jour~8 » et le « jour~12 » ?
+	\end{enumerate}
+
+	\begin{correction}
+		\begin{enumerate}
+			\item[a)] La somme $S = u_0 + u_1 + \cdots + u_{15}$ comporte $16$ termes. Ainsi :
+			      $$
+				      S = 16 \times \frac{u_0 + u_{15}}{2} = 16 \times \frac{3\,000 + (3\,000 + 150 \times 15)}{2}
+				      = 16 \times \frac{8\,250}{2} = 66\,000.
+			      $$
+			      $$
+				      \sum_{k=0}^{15} u_k = 66\,000 \text{ m}.
+			      $$
+			      L'athlète a parcouru $66\,000$~m soit $66$~km au « jour~15 ».
+
+			\item[b)] La somme $u_8 + u_9 + u_{10} + u_{11} + u_{12}$ comporte $5$ termes. Ainsi :
+			      $$
+				      \sum_{k=8}^{12} u_k = 5 \times \frac{u_8 + u_{12}}{2}
+				      = 5 \times \frac{(3\,000 + 150 \times 8) + (3\,000 + 150 \times 12)}{2}
+				      = 5 \times \frac{9\,000}{2} = 22\,500.
+			      $$
+			      L'athlète a parcouru $22\,500$~m soit $22{,}5$~km entre le « jour~8 » et le « jour~12 ».
+		\end{enumerate}
+	\end{correction}
+\end{meth}
+
+\section{Moyenne arithmétique de deux nombres}
+
+\begin{defi}
+	La \textbf{moyenne arithmétique} d'une liste de nombres est la somme des valeurs divisée par le nombre de valeurs.
+\end{defi}
+
+\begin{meth}[Calculer une moyenne arithmétique]
+
+	\begin{enumerate}
+		\item[a)] Calculer la moyenne arithmétique des nombres $-3$ et $19$.
+		\item[b)] Peut-on affirmer que chaque terme d'une suite arithmétique est la moyenne arithmétique du terme qui le précède et du terme qui le suit ?
+	\end{enumerate}
+
+	\begin{correction}
+		\begin{enumerate}
+			\item[a)]
+			      $$
+				      m = \frac{-3 + 19}{2} = \frac{16}{2} = 8.
+			      $$
+
+			\item[b)] Soit $(u_n)$ une suite arithmétique de raison $r$. On a $u_{n+1} = u_n + r$ et $u_{n-1} = u_n - r$. Alors :
+			      $$
+				      \frac{u_{n-1} + u_{n+1}}{2} = \frac{(u_n - r) + (u_n + r)}{2} = \frac{2u_n}{2} = u_n.
+			      $$
+			      Donc $u_n$ est bien la moyenne arithmétique du terme qui le précède et du terme qui le suit.
+		\end{enumerate}
+	\end{correction}
+\end{meth}
+
+\section*{Résumé}
+
+Soit $(u_n)$ une suite arithmétique de raison $r$ et de premier terme $u_0$.
+
+\begin{description}
+	\item[Définition (récurrence)] $u_{n+1} = u_n + r$.
+	\item[Forme explicite] $u_n = u_0 + nr$.
+	\item[Variations] Si $r > 0$ : $(u_n)$ croissante. Si $r < 0$ : $(u_n)$ décroissante.
+	\item[Somme de termes consécutifs]
+	      $$
+		      \sum_{k=p}^{q} u_k = (q-p+1) \times \frac{u_p + u_q}{2}.
+	      $$
+	\item[Représentation graphique] Les points sont alignés (croissance linéaire).
+	\item[Propriété de moyenne] Chaque terme est la moyenne arithmétique de ses voisins :
+	      $u_n = \dfrac{u_{n-1} + u_{n+1}}{2}$.
+\end{description}
+
 
 \end{document}

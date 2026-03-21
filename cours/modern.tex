@@ -15,9 +15,11 @@
 % ──────────────────────────────────────────────
 %  Police sans-sérif
 % ──────────────────────────────────────────────
-\usepackage{cabin}
+% \usepackage{cabin}
+\usepackage{arev}
 \usepackage{inconsolata}
 \renewcommand{\familydefault}{\sfdefault}
+% \usepackage[math]{iwona}
 
 % ──────────────────────────────────────────────
 %  Mise en page
@@ -162,7 +164,7 @@
   arc=0pt,
   colbacktitle=white,
   coltitle=coulPrimaire,
-  title={Démonstration\ifstrempty{#2}{}{~—~#2}},
+  title={\underline{Démonstration}\ifstrempty{#2}{}{~—~#2}},
   #1
 }
 
@@ -176,7 +178,7 @@
   colback=white,
   left=8pt, right=6pt, top=3pt, bottom=3pt,
   arc=0pt,
-  title={Preuve\ifstrempty{#2}{}{~—~#2}},
+  title={\underline{Preuve}\ifstrempty{#2}{}{~—~#2}},
   #1
 }
 
@@ -356,9 +358,9 @@
 	On tire une carte au hasard dans un jeu de 52 cartes.
 	\begin{itemize}
 		\item $P(\text{as}) = \dfrac{4}{52} = \dfrac{1}{13} \approx 7{,}7\,\%$.
-		\item $P(\text{cœur}) = \dfrac{13}{52} = \dfrac{1}{4} = 25\,\%$.
-		\item $P(\text{as de cœur}) = \dfrac{1}{52} \approx 1{,}9\,\%$.
-		\item $P(\text{as ou cœur}) = \dfrac{4 + 13 - 1}{52}
+		\item $P(\text{coeur}) = \dfrac{13}{52} = \dfrac{1}{4} = 25\,\%$.
+		\item $P(\text{as de coeur}) = \dfrac{1}{52} \approx 1{,}9\,\%$.
+		\item $P(\text{as ou coeur}) = \dfrac{4 + 13 - 1}{52}
 			      = \dfrac{16}{52} = \dfrac{4}{13}$.
 	\end{itemize}
 \end{ex}

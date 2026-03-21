@@ -4,6 +4,8 @@
 *.docx
 ## *.html
 *.mst
+**/*.bak
+**/*.bak*
 **/*.dvi
 **/*.ps
 # **/*.pdf

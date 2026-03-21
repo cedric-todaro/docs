@@ -1,0 +1,423 @@
+% arara: indent: { overwrite: yes }
+% arara: pdflatex: { shell: false }
+% arara: pdflatex: { shell: false }
+% arara: latexmk: { options: ["-c"] }
+
+\documentclass[a4paper, 11pt]{article}
+
+% ──────────────────────────────────────────────
+%  Encodage & langue
+% ──────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+
+% ──────────────────────────────────────────────
+%  Police sans-sérif
+% ──────────────────────────────────────────────
+% \usepackage{cabin}
+\usepackage{arev}
+\usepackage{inconsolata}
+\renewcommand{\familydefault}{\sfdefault}
+% \usepackage[math]{iwona}
+
+% ──────────────────────────────────────────────
+%  Mise en page
+% ──────────────────────────────────────────────
+\usepackage[
+  top=1.5cm, bottom=2cm,
+  left=1.5cm, right=1.5cm,
+  headheight=14pt
+]{geometry}
+
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{\small\textit{\CoursTitre}}
+\fancyfoot[R]{\small\thepage/\pageref*{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot[L]{\small\itshape\CoursTitre}
+  \fancyfoot[C]{}
+  \fancyfoot[R]{\thepage/\pageref*{LastPage}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\newcommand{\TitreCours}{%
+  \begin{center}
+    \vspace*{-5mm}
+    {\color{coulPrimaire}\rule{\linewidth}{1pt}}\\[0.1cm]
+    {\small \hfill \CoursClasse}\\[0.2cm]
+    {\LARGE\bfseries\color{coulPrimaire}%
+       \textcolor{coulAccent}{\small\faBookOpen}\enspace\CoursTitre\enspace\textcolor{coulAccent}{\small\faBookOpen}}\\[0.15cm]
+    {\color{coulPrimaire}\rule{\linewidth}{0.4pt}}
+  \end{center}%
+  \tableofcontents
+  \medskip
+}
+
+% ──────────────────────────────────────────────
+%  Couleurs
+% ──────────────────────────────────────────────
+\usepackage[dvipsnames, table]{xcolor}
+
+\definecolor{coulPrimaire}{HTML}{2C3E50}
+\definecolor{coulAccent}{HTML}{2980B9}
+\definecolor{coulFond}{HTML}{F4F6F8}
+\definecolor{coulBordure}{HTML}{AEB6BF}
+\definecolor{coulAlerte}{HTML}{C0392B}
+
+% ──────────────────────────────────────────────
+%  Boîtes tcolorbox
+% ──────────────────────────────────────────────
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable, theorems}
+
+\tcbset{
+  styleBase/.style={
+    enhanced,
+    breakable,
+    arc=2pt,
+    boxrule=0.5pt,
+    left=6pt, right=6pt, top=4pt, bottom=4pt,
+    fonttitle=\bfseries\small,
+  }
+}
+
+\newtcolorbox[auto counter, number within=section]{defin}[2][]{
+  styleBase,
+  colback=coulFond,
+  colframe=coulAccent,
+  colbacktitle=coulAccent,
+  coltitle=white,
+  title={Définition\ifstrempty{#2}{}{~—~#2}},
+  #1
+}
+
+\newtcolorbox[auto counter, number within=section]{theo}[2][]{
+  styleBase,
+  colback=white,
+  colframe=coulPrimaire,
+  colbacktitle=coulPrimaire,
+  coltitle=white,
+  title={Théorème\ifstrempty{#2}{}{~—~#2}},
+  #1
+}
+
+\newtcolorbox[auto counter, number within=section]{prop}[2][]{
+  styleBase,
+  colback=white,
+  colframe=coulBordure,
+  colbacktitle=coulBordure,
+  coltitle=coulPrimaire,
+  title={Propriété\ifstrempty{#2}{}{~—~#2}},
+  #1
+}
+
+\newtcolorbox[auto counter, number within=section]{ex}[2][]{
+  styleBase,
+  colback=white,
+  colframe=coulBordure,
+  colbacktitle=white,
+  coltitle=coulPrimaire,
+  attach boxed title to top left={yshift=-2mm, xshift=6pt},
+  boxed title style={colback=white, colframe=coulBordure, boxrule=0.5pt},
+  title={Exemple\ifstrempty{#2}{}{~—~#2}},
+  #1
+}
+
+\newtcolorbox{rem}[1][]{
+  enhanced,
+  breakable,
+  frame hidden,
+  borderline west={2.5pt}{0pt}{coulAccent},
+  colback=coulFond,
+  left=8pt, right=6pt, top=3pt, bottom=3pt,
+  arc=0pt,
+  before upper={\textbf{Remarque.}\enspace},
+  #1
+}
+
+\newtcolorbox{attention}[1][]{
+  styleBase,
+  colback=white,
+  colframe=coulAlerte,
+  colbacktitle=coulAlerte,
+  coltitle=white,
+  title={Attention},
+  #1
+}
+
+\newtcolorbox{demo}[2][]{
+  enhanced,
+  breakable,
+  colframe=white,
+  borderline west={2.5pt}{0pt}{coulBordure},
+  colback=white,
+  left=8pt, right=6pt, top=3pt, bottom=3pt,
+  arc=0pt,
+  colbacktitle=white,
+  coltitle=coulPrimaire,
+  title={\underline{Démonstration}\ifstrempty{#2}{}{~—~#2}},
+  #1
+}
+
+\newtcolorbox{preuve}[2][]{
+  enhanced,
+  breakable,
+  colframe=white,
+  borderline west={2.5pt}{0pt}{coulBordure},
+  colbacktitle=white,
+  coltitle=coulPrimaire,
+  colback=white,
+  left=8pt, right=6pt, top=3pt, bottom=3pt,
+  arc=0pt,
+  title={\underline{Preuve}\ifstrempty{#2}{}{~—~#2}},
+  #1
+}
+
+% ──────────────────────────────────────────────
+%  Maths & code
+% ──────────────────────────────────────────────
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=none,
+  numbers=left,
+  numberstyle=\tiny\color{coulBordure},
+  commentstyle=\color{coulBordure}\itshape,
+  keywordstyle=\color{coulAccent}\bfseries,
+  stringstyle=\color{coulAlerte},
+  showstringspaces=false,
+  xleftmargin=1cm,
+}
+
+% ──────────────────────────────────────────────
+%  Liens & méta-données
+% ──────────────────────────────────────────────
+\usepackage[
+  colorlinks=true,
+  linkcolor=coulAccent,
+  urlcolor=coulAccent,
+  citecolor=coulAccent,
+  pdftitle={Notes de cours},
+  pdfauthor={},
+]{hyperref}
+
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{fontawesome5}
+\usepackage{etoolbox}
+
+% ──────────────────────────────────────────────
+%  Variables
+% ──────────────────────────────────────────────
+\newcommand{\CoursClasse}{2nde}
+\newcommand{\CoursTitre}{Probabilités}
+
+% ══════════════════════════════════════════════
+\begin{document}
+\TitreCours
+
+% ══════════════════════════════════════════════
+\section{Expériences aléatoires et univers}
+% ══════════════════════════════════════════════
+
+\begin{defin}{Expérience aléatoire}
+	Une \textbf{expérience aléatoire} est une expérience dont on ne peut pas
+	prévoir le résultat à l'avance, mais dont on connaît tous les résultats
+	possibles. L'ensemble de tous ces résultats possibles s'appelle
+	l'\textbf{univers} et se note $\Omega$.
+\end{defin}
+
+\begin{ex}{Lancer de dé}
+	On lance un dé à six faces équilibré.
+	\begin{itemize}
+		\item L'univers est $\Omega = \{1, 2, 3, 4, 5, 6\}$.
+		\item Obtenir le résultat $3$ est une \textbf{issue}.
+	\end{itemize}
+\end{ex}
+
+\begin{rem}
+	Le résultat d'une expérience aléatoire ne peut pas être prévu à l'avance,
+	même en connaissant parfaitement les conditions initiales.
+\end{rem}
+
+\begin{defin}{Événement}
+	Un \textbf{événement} est une partie de $\Omega$. On distingue :
+	\begin{itemize}
+		\item l'\textbf{événement certain} $\Omega$ (toujours réalisé) ;
+		\item l'\textbf{événement impossible} $\emptyset$ (jamais réalisé) ;
+		\item un \textbf{événement élémentaire} $\{\omega\}$ (une seule issue).
+	\end{itemize}
+\end{defin}
+
+\begin{ex}{Événements sur un dé}
+	Soit $A = \{2, 4, 6\}$ l'événement « obtenir un nombre pair » et
+	$B = \{5, 6\}$ l'événement « obtenir un nombre supérieur à 4 ».
+	\begin{itemize}
+		\item $A \cup B = \{2, 4, 5, 6\}$ : « pair \textbf{ou} supérieur à 4 ».
+		\item $A \cap B = \{6\}$ : « pair \textbf{et} supérieur à 4 ».
+		\item $\bar{A} = \{1, 3, 5\}$ : « ne pas obtenir un nombre pair ».
+	\end{itemize}
+\end{ex}
+
+\begin{attention}
+	$A$ et $B$ sont dits \textbf{incompatibles} si $A \cap B = \emptyset$.
+	Ne pas confondre avec des événements indépendants — ce sont deux notions
+	distinctes.
+\end{attention}
+
+% ══════════════════════════════════════════════
+\section{Probabilités}
+% ══════════════════════════════════════════════
+
+\begin{defin}{Probabilité}
+	Une \textbf{probabilité} sur $\Omega$ est une fonction $P$ qui associe à
+	chaque événement $A$ un réel $P(A)$ vérifiant :
+	\begin{enumerate}
+		\item $0 \leq P(A) \leq 1$ ;
+		\item $P(\Omega) = 1$ ;
+		\item si $A \cap B = \emptyset$ alors $P(A \cup B) = P(A) + P(B)$.
+	\end{enumerate}
+\end{defin}
+
+\begin{prop}{Probabilité du complémentaire}
+	Pour tout événement $A$ :
+	\[
+		P(\bar{A}) = 1 - P(A).
+	\]
+\end{prop}
+
+\begin{preuve}{}
+	$A$ et $\bar{A}$ sont incompatibles et $A \cup \bar{A} = \Omega$, donc
+	par le troisième axiome :
+	\[
+		P(A) + P(\bar{A}) = P(\Omega) = 1,
+	\]
+	d'où $P(\bar{A}) = 1 - P(A)$.
+\end{preuve}
+
+\begin{theo}{Formule de la réunion}
+	Pour tous événements $A$ et $B$ :
+	\[
+		P(A \cup B) = P(A) + P(B) - P(A \cap B).
+	\]
+\end{theo}
+
+\begin{demo}{}
+	On décompose $A \cup B$ en trois parties disjointes :
+	\[
+		A \cup B = (A \setminus B) \;\cup\; (A \cap B) \;\cup\; (B \setminus A).
+	\]
+	Par additivité :
+	$P(A \cup B) = P(A\setminus B) + P(A \cap B) + P(B \setminus A)$.
+	Puisque $P(A) = P(A\setminus B) + P(A\cap B)$ et
+	$P(B) = P(B\setminus A) + P(A\cap B)$, on obtient le résultat.
+\end{demo}
+
+\begin{ex}{Application de la formule}
+	Dans une classe de 30 élèves, 18 font du sport, 12 font de la musique et
+	6 font les deux. Quelle est la probabilité qu'un élève choisi au hasard
+	fasse du sport ou de la musique ?
+	\[
+		P(S \cup M) = \frac{18}{30} + \frac{12}{30} - \frac{6}{30}
+		= \frac{24}{30} = \frac{4}{5}.
+	\]
+\end{ex}
+
+% ══════════════════════════════════════════════
+\section{Équiprobabilité}
+% ══════════════════════════════════════════════
+
+\begin{defin}{Situation d'équiprobabilité}
+	Lorsque tous les événements élémentaires ont la même probabilité, on dit
+	que la loi est \textbf{équiprobable}. Si $|\Omega| = n$, alors pour tout
+	événement $A$ :
+	\[
+		P(A) = \frac{|A|}{|\Omega|} = \frac{\text{nombre d'issues favorables}}%
+		{\text{nombre total d'issues}}.
+	\]
+\end{defin}
+
+\begin{rem}
+	L'équiprobabilité est valable pour un dé non pipé, une pièce équilibrée,
+	un tirage au sort dans une urne homogène, etc.
+\end{rem}
+
+\begin{ex}{Tirage de carte}
+	On tire une carte au hasard dans un jeu de 52 cartes.
+	\begin{itemize}
+		\item $P(\text{as}) = \dfrac{4}{52} = \dfrac{1}{13} \approx 7{,}7\,\%$.
+		\item $P(\text{coeur}) = \dfrac{13}{52} = \dfrac{1}{4} = 25\,\%$.
+		\item $P(\text{as de coeur}) = \dfrac{1}{52} \approx 1{,}9\,\%$.
+		\item $P(\text{as ou coeur}) = \dfrac{4 + 13 - 1}{52}
+			      = \dfrac{16}{52} = \dfrac{4}{13}$.
+	\end{itemize}
+\end{ex}
+
+\begin{attention}
+	L'équiprobabilité doit être \textbf{justifiée} par le contexte (dé
+	équilibré, tirage au sort…). On ne peut pas la supposer sans raison.
+\end{attention}
+
+% ══════════════════════════════════════════════
+\section{Fréquences et probabilités}
+% ══════════════════════════════════════════════
+
+\begin{defin}{Fréquence}
+	Lors de $n$ répétitions d'une expérience aléatoire, si un événement $A$
+	est réalisé $k$ fois, sa \textbf{fréquence d'apparition} est :
+	\[
+		f = \frac{k}{n}.
+	\]
+\end{defin}
+
+\begin{theo}{Loi des grands nombres (admis)}
+	Lorsque le nombre $n$ de répétitions d'une expérience aléatoire augmente
+	indéfiniment, la fréquence d'apparition d'un événement $A$ se rapproche
+	de sa probabilité $P(A)$ :
+	\[
+		\frac{k}{n} \xrightarrow[n \to +\infty]{} P(A).
+	\]
+\end{theo}
+
+\begin{rem}
+	Ce théorème justifie l'approche fréquentiste : on peut \emph{estimer}
+	une probabilité inconnue en répétant l'expérience un grand nombre de fois.
+	Il ne garantit pas que la fréquence \emph{égale} la probabilité pour un
+	$n$ fini.
+\end{rem}
+
+\subsection{En python}
+\begin{ex}{Simulation}
+	On lance une pièce 1000 fois et on obtient 487 fois pile. La fréquence
+	est $\frac{487}{1000} = 0{,}487$, proche de la probabilité théorique
+	$P(\text{pile}) = 0{,}5$.
+
+	\begin{lstlisting}[language=Python]
+import random
+
+n = 1000
+pile = 0
+
+for i in range(n):
+    if random.randint(0, 1) == 1:
+        pile = pile + 1
+
+frequence = pile / n
+print(frequence)
+\end{lstlisting}
+
+\end{ex}
+
+\end{document}

@@ -327,6 +327,9 @@
 \rnc{\diamond}{\textcolor{red}{\text{\ding{169}}}}
 \nc{\heart}{\textcolor{red}{\text{\ding{170}}}}
 
+% Probabilités
+\rnc{\bar}[1]{\overline{#1}}
+
 % ──────────────────────────────────────────────
 %  Commande titre
 % ──────────────────────────────────────────────
@@ -429,12 +432,12 @@ Voici toutes les couleurs définies dans ce template, avec leur nom et un aperç
 \end{demo}
 
 \begin{prop}{Complémentaire}
-	$P(\bar{A}) = 1 - P(A)$.
+	$P\pa{\bar{A}} = 1 - P(A)$.
 \end{prop}
 
 \begin{preuve}{$P(\bar A) = 1-P(A)$}
 	$A\cup\bar{A}=\Omega$ et $A\cap\bar{A}=\emptyset$, donc
-	$P(A)+P(\bar{A})=1$.
+	$P(A)+P\pa{\bar{A}}=1$.
 \end{preuve}
 
 \begin{methode}{Calculer une probabilité}
@@ -854,10 +857,10 @@ print("Frequence :", frequence)
 
 	\begin{center}
 		\begin{tikzpicture}
-			\draw[-{Stealth}, coulPrimaire] (0,0) -- (0,1.2)
-			node[above, font=\small] {Succès \quad $\frac{1}{6}$};
-			\draw[-{Stealth}, coulPrimaire] (0,0) -- (0,-1.2)
-			node[below, font=\small] {Échec \quad $\frac{5}{6}$};
+			\draw[-{Stealth}, coulPrimaire] (0,0) -- (1,1.2)
+			node[right, font=\small] {Succès \quad $P(S)=\frac{1}{6}$};
+			\draw[-{Stealth}, coulPrimaire] (0,0) -- (1,-1.2)
+				node[right, font=\small] {Échec \quad $P\pa{\bar{S}}=\frac{5}{6}$};
 			\filldraw[coulAccent] (0,0) circle (0.06);
 		\end{tikzpicture}
 	\end{center}
@@ -891,7 +894,7 @@ print("Frequence :", frequence)
 	On note $A$ : « tirer une boule blanche » et $\bar{A}$ : « tirer une
 	boule rouge ».
 	\[
-		P(A) = \frac{3}{5} = 0{,}6 \qquad P(\bar{A}) = \frac{2}{5} = 0{,}4.
+		P(A) = \frac{3}{5} = 0{,}6 \qquad P\pa{\bar{A}} = \frac{2}{5} = 0{,}4.
 	\]
 
 	\textbf{1) Arbre pondéré :}
@@ -906,19 +909,19 @@ print("Frequence :", frequence)
 			\node {}
 			child { node {$A$}
 					child { node {$A$}
-							node[below, coulAccent] {$0{,}36$}
+							node[below=4pt, coulAccent] {$0{,}36$}
 							edge from parent node[left] {$0{,}6$} }
 					child { node {$\bar{A}$}
-							node[below, coulOrange] {$0{,}24$}
+							node[below=4pt, coulOrange] {$0{,}24$}
 							edge from parent node[right] {$0{,}4$} }
 					edge from parent node[left] {$0{,}6$}
 				}
 			child { node {$\bar{A}$}
 					child { node {$A$}
-							node[below, coulOrange] {$0{,}24$}
+							node[below=4pt, coulOrange] {$0{,}24$}
 							edge from parent node[left] {$0{,}6$} }
 					child { node {$\bar{A}$}
-							node[below, coulAlerte] {$0{,}16$}
+							node[below=4pt, coulAlerte] {$0{,}16$}
 							edge from parent node[right] {$0{,}4$} }
 					edge from parent node[right] {$0{,}4$}
 				};
@@ -931,20 +934,20 @@ print("Frequence :", frequence)
 	\]
 
 	\textbf{2b)} Une blanche et une rouge $\Rarr$ issues
-	$(A\,;\bar{A})$ et $(\bar{A}\,;A)$ :
+	$(A\,;\bar{A})$ et $\pa{\bar{A}\,;A}$ :
 	\[
 		P_2 = 0{,}24 + 0{,}24 = 0{,}48.
 	\]
 
 	\textbf{2c)} Au moins une blanche $\Rarr$ issues
-	$(A\,;A)$, $(A\,;\bar{A})$ et $(\bar{A}\,;A)$ :
+	$(A\,;A)$, $(A\,;\bar{A})$ et $\pa{\bar{A}\,;A}$ :
 	\[
 		P_3 = 0{,}36 + 0{,}24 + 0{,}24 = 0{,}84.
 	\]
 
 	\begin{rem}
 		On peut aussi utiliser le complémentaire :
-		$P_3 = 1 - P(\bar{A}\,;\bar{A}) = 1 - 0{,}16 = 0{,}84$.
+		$P_3 = 1 - P\pa{\bar{A}\,;\bar{A}} = 1 - 0{,}16 = 0{,}84$.
 	\end{rem}
 \end{correction}
 

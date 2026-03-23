@@ -23,12 +23,12 @@
 % ──────────────────────────────────────────────
 %  Mise en page
 % ──────────────────────────────────────────────
-\usepackage[top=1.5cm, bottom=2cm, left=1.5cm, right=1.5cm, headheight=14pt]{geometry}
+\usepackage[left=1cm,right=1cm,top=1.35cm,bottom=1.35cm,headheight=1.35cm,headsep=0.5pt, footskip=0pt]{geometry}
 \usepackage{fancyhdr, lastpage}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot[L]{\small\CoursClasse~-~\CoursTitre}
-\fancyfoot[R]{\small\thepage~/~\pageref*{LastPage}}
+\fancyfoot[R]{\small\thepage/\pageref{LastPage}}
 \rnc{\headrulewidth}{0pt}
 \rnc{\footrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
@@ -146,7 +146,8 @@
 % ──────────────────────────────────────────────
 \usepackage[
 	colorlinks=true,
-	linkcolor=coulAccent,
+	linkcolor=coulPrimaire,
+	% linkcolor=coulAccent,
 	urlcolor=coulAccent,
 	citecolor=coulAccent,
 	pdftitle={Notes de cours},
@@ -198,7 +199,7 @@
 
 \newtcolorbox[auto counter, number within=section]{exercice}[2][]{
 	styleBase, colback=white, colframe=coulOrange,
-	colbacktitle=coulOrange!15!white, coltitle=coulOrange!70!black,
+	colbacktitle=coulOrange!15!white, coltitle=coulOrange!30!black,
 	title={\faPen\enspace Exercice\ifstrempty{#2}{}{~:~#2}}, #1}
 
 \newtcolorbox{correction}[1][]{

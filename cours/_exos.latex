@@ -86,7 +86,7 @@
 	\begin{center}
 		\vspace*{-7mm}
 		{\LARGE\bfseries\color{coulPrimaire}%
-			\decofourleft\enspace Exercices~:~\CoursTitre\enspace\decofourright}\\[-2pt]
+			\decorleft\enspace Exercices~:~\CoursTitre\enspace\decorright}\\[-2pt]
 		{\color{coulPrimaire}\rule{\linewidth}{0.8pt}}
 	\end{center}%
 }

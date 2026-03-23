@@ -1,0 +1,95 @@
+% ──────────────────────────────────────────────
+%  _exos.latex — Extension fiche d'exercices
+%  À inclure après _m.latex
+% ──────────────────────────────────────────────
+
+% ──────────────────────────────────────────────
+%  Colonnes
+% ──────────────────────────────────────────────
+\usepackage{multicol}
+\setlength{\columnsep}{0.5cm}
+\setlength{\columnseprule}{0.4pt}
+\definecolor{coulSep}{HTML}{D5D8DC}
+\def\columnseprulecolor{\color{coulSep}}
+
+% ──────────────────────────────────────────────
+%  Environnement exercice (style D actif)
+%  Décommenter le style voulu, commenter les autres
+% ──────────────────────────────────────────────
+
+% ---- STYLE A : texte brut, gras ----
+% \newcounter{exocpt}
+% \newenvironment{exo}[1]{%
+% 	\refstepcounter{exocpt}%
+% 	\medskip
+% 	\noindent\textbf{Ex.\theexocpt\ifstrempty{#1}{}{~: #1}}\par\smallskip
+% }{\par}
+
+% ---- STYLE B : numéro couleur + filet bas ----
+% \newcounter{exocpt}
+% \newenvironment{exo}[1]{%
+% 	\refstepcounter{exocpt}%
+% 	\medskip
+% 	\noindent{\bfseries\color{coulAccent}Ex.\theexocpt}%
+% 	\ifstrempty{#1}{}{\enspace\textbf{:}\enspace\textbf{#1}}\\[-4pt]
+% 	{\color{coulBordure}\rule{\linewidth}{0.4pt}}\par\smallskip
+% }{\par}
+
+% ---- STYLE C : ligne latérale tcolorbox ----
+% \newcounter{exocpt}
+% \newenvironment{exo}[1]{%
+% 	\refstepcounter{exocpt}%
+% 	\begin{tcolorbox}[
+% 		enhanced, breakable, frame hidden, opacityback=0,
+% 		borderline west={2pt}{0pt}{coulAccent},
+% 		left=6pt, right=0pt, top=1pt, bottom=1pt,
+% 		before skip=6pt, after skip=2pt,
+% 		title={\textbf{Ex.\theexocpt\ifstrempty{#1}{}{~: #1}}},
+% 		after title={\par},
+% 		colbacktitle=white, coltitle=coulPrimaire,
+% 		fonttitle=\bfseries\small,
+% 	]
+% }{\end{tcolorbox}}
+
+% ---- STYLE D : cadre discret fond clair ----
+\newcounter{exocpt}
+\newenvironment{exo}[1]{%
+	\refstepcounter{exocpt}%
+	\begin{tcolorbox}[
+		enhanced, breakable, arc=1pt,
+		boxrule=0.4pt, colframe=coulBordure,
+		colback=white,
+		left=6pt, right=6pt, top=3pt, bottom=3pt,
+		before skip=6pt, after skip=2pt,
+		title={\textbf{Ex.\theexocpt\ifstrempty{#1}{}{~: #1}}},
+		colbacktitle=coulFond, coltitle=coulPrimaire,
+		fonttitle=\bfseries\small, titlerule=0pt,
+		attach boxed title to top left={yshift=-1mm, xshift=3pt},
+		boxed title style={boxrule=0pt, colback=coulFond},
+	]
+}{\end{tcolorbox}}
+
+% ──────────────────────────────────────────────
+%  Titre de série dans la colonne
+% ──────────────────────────────────────────────
+\nc{\serie}[1]{%
+	\vspace{3mm}%
+	\noindent{\bfseries\color{coulPrimaire}\faAngleRight~#1}\\[-8pt]
+	{\color{coulAccent}\rule{\linewidth}{0.6pt}}%
+	\par\nopagebreak
+}
+
+% ──────────────────────────────────────────────
+%  En-tête fiche (redéfinit \Entete de _m.latex)
+% ──────────────────────────────────────────────
+\rnc{\Entete}{%
+	\begin{center}
+		\vspace*{-7mm}
+		{\LARGE\bfseries\color{coulPrimaire}%
+			\decofourleft\enspace Exercices~:~\CoursTitre\enspace\decofourright}\\[-2pt]
+		{\color{coulPrimaire}\rule{\linewidth}{0.8pt}}
+	\end{center}%
+}
+
+\AtBeginDocument{\small}
+

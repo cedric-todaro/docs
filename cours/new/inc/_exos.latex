@@ -85,11 +85,11 @@
 \rnc{\Entete}{%
 	\begin{center}
 		\vspace*{-7mm}
-		{\LARGE\bfseries\color{coulPrimaire}%
-			\decorleft\enspace Exercices~:~\CoursTitre\enspace\decorright}\\[-2pt]
-		{\color{coulPrimaire}\rule{\linewidth}{0.8pt}}
+		{\color{coulPrimaire}\rule{\linewidth}{1pt}}\\[0.5cm]
+		{\LARGE\bfseries\color{coulPrimaire}\decorleft\enspace Exercices~:~\Titre\enspace\decorright}\\[0.15cm]
+		{\color{coulPrimaire}\rule{\linewidth}{1pt}}
 	\end{center}%
 }
 
-\AtBeginDocument{\small}
+\AtBeginDocument{\small\Entete}
 

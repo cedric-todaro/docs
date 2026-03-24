@@ -1,0 +1,63 @@
+% ──────────────────────────────────────────────
+%  _ev.latex — Extension évaluation
+%  À inclure après _m.latex
+%  Nécessite : back.png (189.95mm x 270mm)
+% ──────────────────────────────────────────────
+
+% ──────────────────────────────────────────────
+%  Fond de page (grille back.png)
+% ──────────────────────────────────────────────
+\usepackage{eso-pic}
+\AddToShipoutPictureBG{%
+	\AtPageLowerLeft{%
+		\put(10mm,13.5mm){\includegraphics[width=189.95mm, height=270mm]{inc/back.png}}
+	}%
+}
+
+% ──────────────────────────────────────────────
+%  Environnement exercice évaluation
+% ──────────────────────────────────────────────
+\newtcolorbox{void}{enhanced, frame hidden, colback=white, boxrule=0pt, arc=0pt, left=0pt, right=0pt, top=0pt, bottom=0pt,before skip=-2pt, after skip=4pt}
+
+\newcounter{evcpt}
+\newenvironment{exo}[2]{%
+	% #1 = titre, #2 = points
+	\refstepcounter{evcpt}%
+	\begin{tcolorbox}[
+			enhanced, breakable, arc=0pt,
+			boxrule=0.6pt, colframe=lightgray,
+			colback=white, opacityback=1,
+			left=1pt, right=1pt, top=3pt, bottom=3pt,
+			before skip=-5pt, after skip=4pt,
+			title={%
+					\rule[-2mm]{0mm}{6mm}\textbf{\faAngleRight~Exercice~\theevcpt\ifstrempty{#1}{}{~: #1}}%
+					\hfill\ifstrempty{#2}{}{{\normalfont\small~/~#2~pts}}%
+				},
+			colbacktitle=lightgray!50!white,
+			coltitle=black,
+			fonttitle=\bfseries\small,
+		]
+		}{\end{tcolorbox}
+}
+
+\nc{\quest}[1]{\item (/#1)\qquad}\let\q\quest
+
+% ──────────────────────────────────────────────
+%  En-tête évaluation (redéfinit \Entete)
+% ──────────────────────────────────────────────
+\rnc{\Entete}{%
+	\begin{void}\textcolor{black}{Nom~-~prénom~:}\end{void}
+	\begin{tcolorbox}[
+			enhanced, colback=white, opacityback=1,
+			colframe=white, boxrule=1pt,
+			arc=0pt, left=6pt, right=6pt, top=6pt, bottom=3pt,
+			before skip=-2mm, after skip=4pt,
+		]
+		\centering{\LARGE\bfseries\color{coulPrimaire}\Titre}\\
+		\centering{\Large\bfseries\color{coulPrimaire}\hfill~/\EvalTotal}
+
+	\end{tcolorbox}%
+	\begin{void}\rule{0mm}{3mm}\end{void}
+}
+
+\AtBeginDocument{\Entete}

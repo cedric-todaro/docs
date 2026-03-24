@@ -27,13 +27,13 @@
 \usepackage{fancyhdr, lastpage}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyfoot[L]{\small\CoursClasse~-~\CoursTitre}
-\fancyfoot[R]{\small\thepage/\pageref{LastPage}}
+\fancyfoot[L]{\small\Classe~-~\Titre}
+\fancyfoot[R]{\small\thepage/\pageref*{LastPage}}
 \rnc{\headrulewidth}{0pt}
 \rnc{\footrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
 	\fancyhf{}
-	\fancyfoot[L]{\small\CoursClasse~-~\CoursTitre}
+	\fancyfoot[L]{\small\Classe~-~\Titre}
 	\fancyfoot[R]{\small\thepage~/~\pageref*{LastPage}}
 	\rnc{\headrulewidth}{0pt}
 	\rnc{\footrulewidth}{0.4pt}
@@ -338,19 +338,12 @@
 \ShowTOCtrue
 \nc{\Entete}{%
 	\begin{center}
-		\vspace*{-5mm}
+		\vspace*{-7mm}
 		{\color{coulPrimaire}\rule{\linewidth}{1pt}}\\[0.5cm]
-		{\LARGE\bfseries\color{coulPrimaire}\decorleft\enspace\CoursTitre\enspace\decorright}\\[0.15cm]
+		{\LARGE\bfseries\color{coulPrimaire}\decorleft\enspace\Titre\enspace\decorright}\\[0.15cm]
 		{\color{coulPrimaire}\rule{\linewidth}{1pt}}
 	\end{center}%
 	\ifShowTOC\tableofcontents\fi
 	\medskip
 }
 
-% ──────────────────────────────────────────────
-%  Variables
-% ──────────────────────────────────────────────
-% \nc{\CoursClasse}{2nde}
-% \nc{\CoursTitre}{Probabilités : document de test}
-
-% ══════════════════════════════════════════════

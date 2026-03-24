@@ -53,7 +53,7 @@
 			arc=0pt, left=6pt, right=6pt, top=6pt, bottom=3pt,
 			before skip=-2mm, after skip=4pt,
 		]
-		\centering{\LARGE\bfseries\color{coulPrimaire}\Titre}\\
+		\centering{\LARGE\bfseries\color{coulPrimaire}\decorleft\enspace\Titre\enspace\decorright}\\
 		\centering{\Large\bfseries\color{coulPrimaire}\hfill~/\EvalTotal}
 
 	\end{tcolorbox}%

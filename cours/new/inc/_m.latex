@@ -339,9 +339,9 @@
 \nc{\Entete}{%
 	\begin{center}
 		\vspace*{-7mm}
-		{\color{coulPrimaire}\rule{\linewidth}{1pt}}\\[0.5cm]
+		{\color{coulPrimaire}\rule{\linewidth}{0pt}}\\[0.5cm]
 		{\LARGE\bfseries\color{coulPrimaire}\decorleft\enspace\Titre\enspace\decorright}\\[0.15cm]
-		{\color{coulPrimaire}\rule{\linewidth}{1pt}}
+		{\color{coulPrimaire}\rule{\linewidth}{0pt}}
 	\end{center}%
 	\ifShowTOC\tableofcontents\fi
 	\medskip

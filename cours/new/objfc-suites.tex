@@ -1,0 +1,106 @@
+% !TEX program = pdflatex
+% arara: pdflatex: { shell: false }
+% arara: pdflatex: { shell: false }
+% arara: latexmk: { options: ["-c"] }
+% -------------------------------
+\input{inc/_m.latex}
+% -------------------------------
+\ShowTOCfalse
+\fancyhf{}
+\rnc{\footrulewidth}{0pt}
+% -------------------------------
+\nc{\Classe}{T.comp}
+\nc{\Titre}{Suites numériques}
+\def\PageDebut{39}
+\def\NbParPage{4}
+\def\Source{Nathan - Hyperbole Math Complémentaire (313-3-09-118098-0)}
+% -------------------------------
+
+% ──────────────────────────────────────────────
+%  Illustration de droite
+% ──────────────────────────────────────────────
+\nc{\Illustration}{%
+	\includegraphics[width=4.5cm]{img/objfc-image.png}
+	% \begin{tikzpicture}[scale=0.65, >=Stealth]
+	% 	% Axes
+	% 	\draw[->, coulPrimaire] (-0.3,0) -- (5.2,0)
+	% 		node[right, font=\small] {$u_n$};
+	% 	\draw[->, coulPrimaire] (0,-0.3) -- (0,4.5)
+	% 		node[above, font=\small] {$u_{n+1}$};
+	% 	% Courbe f(x) = sqrt(x)*1.5 (croissante, concave)
+	% 	\draw[tealblue, thick, domain=0:4.8, samples=60]
+	% 		plot(\x, {1.4*sqrt(\x)+0.3});
+	% 	% Droite y = x
+	% 	\draw[coulAlerte!70, thick, domain=0:4.5]
+	% 		plot(\x,{\x});
+	% 	% Points u0, u1, u2, u3 avec les toiles
+	% 	\def\uzero{0.15}
+	% 	\pgfmathsetmacro{\uone}{1.4*sqrt(\uzero)+0.3}
+	% 	\pgfmathsetmacro{\utwo}{1.4*sqrt(\uone)+0.3}
+	% 	\pgfmathsetmacro{\uthree}{1.4*sqrt(\utwo)+0.3}
+	% 	% Toile d'araignée
+	% 	\draw[dashed, coulBordure]
+	% 		(\uzero,0) -- (\uzero,\uone) -- (\uone,\uone)
+	% 		-- (\uone,\utwo) -- (\utwo,\utwo)
+	% 		-- (\utwo,\uthree) -- (\uthree,\uthree);
+	% 	% Points sur l'axe
+	% 	\foreach \x/\lab in {
+	% 		\uzero/$u_0$,
+	% 		\uone/$u_1$,
+	% 		\utwo/$u_2$,
+	% 		\uthree/$u_3$}{
+	% 		\filldraw[coulOrange] (\x,0) circle (0.07)
+	% 			node[below, font=\tiny] {\lab};
+	% 	}
+	% 	% Points sur la courbe
+	% 	\filldraw[tealblue] (\uzero,\uone) circle (0.07);
+	% 	\filldraw[tealblue] (\uone,\utwo) circle (0.07);
+	% 	\filldraw[tealblue] (\utwo,\uthree) circle (0.07);
+	% \end{tikzpicture}%
+}
+
+% ──────────────────────────────────────────────
+%  Bloc objectifs (une occurrence)
+% ──────────────────────────────────────────────
+\nc{\BlocObjectifs}{%
+	\vspace*{2mm}
+	\begin{center}
+		{\LARGE\bfseries\color{coulPrimaire}
+			\Titre~(p\PageDebut+)}
+	\end{center}
+	\noindent
+	\begin{minipage}{0.76\linewidth}
+		\rnc{\arraystretch}{1.6}
+		\begin{tabular}{|p{12cm}|p{1.5cm}|}
+			\hline
+			Notion de limite d'une suite, opérations sur les limites de suites & \centering 21 à 45 \tabularnewline \hline
+			Passage à la limite dans les inégalités. Théorème des gendarmes & \centering 46 à 50 \tabularnewline \hline
+			Limite d'une suite géométrique de raison $>0$\par Limite de la somme des termes d'une suite géo. de raison $<1$ & \centering 51 à 63 \tabularnewline \hline
+			% Suites arithmético-géométriques : modéliser un problème par une suite donnée par une formule de récurrence & \centering 64-65\par 67 à 71 \tabularnewline \hline
+			Représenter graphiquement une suite donnée par une relation de récurrence & \centering 66-102 \tabularnewline \hline
+		\end{tabular}
+		\rnc{\arraystretch}{1}
+	\end{minipage}%
+	\hfill
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\Illustration
+	\end{minipage}
+	\begin{flushleft}
+		{\small\color{coulPrimaire}\Source}
+	\end{flushleft}%
+}
+
+% -------------------------------
+
+\begin{document}
+\vspace*{-1cm}
+\foreach \nb in {1,...,\NbParPage}{%
+		\ifnum\nb>1
+			\par\medskip
+			\noindent\textcolor{gray}\dotfill
+			\par\medskip
+		\fi
+		\BlocObjectifs
+	}
+\end{document}

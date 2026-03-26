@@ -237,7 +237,10 @@
 \nc{\wfig}[2]{\begin{wrapfigure}{r}{#1}\includegraphics[width=#1]{#2}\end{wrapfigure}}
 
 % Raccourcis listes
-\def\be{\begin{enumerate}}\def\ee{\end{enumerate}}
+\def\be{\begin{enumerate}}
+\def\ber{\begin{enumerate}[resume]}
+\def\bqst{\begin{enumerate}[leftmargin=*]}
+\def\ee{\end{enumerate}}
 \def\bi{\begin{itemize}}\def\ei{\end{itemize}}
 
 % Raccourcis medskip
@@ -339,9 +342,9 @@
 \nc{\Entete}{%
 	\begin{center}
 		\vspace*{-7mm}
-		{\color{coulPrimaire}\rule{\linewidth}{0pt}}\\[0.5cm]
+		% {\color{coulPrimaire}\rule{\linewidth}{0pt}}\\[0.5cm]
 		{\LARGE\bfseries\color{coulPrimaire}\decorleft\enspace\Titre\enspace\decorright}\\[0.15cm]
-		{\color{coulPrimaire}\rule{\linewidth}{0pt}}
+		% {\color{coulPrimaire}\rule{\linewidth}{0pt}}
 	\end{center}%
 	\ifShowTOC\tableofcontents\fi
 	\medskip

@@ -10,21 +10,16 @@ else
 	NOOUTPUT = > /dev/null
 endif
 
-SRC = $(wildcard ds-*.tex cours-*.tex exos-*.tex)
+SRC = $(wildcard ds-*.tex cours-*.tex exos-*.tex objfc-* actp-*)
 PDF = $(SRC:.tex=.pdf)
 
 all : $(PDF)
 
 ##
 
-cours-%.pdf: cours-%.tex
+%.pdf: %.tex
 	$(TEX) $<
 
-ds-%.pdf: ds-%.tex
-	$(TEX) $<
-
-exos-%.pdf: exos-%.tex
-	$(TEX) $<
 
 .PHONY: all clean mrproper tt diapo
 

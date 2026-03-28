@@ -1257,6 +1257,23 @@ $if(title)$\def\Titre{$title$}$else$\def\Titre{TITRE}$endif$
 \definecolor{yellow(ryb)}{rgb}{1.0, 1.0, 0.2}
 \definecolor{yellow-green}{rgb}{0.6, 0.8, 0.2}
 \definecolor{zaffre}{rgb}{0.0, 0.08, 0.66}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \ifdim\wd\pandoc@box>\linewidth
+    \resizebox{\linewidth}{!}{\copy\pandoc@box}%
+  \else
+    \copy\pandoc@box
+  \fi
+}
+\makeatother
+
+\newcounter{none}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 $if(has-frontmatter)$

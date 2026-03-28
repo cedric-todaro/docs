@@ -4,7 +4,6 @@ classe: 1spé
 toc: true
 ---
 
-
 \colorbox{airforceblue}{airforceblue}
 \colorbox{aliceblue}{aliceblue}
 \colorbox{alizarin}{alizarin}
@@ -32,8 +31,6 @@ toc: true
 \colorbox{atomictangerine}{atomictangerine}
 \colorbox{auburn}{auburn}
 \colorbox{aureolin}{aureolin}
-
-
 
 # Dérivées des fonctions usuelles
 
@@ -77,25 +74,25 @@ Dans ce cas, la fonction qui à tout $x\in I$ associe le **nombre dérivé** de 
 
 ## Formules de dérivation des fonctions usuelles$^{\text{\faHeart}}$
 
-| $f$                            | $\mathcal{D}_f$            | $f'$                         | $\mathcal{D}_{f'}$         |
-| :----------------------------- | :------------------------- | :--------------------------- | :------------------------- |
+| $f$                                  | $\mathcal{D}_f$            | $f'$                         | $\mathcal{D}_{f'}$         |
+| :----------------------------------- | :------------------------- | :--------------------------- | :------------------------- |
 | $f(x)=a\qquad$ avec $a\in\mathbb{R}$ | $\mathbb{R}$               | $f'(x)=0$                    | $\mathbb{R}$               |
-|                                |                            |                              |                            |
-| avec $a\in\mathbb{R}$          |                            |                              |                            |
-|                                |                            |                              |                            |
-| $f(x)=ax$                      | $\mathbb{R}$               | $f'(x)=a$                    | $\mathbb{R}$               |
-|                                |                            |                              |                            |
-| avec $a\in\mathbb{R}$          |                            |                              |                            |
-|                                |                            |                              |                            |
-| $f(x)=x^2$                     | $\mathbb{R}$               | $f'(x)=2x$                   | $\mathbb{R}$               |
-|                                |                            |                              |                            |
-| $f(x)=\frac{1}{x}$             | $\mathbb{R}-\{0\}$         | $f'(x)=\frac{-1}{x^2}$       | $\mathbb{R}-\{0\}$         |
-|                                |                            |                              |                            |
-| $f(x)=\frac{1}{x^n}$           | $\mathbb{R}-\{0\}$         | $f'(x)=\frac{-n}{x^{(n+1)}}$ | $\mathbb{R}-\{0\}$         |
-|                                |                            |                              |                            |
-| avec $n\ge 1$                  |                            |                              |                            |
-|                                |                            |                              |                            |
-| $f(x)=\sqrt{x}$                | $\left[0~;~+\infty\right[$ | $f'(x)=\frac{1}{2\sqrt{x}}$  | $\left]0~;~+\infty\right[$ |
+|                                      |                            |                              |                            |
+| avec $a\in\mathbb{R}$                |                            |                              |                            |
+|                                      |                            |                              |                            |
+| $f(x)=ax$                            | $\mathbb{R}$               | $f'(x)=a$                    | $\mathbb{R}$               |
+|                                      |                            |                              |                            |
+| avec $a\in\mathbb{R}$                |                            |                              |                            |
+|                                      |                            |                              |                            |
+| $f(x)=x^2$                           | $\mathbb{R}$               | $f'(x)=2x$                   | $\mathbb{R}$               |
+|                                      |                            |                              |                            |
+| $f(x)=\frac{1}{x}$                   | $\mathbb{R}-\{0\}$         | $f'(x)=\frac{-1}{x^2}$       | $\mathbb{R}-\{0\}$         |
+|                                      |                            |                              |                            |
+| $f(x)=\frac{1}{x^n}$                 | $\mathbb{R}-\{0\}$         | $f'(x)=\frac{-n}{x^{(n+1)}}$ | $\mathbb{R}-\{0\}$         |
+|                                      |                            |                              |                            |
+| avec $n\ge 1$                        |                            |                              |                            |
+|                                      |                            |                              |                            |
+| $f(x)=\sqrt{x}$                      | $\left[0~;~+\infty\right[$ | $f'(x)=\frac{1}{2\sqrt{x}}$  | $\left]0~;~+\infty\right[$ |
 
 **Ex. :**
 

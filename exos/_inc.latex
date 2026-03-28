@@ -64,6 +64,10 @@
 
 % --- Marge dans tabular
 \usepackage{cellspace}
+% --- alors ça marche : https://tex.stackexchange.com/questions/745624/cellspace-recent-error-with-tabulars-containing-p-paragraph-type-columns
+\makeatletter
+\let\@startpbox@action\@startpbox
+\makeatother
 \cellspacetoplimit=6pt
 \cellspacebottomlimit=6pt
 \setlength{\arrayrulewidth}{1pt}

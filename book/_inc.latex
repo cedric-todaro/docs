@@ -1,0 +1,154 @@
+\let\rnc\renewcommand
+\let\nc\newcommand
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+
+\geometry{a4paper} 
+% \geometry{a4paper,left=1.5cm,bottom=2.5cm,right=7.5cm}
+
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{1}
+
+\usepackage{eurosym}
+\nc{\eur}{\text{\euro}}
+
+\usepackage{tikz,tkz-tab}
+\usetikzlibrary{arrows.meta,calc,patterns,decorations.markings,shapes.geometric,positioning,backgrounds,decorations.text}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\usepackage{graphicx,booktabs,array,tabularx}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}b{#1}}
+
+\usepackage{listings}
+\lstset{language=Python}
+\lstset{basicstyle=\ttfamily,
+breaklines=true,
+frame=none,
+numbers=left,
+numberstyle=\ttfamily\scriptsize\color{black!50},
+commentstyle=\color{green!70!black}\itshape,
+keywordstyle=\color{blue}\bfseries,
+stringstyle=\color{black},
+showstringspaces=false,
+literate={é}{{\'e}}1 {à}{{\`a}}1 {è}{{\`e}}1 {ç}{{\c{c}}}1 {ê}{{\^e}}1,
+lineskip=1pt,
+frame=l,
+framesep=5pt,
+framerule=0.5pt,
+rulecolor=\color{black!40},
+xleftmargin=0.5cm
+}
+
+\usepackage{etoolbox}
+\usepackage{lipsum,fontawesome5,multicol,soul,contour,ulem}
+% \rnc{\ULdepth}{3pt}
+% \rnc{\ULthickness}{1pt}
+% \contourlength{1pt}
+% \rnc{\underline}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+% \rnc{\ul}[1]{\underline{#1}}
+\usepackage{enumitem}
+\setlist[itemize]{label=\textbullet}
+\setlist[enumerate]{label=\alph*)}
+\usepackage{epsdice}
+\nc{\dice}[2][white]{~\raisebox{-0.5ex}{\large\epsdice[#1]{#2}}~}
+\nc{\circled}[1]{~\begin{tikzpicture}[baseline=(char.base)] \node[shape=circle,draw,inner sep=1pt,minimum size=1.2em,line width=0.6pt,black] (char) {\small #1}; \end{tikzpicture}~}
+
+\nc{\hligne}{\begin{center}\rule{0.5\textwidth}{1pt}\end{center}}
+\nc{\cimg}[2]{\begin{center}\includegraphics[width=#1]{#2}\end{center}}
+
+\def\be{\begin{enumerate}}\def\ee{\end{enumerate}}
+\def\ber{\begin{enumerate}[resume]}
+\def\bi{\begin{itemize}}\def\ei{\end{itemize}}
+\def\bmc{\begin{multicols}}\def\emc{\end{multicols}}
+
+\let\ms\medskip
+\let\bs\bigskip
+
+\nc{\definition}{\newthought{Définition.\enspace}}
+\nc{\prop}{\newthought{Propriété.\enspace}}
+\nc{\ex}{\newthought{Exemple.\enspace}}
+\nc{\methode}{\newthought{Méthode.\enspace}}
+\nc{\correction}{\newthought{Correction.\enspace}}
+\nc{\rem}{\newthought{Remarque.\enspace}}
+
+\usepackage{amsfonts,amsmath,amssymb,mathtools}
+\usepackage{mathrsfs}   % \mathscr
+\usepackage{yhmath}     % \wideparen etc.
+\usepackage{xfp}        % calculs en virgule flottante
+\usepackage{relsize}    % \mathlarger etc.
+\mathsurround=2pt
+
+\nc{\R}{\ensuremath{\mathbb{R}}}
+\nc{\D}{\ensuremath{\mathbb{D}}}
+\nc{\Q}{\ensuremath{\mathbb{Q}}}
+\nc{\Z}{\ensuremath{\mathbb{Z}}}
+\nc{\N}{\ensuremath{\mathbb{N}}}
+\nc{\C}{\ensuremath{\mathbb{C}}}
+
+\nc{\Cf}{\ensuremath{\mathcal{C}_f}}
+\nc{\Cg}{\ensuremath{\mathcal{C}_g}}
+
+\usepackage[c]{esvect}
+\rnc{\vec}[1]{\ensuremath{\vv{#1}}}
+\nc{\norm}[1]{\ensuremath{\left\lVert#1\right\rVert}}
+\nc{\abs}[1]{\ensuremath{\left\lvert#1\right\rvert}}
+
+\nc{\pa}[1]{\ensuremath{\left(#1\right)}}
+\nc{\bra}[1]{\ensuremath{\left[#1\right]}}
+\nc{\brac}[1]{\ensuremath{\left\{#1\right\}}}
+
+\nc{\pfrac}[2]{\ensuremath{\pa{\frac{#1}{#2}}}}
+\nc{\bfrac}[2]{\ensuremath{\bra{\frac{#1}{#2}}}}
+
+\nc{\mat}[1]{\ensuremath{\begin{matrix}#1\end{matrix}}}
+\nc{\pmat}[1]{\ensuremath{\pa{\mat{#1}}}}
+\nc{\bmat}[1]{\ensuremath{\bra{\mat{#1}}}}
+\nc{\smat}[1]{\ensuremath{\begin{smallmatrix}#1\end{smallmatrix}}}
+\nc{\psmat}[1]{\ensuremath{\pa{\smat{#1}}}}
+\nc{\determinant}[1]{\ensuremath{\left|\mat{#1}\right|}}
+
+\nc{\coord}[2]{\ensuremath{\begin{pmatrix}#1\\#2\end{pmatrix}}}
+\nc{\coordl}[2]{\ensuremath{\left(#1~;~#2\right)}}
+\nc{\OIJ}{\ensuremath{\left(O;I,J\right)}}
+\nc{\vOIJ}{\ensuremath{\left(O;\vec{i},\vec{j}\right)}}
+
+\nc{\eqv}{\Leftrightarrow}
+\nc{\rarr}{\rightarrow}  \nc{\larr}{\leftarrow}
+\nc{\Rarr}{\Rightarrow}  \nc{\Larr}{\Leftarrow}
+\nc{\Lrarr}{\Leftrightarrow}
+\rnc{\iff}{\ensuremath{\Lrarr}}
+
+\let\le\leqslant
+\let\ge\geqslant
+
+\nc{\eqn}[1]{\begin{align*}#1\end{align*}}
+
+\nc{\dint}{\ensuremath{\displaystyle\int}}
+
+\nc{\pd}{\partial}
+\nc{\pdx}[1]{\ensuremath{\frac{\pd #1}{\pd x}}}
+\nc{\pdy}[1]{\ensuremath{\frac{\pd #1}{\pd y}}}
+\nc{\pdt}[1]{\ensuremath{\frac{\pd #1}{\pd t}}}
+
+\nc{\mtc}[2]{\textcolor{#1}{\ensuremath{#2}}}
+\nc{\cbox}[2]{\colorbox{#1}{\ensuremath{#2}}}
+\let\tc\textcolor
+
+\usepackage{numprint}
+\nc{\np}[1]{\ensuremath{\numprint{#1}}}
+
+\usepackage{pifont}
+\nc{\club}{\text{\ding{168}}}
+\nc{\spade}{\text{\ding{171}}}
+\rnc{\diamond}{\textcolor{red}{\text{\ding{169}}}}
+\nc{\heart}{\textcolor{red}{\text{\ding{170}}}}
+
+\rnc{\bar}[1]{\overline{#1}}
+
+\rnc{\parallel}{\mathbin{\!/\mkern-4mu/\!}}
+

@@ -1,4 +1,4 @@
-SUBDIRS := $(wildcard */.)
+SUBDIRS := $(filter-out book/., $(wildcard */.))
 
 all: $(SUBDIRS)
 

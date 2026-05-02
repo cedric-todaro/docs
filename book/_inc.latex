@@ -5,11 +5,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 
-\geometry{a4paper} 
+\geometry{a4paper}
 % \geometry{a4paper,left=1.5cm,bottom=2.5cm,right=7.5cm}
 
 \setcounter{tocdepth}{1}
-\setcounter{secnumdepth}{1}
+\setcounter{secnumdepth}{2}
 
 \usepackage{eurosym}
 \nc{\eur}{\text{\euro}}

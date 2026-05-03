@@ -11,6 +11,6 @@ set shell := ["bash", "-eu", "-o", "pipefail", "-c"]
     latexmk -silent -C &> /dev/null
 
 @watch:
-    latexmk -pvc -pdf main.tex
+    latexmk -pvc -bibtex- -pdf main.tex
 
 # vim: ft=just:ts=2:sw=4:

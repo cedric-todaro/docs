@@ -5,8 +5,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 
-\geometry{a4paper,bottom=2.5cm}
-% \geometry{a4paper,left=1.5cm,bottom=2.5cm,right=7.5cm}
+% \geometry{a4paper,bottom=2.5cm}
+\geometry{a4paper,left=1.5cm,bottom=2.5cm,right=7.5cm}
 
 \setcounter{tocdepth}{1}
 \setcounter{secnumdepth}{2}
@@ -75,6 +75,7 @@ xleftmargin=0.5cm
 \nc{\methode}{\newthought{Méthode.\enspace}}
 \nc{\correction}{\newthought{Correction.\enspace}}
 \nc{\rem}{\newthought{Remarque.\enspace}}
+\nc{\demo}{\newthought{Démonstration.\enspace}}
 
 \usepackage{amsfonts,amsmath,amssymb,mathtools}
 \usepackage{mathrsfs}   % \mathscr
@@ -123,6 +124,8 @@ xleftmargin=0.5cm
 \nc{\Lrarr}{\Leftrightarrow}
 \rnc{\iff}{\ensuremath{\Lrarr}}
 
+\rnc{\leq}{\leqslant}
+\rnc{\geq}{\geqslant}
 \let\le\leqslant
 \let\ge\geqslant
 
@@ -151,4 +154,3 @@ xleftmargin=0.5cm
 \rnc{\bar}[1]{\overline{#1}}
 
 \rnc{\parallel}{\mathbin{\!/\mkern-4mu/\!}}
-

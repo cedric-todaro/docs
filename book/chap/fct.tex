@@ -29,18 +29,36 @@ On note :
 	\end{array}
 \]
 
-\ex Fonction polynôme
+\ex
 
-Soit $f(x) = 2x^2 - 3x + 1$ définie sur $\R$.
+Soit $f(x) = 3x - 5$ définie sur $\R$.
+
+\begin{itemize}
+	\item L'image de $-2$ est $f(-2) = 3\times (-2) - 5 = -11$.
+	\item Pour trouver l'antécédent de $4$ :
+	      \[
+		      \begin{array}{rl}
+			           & f(x) = 4   \\
+			      \iff & 3x - 5 = 4 \\
+			      \iff & 3x = 9     \\
+			      \iff & x = 3
+		      \end{array}
+	      \]
+\end{itemize}
+
+\ex
+
+Soit $g(x) = 2x^2 - 3x + 1$ définie sur $\R$.
 
 \begin{itemize}
 	\item \textbf{Calcul d'image :}\\ Pour $x = 4$ :
-	      \[ f(4) = 2\times (4)^2 - 3\times (4) + 1 \quad = 2(16) - 12 + 1 \quad = 21 \]
+	      \[ g(4) = 2\times (4)^2 - 3\times (4) + 1 \quad = 2(16) - 12 + 1 \quad = 21 \]
 	\item \textbf{Recherche d'antécédent de $1$ :}
 	      $$
 		      \def\arraystretch{1.3}
 		      \begin{array}{rl}
-			           & 2x^2 - 3x + 1 = 1                      \\
+			           & g(x) = 1                               \\
+			      \iff & 2x^2 - 3x + 1 = 1                      \\
 			      \iff & 2x^2 - 3x = 0                          \\
 			      \iff & x(2x - 3) = 0                          \\
 			      \iff & \begin{cases}x_1=0\\x_2=1,5\end{cases}
@@ -49,21 +67,6 @@ Soit $f(x) = 2x^2 - 3x + 1$ définie sur $\R$.
 	      Les antécédents sont $0$ et $1,5$.
 \end{itemize}
 
-\ex Fonction affine
-
-Soit $g(x) = 3x - 5$ définie sur $\R$.
-
-\begin{itemize}
-	\item L'image de $-2$ est $g(-2) = 3\times (-2) - 5 = -11$.
-	\item Pour trouver l'antécédent de $4$ :
-	      \[
-		      \begin{array}{rl}
-			           & 3x - 5 = 4 \\
-			      \iff & 3x = 9     \\
-			      \iff & x = 3
-		      \end{array}
-	      \]
-\end{itemize}
 
 \subsection{Courbe représentative}
 
@@ -77,8 +80,7 @@ Soit la fonction $f$ définie sur $[-2, 3]$ par $f(x) = 0.5x^2 - x - 1$.
 
 \begin{itemize}
 	\item Tableau de valeurs
-% TODO : Ajouter une image de tableur
-	      Pour construire la courbe, on calcule d'abord quelques images\sidenote{Nous pouvons utiliser une calculatrice en mode tableur pour automatiser les calculs} :
+	      Pour construire la courbe, on calcule d'abord quelques images\sidenote{Nous pouvons utiliser une calculatrice en mode tableur pour automatiser les calculs\\ \cimg{\linewidth}{img/fct/calc.png}} :
 	      \begin{itemize}
 		      \item $f(-2) = 0.5\times (-2)^2 - (-2) - 1 \quad = 3$
 		      \item $f(-1) = 0.5\times (-1)^2 - (-1) - 1 \quad = 0,5$
@@ -108,6 +110,7 @@ Soit la fonction $f$ définie sur $[-2, 3]$ par $f(x) = 0.5x^2 - x - 1$.
 		      \end{tikzpicture}
 	      \end{center}
 \end{itemize}
+% TODO : dans ces graphique mettre de grosses fleche a la place des dashed
 \def\tikza{\begin{tikzpicture}[scale=0.8]
 		\draw[->] (-1,0) -- (4,0) node[right] {$x$};
 		\draw[->] (0,-1) -- (0,3) node[above] {$y$};

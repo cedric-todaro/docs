@@ -10,46 +10,67 @@
 
 \subsection{Image et antécédents}
 
-\definition [Fonction numérique - image]
+\def\manote{Le concept de fonction s'est construit progressivement au XVII\textsuperscript{e} siècle avec les travaux de \textbf{René Descartes} et \textbf{Pierre de Fermat}, qui ont révolutionné les mathématiques en reliant la géométrie aux équations algébriques via le système de coordonnées. Cependant, c'est au XVIII\textsuperscript{e} siècle que \textbf{Leonhard Euler} a formalisé la notion moderne, définissant la fonction comme une relation analytique précise permettant de lier deux variables entre elles.}
+
+\definition [Fonction numérique\sidenote{\manote} - image]
 
 Étant donné $I$ un intervalle de $\R$, une \textbf{fonction numérique} $f$ définie sur $I$ est une relation qui à tout $x$ de $I$ associe un \textbf{unique} réel, noté $f(x)$ et appelé \textbf{image} de $x$ par $f$.
 
 \rem
 
 Notations possibles :
+
 \begin{itemize}
 	\item $f$ est la fonction définie sur $I$ par $f(x)=\cdots$
 	\item $\begin{array}{rcl}f : I& \to& \R\\ x &\mapsto &f(x)=\cdots\end{array}$
 \end{itemize}
 
-\ex
+\ex\sidenote{Nous pouvons utiliser une calculatrice en mode tableur pour automatiser les calculs\\ \cimg{\linewidth}{img/fct/calc.png}}
 
 Soit $f$ la fonction définie sur $\R$ par $f(x)=2x^2+3$.
+
 \begin{itemize}
 	\item L'image de $0$ par $f$ est $f(0)=2\times 0^{2}+3=3$.
 	\item L'image de $1$ par $f$ est $f(1)=2\times 1^{2}+3=5$.
-	\item Pour tous réels $a$ et $b$ :
-	      $f(b)-f(a)=(2b^{2}+3)-(2a^{2}+3)=2b^{2}-2a^{2}=2(b^{2}-a^{2})$.
+	\item \ldots
+	      % \item Pour tous réels $a$ et $b$ : $f(b)-f(a)=(2b^{2}+3)-(2a^{2}+3)=2b^{2}-2a^{2}=2(b^{2}-a^{2})$.
 \end{itemize}
 
 \definition [Antécédents]
 
-Étant donné une fonction $f$ définie sur $I$. Pour tout réel $b$, on appelle \textbf{antécédents} de $b$ par $f$ tous les réels $x$ de $I$ (s'ils existent) tels que $f(x)=b$.
+Étant donné une fonction $f$ définie sur $I$.
+
+Pour tout réel $b$, on appelle \textbf{antécédents} de $b$ par $f$ tous les réels $x$ de $I$ (s'ils existent) tels que $f(x)=b$.
 
 \ex
 
 Soit $f$ la fonction définie sur $\R$ par $f(x)=x^2+1$.
 \begin{itemize}
-	\item \textit{Antécédents de $1$} :\\
-	      $f(x)=1 \Leftrightarrow x^{2}+1=1 \Leftrightarrow x^2=0 \Leftrightarrow x=0$.\\
+	\item \textit{Antécédents de $1$} :\\ \ms
+	      $$
+		      \begin{array}{rl}
+			      ~    & f(x)=1                                    \\
+			      \iff & x^{2}+1=1 \quad \iff x^2=0 \quad \iff x=0
+		      \end{array}
+	      $$
 	      $0$ est le seul antécédent de $1$ par $f$.
 
-	\item \textit{Antécédents de $5$} :\\
-	      $f(x)=5 \Leftrightarrow x^{2}+1=5 \Leftrightarrow x^2=4 \Leftrightarrow x=2$ ou $x=-2$.\\
+	\item \textit{Antécédents de $5$} :\\ \ms
+	      $$
+		      \begin{array}{rl}
+			      ~    & f(x)=5                                                     \\
+			      \iff & x^{2}+1=5\quad \iff x^2=4\quad \iff x=2\,\text{ ou }\,x=-2
+		      \end{array}
+	      $$
 	      $2$ et $-2$ sont les deux antécédents de $5$ par $f$.
 
-	\item \textit{Antécédents de $0$} :\\
-	      $f(x)=0 \Leftrightarrow x^{2}+1=0 \Leftrightarrow x^2=-1$ (impossible dans $\R$).\\
+	\item \textit{Antécédents de $0$} :\\ \ms
+	      $$
+		      \begin{array}{rl}
+			      ~    & f(x)=0                                                         \\
+			      \iff & x^{2}+1=0 \quad \iff x^2=-1\quad \text{(impossible dans $\R$)}
+		      \end{array}
+	      $$
 	      $0$ n'admet aucun antécédent par $f$.
 \end{itemize}
 
@@ -58,15 +79,33 @@ Soit $f$ la fonction définie sur $\R$ par $f(x)=x^2+1$.
 
 \definition [Courbe représentative]
 
-Dans un repère $(O,\vec{i},\vec{j})$, on appelle \textbf{courbe représentative} de la fonction $f$ définie sur $I$ l'ensemble des points d'abscisse $x$ et d'ordonnée $f(x)$ pour tous les $x$ de $I$.
+\def\manote{\begin{tikzpicture}
+  \draw[->] (-0.5,0) -- (3.5,0) node[right] {$x$};
+  \draw[->] (0,-0.5) -- (0,3.5) node[above] {$y$};
+  \draw[domain=0:3, smooth, variable=\x, blue, thick] plot ({\x}, {0.5*\x*\x/2 + 0.5});
+  \draw[dashed] (2,0) -- (2,2.5);
+  \draw[dashed] (0,2.5) -- (2,2.5);
+  \fill (2,2.5) circle (2pt);
 
-Notation courante : $\mathcal{C}_{f}$. Une équation cartésienne de la courbe est $y=f(x)$.
+  % Labels
+  \node[below] at (2,0) {$x$};
+  \node[left] at (0,2.5) {$f(x)$};
+  \node[above right] at (2,2.5) {$(x,f(x))$};
+\end{tikzpicture}}
+
+Dans un repère $(O,\vec{i},\vec{j})$, on appelle \textbf{courbe représentative}\sidenote{\manote} de la fonction $f$ définie sur $I$ l'ensemble des points d'abscisse $x$ et d'ordonnée $f(x)$ pour tous les $x$ de $I$.
+
+\rem
+
+Notation courante : $\mathcal{C}_{f}$.
+
+Une équation de la courbe est $y=f(x)$.
 
 \prop
 
 \begin{itemize}
-	\item \textbf{Lecture graphique de l'image} d'un réel $a$ par $f$ : on repère le point de $\Cf$ d'abscisse $a$ et on lit son ordonnée $f(a)$.
-	\item \textbf{Lecture graphique des antécédents} d'un réel $b$ par $f$ : on repère les points de $\Cf$ d'ordonnée $b$ et on lit leurs abscisses.
+	\item \textbf{Lecture graphique de l'image} d'un réel $a$ par $f$\\ On repère le point de $\Cf$ d'abscisse $a$ et on lit son ordonnée $f(a)$.
+	\item \textbf{Lecture graphique des antécédents} d'un réel $b$ par $f$\\ On repère les points de $\Cf$ d'ordonnée $b$ et on lit leurs abscisses.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

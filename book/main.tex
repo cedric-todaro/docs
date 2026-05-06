@@ -79,19 +79,17 @@ Soit $f$ la fonction définie sur $\R$ par $f(x)=x^2+1$.
 
 \definition [Courbe représentative]
 
-\def\manote{\begin{tikzpicture}
-  \draw[->] (-0.5,0) -- (3.5,0) node[right] {$x$};
-  \draw[->] (0,-0.5) -- (0,3.5) node[above] {$y$};
-  \draw[domain=0:3, smooth, variable=\x, blue, thick] plot ({\x}, {0.5*\x*\x/2 + 0.5});
-  \draw[dashed] (2,0) -- (2,2.5);
-  \draw[dashed] (0,2.5) -- (2,2.5);
-  \fill (2,2.5) circle (2pt);
-
-  % Labels
-  \node[below] at (2,0) {$x$};
-  \node[left] at (0,2.5) {$f(x)$};
-  \node[above right] at (2,2.5) {$(x,f(x))$};
-\end{tikzpicture}}
+\def\manote{~\\ \begin{tikzpicture}
+		\draw[->, >=Triangle, line width=1pt] (-0.5,0) -- (3.5,0) node[right] {$x$};
+		\draw[->, >=Triangle, line width=1pt] (0,-0.5) -- (0,3.5) node[above] {$y$};
+		\draw[domain=0:3, smooth, variable=\x, blue, line width=1.5pt] plot ({\x}, {0.5*\x*\x/2 + 0.5});
+		\draw[dashed] (2,0) -- (2,1.5);
+		\draw[dashed] (0,1.5) -- (2,1.5);
+		\node[below, font=\large] at (2,-0.1) {$x$};
+		\node[left, font=\large] at (0,1.5) {$f(x)$};
+		\node[above right,font=\large] at (2.3,2.5) {$\Cf$};
+		\fill[red] (2,1.5) circle (2pt);
+	\end{tikzpicture}}
 
 Dans un repère $(O,\vec{i},\vec{j})$, on appelle \textbf{courbe représentative}\sidenote{\manote} de la fonction $f$ définie sur $I$ l'ensemble des points d'abscisse $x$ et d'ordonnée $f(x)$ pour tous les $x$ de $I$.
 
@@ -104,8 +102,44 @@ Une équation de la courbe est $y=f(x)$.
 \prop
 
 \begin{itemize}
-	\item \textbf{Lecture graphique de l'image} d'un réel $a$ par $f$\\ On repère le point de $\Cf$ d'abscisse $a$ et on lit son ordonnée $f(a)$.
+	\item \textbf{Lecture graphique de l'image} d'un réel $a$ par $f$\\ On repère le point de $\Cf$ d'abscisse $a$ et on lit son ordonnée $f(a)$.\\
+	      \begin{center}
+		      \begin{tikzpicture}
+			      \draw[->, >=Triangle, line width=1pt] (-0.5,0) -- (3.5,0) node[right] {$x$};
+			      \draw[->, >=Triangle, line width=1pt] (0,-0.5) -- (0,3.5) node[above] {$y$};
+			      \draw[domain=0:3.3, smooth, variable=\x, blue, line width=1.5pt] plot ({\x}, {-0.5*\x*\x/4 + 2});
+			      \def\a{2}\def\fa{1.5}
+			      \draw[->, >=Triangle, thick] (\a,0) -- (\a,\fa);
+			      \draw[->, >=Triangle, thick] (\a,\fa) -- (0,\fa);
+			      \node[below, font=\large] at (\a, -0.1) {$a$};
+			      \node[left, font=\large] at (0,\fa) {$f(a)$};
+			      \node[above right,font=\large] at (3,0.7) {$\Cf$};
+			      \fill[red] (\a,\fa) circle (2pt);
+		      \end{tikzpicture}
+	      \end{center}
+
 	\item \textbf{Lecture graphique des antécédents} d'un réel $b$ par $f$\\ On repère les points de $\Cf$ d'ordonnée $b$ et on lit leurs abscisses.
+
+	      \begin{center}
+		      \begin{tikzpicture}
+			      \draw[->, >=Triangle, line width=1pt] (-0.5,0) -- (3.5,0) node[right] {$x$};
+			      \draw[->, >=Triangle, line width=1pt] (0,-0.5) -- (0,3.5) node[above] {$y$};
+			      \draw[domain=0:3.3, smooth, variable=\x, blue, line width=1.5pt] plot ({\x}, {0.3125*(\x-1.6)*(\x-1.6)+1});
+			      \def\b{1.2}
+			      \draw[dashed] (0,\b) -- (3.2,\b);
+			      \def\xA{0.8}\def\xB{2.4}
+			      \draw[->, >=Triangle, thick] (\xA,\b) -- (\xA,0);
+			      \draw[->, >=Triangle, thick] (\xB,\b) -- (\xB,0);
+			      \node[left, font=\large] at (0,\b) {$b$};
+			      \node[below, font=\large] at (\xA,-0.1) {$x_1$};
+			      \node[below, font=\large] at (\xB,-0.1) {$x_2$};
+			      \node[above right,font=\large] at (3,1.9) {$\Cf$};
+			      \fill[red] (\xA,\b) circle (2pt);
+			      \fill[red] (\xB,\b) circle (2pt);
+		      \end{tikzpicture}
+	      \end{center}
+
+
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -114,13 +148,36 @@ Une équation de la courbe est $y=f(x)$.
 \definition [Fonctions croissante et décroissante]
 
 \begin{itemize}
-	\item Une fonction $f$ est dite \textbf{croissante} sur un intervalle $I$ si, pour \textbf{tous} les réels $a$ et $b$ de $I$ tels que $a<b$, on a $f(a)\leqslant f(b)$.
-	      \emph{(Les images sont rangées dans le même ordre que les antécédents.)}
-
-	\item Une fonction $f$ est dite \textbf{décroissante} sur un intervalle $I$ si, pour \textbf{tous} les réels $a$ et $b$ de $I$ tels que $a<b$, on a $f(a)\geqslant f(b)$.
-	      \emph{(Les images sont rangées dans l'ordre contraire de celui des antécédents.)}
+	\item Une fonction $f$ est dite \textbf{croissante} sur un intervalle $I$ si, pour \textbf{tous} les réels $a$ et $b$ de $I$ tels que $a<b$, on a $f(a)\leqslant f(b)$.\sidenote{Les images sont rangées dans le même ordre que les antécédents.}
+	\item Une fonction $f$ est dite \textbf{décroissante} sur un intervalle $I$ si, pour \textbf{tous} les réels $a$ et $b$ de $I$ tels que $a<b$, on a $f(a)\geqslant f(b)$.\sidenote{Les images sont rangées dans l'ordre contraire de celui des antécédents.}
 \end{itemize}
 
+\begin{center}
+	\begin{tikzpicture}[scale=1, >=Stealth]
+		\begin{scope}
+			\draw[->] (-0.5,0) -- (4,0) node[right, font=\small] {$x$};
+			\draw[->] (0,-0.5) -- (0,4) node[above, font=\small] {$y$};
+			\def\xa{0.8} \def\ya{0.75}
+			\def\xb{3.2} \def\yb{2.55}
+			\draw[thick, black, domain=0.2:3.8] plot (\x, {0.15*(\x+0.5)^2 + 0.5});
+			\draw[dashed, gray] (\xa,0) node[below, black, font=\small] {$a$} -- (\xa,\ya) -- (0,\ya) node[left, black, font=\small] {$f(a)$};
+			\draw[dashed, gray] (\xb,0) node[below, black, font=\small] {$b$} -- (\xb,\yb) -- (0,\yb) node[left, black, font=\small] {$f(b)$};
+			\node[circle, fill=blue, inner sep=1.5pt, label={[blue]above :$A$}] at (\xa,\ya) {};
+			\node[circle, fill=blue, inner sep=1.5pt, label={[blue]above :$B$}] at (\xb,\yb) {};
+		\end{scope}
+		\begin{scope}[xshift=6cm]
+			\draw[->] (-0.5,0) -- (4,0) node[right, font=\small] {$x$};
+			\draw[->] (0,-0.5) -- (0,4) node[above, font=\small] {$y$};
+			\def\xa{0.8} \def\ya{3.25}
+			\def\xb{3.2} \def\yb{1.45}
+			\draw[thick, coulAlerte, domain=0.2:3.8] plot (\x, {-0.15*(\x+0.5)^2 + 3.5});
+			\draw[dashed, gray] (\xa,0) node[below, black, font=\small] {$a$} -- (\xa,\ya) -- (0,\ya) node[left, black, font=\small] {$f(a)$};
+			\draw[dashed, gray] (\xb,0) node[below, black, font=\small] {$b$} -- (\xb,\yb) -- (0,\yb) node[left, black, font=\small] {$f(b)$};
+			\node[circle, fill=blue, inner sep=1.5pt, label={[blue]above :$A$}] at (\xa,\ya) {};
+			\node[circle, fill=blue, inner sep=1.5pt, label={[blue]above :$B$}] at (\xb,\yb) {};
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
 \begin{rem}
 	\begin{itemize}
 		\item En remplaçant $f(a)\leqslant f(b)$ par $f(a)<f(b)$, on dit que $f$ est \textbf{strictement croissante} sur $I$.
@@ -135,32 +192,45 @@ Une équation de la courbe est $y=f(x)$.
 		\item On calcule $f(b)-f(a)$ en factorisant le résultat si possible.
 		\item On étudie le signe de $f(b)-f(a)$ :
 		      \begin{itemize}
-			      \item si $f(b)-f(a)$ reste toujours positif sur $I$, alors $f$ est \textbf{croissante} sur $I$ ;
-			      \item si $f(b)-f(a)$ reste toujours négatif sur $I$, alors $f$ est \textbf{décroissante} sur $I$.
+			      \item si $f(b)-f(a)$ reste positif sur $I$, alors $f$ est \textbf{croissante} sur $I$ ;
+			      \item si $f(b)-f(a)$ reste négatif sur $I$, alors $f$ est \textbf{décroissante} sur $I$.
 		      \end{itemize}
 	\end{enumerate}
 \end{methode}
 
-\ex
+
+\ex\sidenote{Représentation de $f(x)=3x^2$\begin{center}\begin{tikzpicture}[xscale=1.7]
+  \draw[->, >=Stealth, line width=1pt] (-1.2,0) -- (1.2,0) node[right] {$x$};
+  \draw[->, >=Stealth, line width=1pt] (0,-0.5) -- (0,3.5) node[above] {$y$};
+  \draw[domain=-1.05:1.05, smooth, variable=\x, blue, line width=1.5pt] plot ({\x}, {3*\x*\x});
+  \node[below left] at (0,0) {$O$};
+  \node[below left,font=\large] at (1,3.4) {$\Cf$};
+\end{tikzpicture}\end{center}
+}
 
 Soit $f$ la fonction définie sur $\R$ par $f(x)=3x^2$.
 
 \begin{itemize}
-	\item \textit{Sens de variation sur $\left]-\infty\,;\,0\right[$} :
-				      Pour tous $a,b\in\left]-\infty\,;\,0\right[$ avec $b-a>0$ :
-	      \[
-		      f(b)-f(a)=3b^{2}-3a^{2}=3(b-a)(b+a).
-	      \]
-	      Or $b-a>0$ et $b+a<0$ (car $a<0$ et $b<0$), donc $f(b)-f(a)<0$.\\
-	      $f$ est \textbf{décroissante} sur $\left]-\infty\,;\,0\right[$.
+	\item \textit{Sens de variation sur $\left]~-\infty\,;\,0~\right[$} :\\
+				      Pour tous $a,b\in\left]~-\infty\,;\,0~\right[$ avec $b-a>0$ :
+	      $$
+		      \begin{array}{rl}
+			      f(b)-f(a) & =3b^{2}-3a^{2} \\
+			                & =3(b-a)(b+a)
+		      \end{array}
+	      $$
+	      Or : \bi\item $b-a>0$\item  $b+a<0$ (car $a<0$ et $b<0$)\ei
+	      Donc $f(b)-f(a)<0\implies f$ est \textbf{décroissante} sur $\left]~-\infty\,;\,0~\right[$.
 
-	\item \textit{Sens de variation sur $\left]0\,;\,+\infty\right[$} :
-				      Pour tous $a,b\in\left]0\,;\,+\infty\right[$ avec $b-a>0$ :
-				      \[
-					      f(b)-f(a)=3(b-a)(b+a).
-				      \]
-				      Or $b-a>0$ et $b+a>0$ (car $a>0$ et $b>0$), donc $f(b)-f(a)>0$.\\
-			      $f$ est \textbf{croissante} sur $\left]0\,;\,+\infty\right[$.
+	\item \textit{Sens de variation sur $\left]~0\,;\,+\infty~\right[$} :\\
+				      Pour tous $a,b\in\left]~0\,;\,+\infty~\right[$ avec $b-a>0$ :
+				      $$
+					      \begin{array}{rl}
+						      f(b)-f(a)=3(b-a)(b+a)
+					      \end{array}
+				      $$
+				      Or : \bi\item $b-a>0$\item $b+a>0$ (car $a>0$ et $b>0$)\ei
+					  Donc $f(b)-f(a)>0\implies f$ est \textbf{croissante} sur $\left]~0\,;\,+\infty~\right[$.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -170,9 +240,11 @@ Soit $f$ la fonction définie sur $\R$ par $f(x)=3x^2$.
 
 Étant donné $f$ une fonction définie sur $[a\,;\,b]$ contenant $x_0$ :
 \begin{itemize}
-	\item $f$ admet un \textbf{minimum} en $x_0$ sur $[a\,;\,b]$ si pour tout $x\in[a\,;\,b]$, on a $f(x)\geqslant f(x_0)$.
-	\item $f$ admet un \textbf{maximum} en $x_0$ sur $[a\,;\,b]$ si pour tout $x\in[a\,;\,b]$, on a $f(x)\leqslant f(x_0)$.
+	\item $f$ admet un \textbf{minimum} en $x_0$ sur $[\,a\,;\,b\,]$ si pour tout $x\in[\,a\,;\,b\,]$, on a : $$f(x)\geqslant f(x_0)$$
+	\item $f$ admet un \textbf{maximum} en $x_0$ sur $[\,a\,;\,b\,]$ si pour tout $x\in[\,a\,;\,b\,]$, on a : $$f(x)\leqslant f(x_0)$$
 \end{itemize}
+
+% TODO : faire une illustration
 
 \ex
 

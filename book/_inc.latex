@@ -151,6 +151,11 @@ xleftmargin=0.5cm
 \rnc{\diamond}{\textcolor{red}{\text{\ding{169}}}}
 \nc{\heart}{\textcolor{red}{\text{\ding{170}}}}
 
+\newcommand{\intoo}[2]{\left]\,#1\,;\,#2\,\right[} % ouvert ouvert
+\newcommand{\intff}[2]{\left[\,#1\,;\,#2\,\right]} % fermé fermé
+\newcommand{\intof}[2]{\left]\,#1\,;\,#2\,\right]} % ouvert fermé
+\newcommand{\intfo}[2]{\left[\,#1\,;\,#2\,\right[} % fermé ouvert
+
 \rnc{\bar}[1]{\overline{#1}}
 
 \rnc{\parallel}{\mathbin{\!/\mkern-4mu/\!}}

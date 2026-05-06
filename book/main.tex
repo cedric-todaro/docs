@@ -211,8 +211,8 @@ Une équation de la courbe est $y=f(x)$.
 Soit $f$ la fonction définie sur $\R$ par $f(x)=3x^2$.
 
 \begin{itemize}
-	\item \textit{Sens de variation sur $\left]~-\infty\,;\,0~\right[$} :\\
-				      Pour tous $a,b\in\left]~-\infty\,;\,0~\right[$ avec $b-a>0$ :
+	\item \textit{Sens de variation sur $\intoo{-\infty}{0}$} :\\
+				      Pour tous $a,b\in\intoo{-\infty}{0}$ avec $b-a>0$ :
 	      $$
 		      \begin{array}{rl}
 			      f(b)-f(a) & =3b^{2}-3a^{2} \\
@@ -220,35 +220,37 @@ Soit $f$ la fonction définie sur $\R$ par $f(x)=3x^2$.
 		      \end{array}
 	      $$
 	      Or : \bi\item $b-a>0$\item  $b+a<0$ (car $a<0$ et $b<0$)\ei
-	      Donc $f(b)-f(a)<0\implies f$ est \textbf{décroissante} sur $\left]~-\infty\,;\,0~\right[$.
+	      Donc $f(b)-f(a)<0\implies f$ est \textbf{décroissante} sur $\intoo{-\infty}{0}$.
 
-	\item \textit{Sens de variation sur $\left]~0\,;\,+\infty~\right[$} :\\
-				      Pour tous $a,b\in\left]~0\,;\,+\infty~\right[$ avec $b-a>0$ :
+	  \item \textit{Sens de variation sur $\intoo{0}{+\infty}$} :\\
+				      Pour tous $a,b\in\intoo{0}{+\infty}$ avec $b-a>0$ :
 				      $$
 					      \begin{array}{rl}
 						      f(b)-f(a)=3(b-a)(b+a)
 					      \end{array}
 				      $$
 				      Or : \bi\item $b-a>0$\item $b+a>0$ (car $a>0$ et $b>0$)\ei
-					  Donc $f(b)-f(a)>0\implies f$ est \textbf{croissante} sur $\left]~0\,;\,+\infty~\right[$.
+					  Donc $f(b)-f(a)>0\implies f$ est \textbf{croissante} sur $\intoo{0}{+\infty}$.
 \end{itemize}
+
+% TODO : parler des tableaux de variations
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Maximum et minimum d'une fonction sur un intervalle}
 
 \definition [Maximum et minimum]
 
-Étant donné $f$ une fonction définie sur $[a\,;\,b]$ contenant $x_0$ :
+Étant donné $f$ une fonction définie sur $\intff{a}{b}$ contenant $x_0$ :
 \begin{itemize}
-	\item $f$ admet un \textbf{minimum} en $x_0$ sur $[\,a\,;\,b\,]$ si pour tout $x\in[\,a\,;\,b\,]$, on a : $$f(x)\geqslant f(x_0)$$
-	\item $f$ admet un \textbf{maximum} en $x_0$ sur $[\,a\,;\,b\,]$ si pour tout $x\in[\,a\,;\,b\,]$, on a : $$f(x)\leqslant f(x_0)$$
+	\item $f$ admet un \textbf{minimum} en $x_0$ sur $\intff{a}{b}$ si pour tout $x\in\intff{a}{b}$, on a : $$f(x)\geqslant f(x_0)$$
+	\item $f$ admet un \textbf{maximum} en $x_0$ sur $\intff{a}{b}$ si pour tout $x\in\intff{a}{b}$, on a : $$f(x)\leqslant f(x_0)$$
 \end{itemize}
 
 % TODO : faire une illustration
 
 \ex
 
-Une fonction $f$ est définie sur $[-5\,;\,3]$ par sa courbe. On peut lire :
+Une fonction $f$ est définie sur $\intff{-5}{3}$ par sa courbe. On peut lire :
 \begin{itemize}
 	\item $f(-2)=1$.
 	\item L'antécédent de $0$ est $2$.
@@ -272,9 +274,9 @@ Une partie $I$ de $\R$ est dite \textbf{symétrique par rapport à $0$} si pour 
 
 \begin{itemize}
 	\item $\R$ est symétrique par rapport à $0$.
-	\item $\left]-3\,;\,2\right[$ n'est \textbf{pas} symétrique par rapport à $0$.
-	\item $\left]-\infty\,;\,0\right[\cup\left]0\,;\,+\infty\right[$ ($\R$ privé de $0$) est symétrique par rapport à $0$.
-	\item $\left]-\infty\,;\,1\right[\cup\left]1\,;\,+\infty\right[$ ($\R$ privé de $1$) n'est \textbf{pas} symétrique par rapport à $0$.
+	\item $\intoo{-3}{2}$ n'est \textbf{pas} symétrique par rapport à $0$.
+	\item $\intoo{-\infty}{0}\cup\intoo{0}{+\infty}$ ($\R$ privé de $0$) est symétrique par rapport à $0$.
+	\item $\intoo{-\infty}{1}\cup\intoo{1}{+\infty}$ \textbf{n'}est \textbf{pas} symétrique par rapport à $0$.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

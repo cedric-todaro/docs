@@ -2,7 +2,7 @@
 \input{_inc.latex}
 
 \begin{document}
-% \Huge\allcaps{math}\normalsize\tableofcontents
+\Huge\allcaps{math}\normalsize\tableofcontents
 
 \chapter{Généralités sur les fonctions}
 
@@ -148,8 +148,8 @@ Une équation de la courbe est $y=f(x)$.
 \definition [Fonctions croissante et décroissante]
 
 \begin{itemize}
-	\item Une fonction $f$ est dite \textbf{croissante} sur un intervalle $I$ si, pour \textbf{tous} les réels $a$ et $b$ de $I$ tels que $a<b$, on a $f(a)\leqslant f(b)$.\sidenote{Les images sont rangées dans le même ordre que les antécédents.}
-	\item Une fonction $f$ est dite \textbf{décroissante} sur un intervalle $I$ si, pour \textbf{tous} les réels $a$ et $b$ de $I$ tels que $a<b$, on a $f(a)\geqslant f(b)$.\sidenote{Les images sont rangées dans l'ordre contraire de celui des antécédents.}
+	\item Une fonction $f$ est dite \textbf{croissante} sur un intervalle $I$ si, pour \textbf{tous} les réels $a$ et $b$ de $I$ tels que $a<b$, on a $f(a)\le f(b)$.\sidenote{Les images sont rangées dans le même ordre que les antécédents.}
+	\item Une fonction $f$ est dite \textbf{décroissante} sur un intervalle $I$ si, pour \textbf{tous} les réels $a$ et $b$ de $I$ tels que $a<b$, on a $f(a)\ge f(b)$.\sidenote{Les images sont rangées dans l'ordre contraire de celui des antécédents.}
 \end{itemize}
 
 \begin{center}
@@ -180,8 +180,8 @@ Une équation de la courbe est $y=f(x)$.
 \end{center}
 \begin{rem}
 	\begin{itemize}
-		\item En remplaçant $f(a)\leqslant f(b)$ par $f(a)<f(b)$, on dit que $f$ est \textbf{strictement croissante} sur $I$.
-		\item En remplaçant $f(a)\geqslant f(b)$ par $f(a)>f(b)$, on dit que $f$ est \textbf{strictement décroissante} sur $I$.
+		\item En remplaçant $f(a)\le f(b)$ par $f(a)<f(b)$, on dit que $f$ est \textbf{strictement croissante} sur $I$.
+		\item En remplaçant $f(a)\ge f(b)$ par $f(a)>f(b)$, on dit que $f$ est \textbf{strictement décroissante} sur $I$.
 		\item Quand une fonction est croissante ou décroissante sur un intervalle, on dit qu'elle est \textbf{monotone} sur cet intervalle.
 	\end{itemize}
 \end{rem}
@@ -267,8 +267,8 @@ Le \textbf{tableau de variations} d'une fonction permet de résumer :
 
 Étant donné $f$ une fonction définie sur $\intff{a}{b}$ contenant $x_0$ :
 \begin{itemize}
-	\item $f$ admet un \textbf{minimum} en $x_0$ sur $\intff{a}{b}$ si pour tout $x\in\intff{a}{b}$, on a : $$f(x)\geqslant f(x_0)$$
-	\item $f$ admet un \textbf{maximum} en $x_0$ sur $\intff{a}{b}$ si pour tout $x\in\intff{a}{b}$, on a : $$f(x)\leqslant f(x_0)$$
+	\item $f$ admet un \textbf{minimum} en $x_0$ sur $\intff{a}{b}$ si pour tout $x\in\intff{a}{b}$, on a : $$f(x)\ge f(x_0)$$
+	\item $f$ admet un \textbf{maximum} en $x_0$ sur $\intff{a}{b}$ si pour tout $x\in\intff{a}{b}$, on a : $$f(x)\le f(x_0)$$
 \end{itemize}
 
 \begin{center}
@@ -394,7 +394,7 @@ Une partie $I$ de $\R$ est dite \textbf{symétrique par rapport à $0$} si pour 
 		\fill (-2,1.7) circle (2pt);
 		\fill (0,1.7) circle (2pt);
 		\fill (2,1.7) circle (2pt);
-\end{tikzpicture}}
+	\end{tikzpicture}}
 
 Une fonction $f$ définie sur une partie $I$ de $\R$ est dite \textbf{paire} si $I$ est symétrique par rapport à $0$ et si, pour tout $x\in I$, on a : $$f(-x)=f(x)$$
 
@@ -406,7 +406,7 @@ Dans un repère orthogonal, la courbe représentative d'une fonction paire\siden
 
 \begin{enumerate}
 	\item La fonction $f$ définie sur $\R$ par $f(x)=3x^{2}$ est paire, car :
-		\bi\item $\R$ est symétrique par rapport à $0$\item et $f(-x)=3(-x)^{2}=3x^{2}=f(x)$\ei
+	      \bi\item $\R$ est symétrique par rapport à $0$\item et $f(-x)=3(-x)^{2}=3x^{2}=f(x)$\ei
 	\item La fonction $f$ définie sur $\R$ par $f(x)=2x+1$ \textbf{n'}est \textbf{pas} paire, car : \bi\item$f(-x)=-2x+1\neq f(x)$\ei
 \end{enumerate}
 
@@ -415,22 +415,22 @@ Dans un repère orthogonal, la courbe représentative d'une fonction paire\siden
 \definition [Fonction impaire]
 
 \def\manote{\null\\\begin{tikzpicture}[xscale=0.8, >=Triangle]
-	\draw[->] (-3,0) -- (3,0) node[right] {$x$};
-	\draw[->] (0,-3) -- (0,3) node[above] {$y$};
-	\draw[thick, blue, domain=-2.3:2.3, smooth] plot (\x,{0.15*\x*\x*\x + 0.5*\x});
-	\draw[dashed, gray] (-2,0) -- (-2,-2.2);
-	\draw[dashed, gray] (2,0) -- (2,2.2);
-	\draw[dashed, gray] (-2,-2.2) -- (0,-2.2);
-	\draw[dashed, gray] (2,2.2) -- (0,2.2);
-	\node[below] at (-2,0) {$-x$};
-	\node[below] at (2,0) {$x$};
-	\node[right] at (0,-2.2) {$-f(x)$};
-	\node[left] at (0,2.2) {$f(x)$};
-	\node[above, blue] at (1.9,2.7) {$\Cf$};
-	\fill (-2,-2.2) circle (2pt);
-	\fill (0,0) circle (2pt);
-	\fill (2,2.2) circle (2pt);
-\end{tikzpicture}}
+		\draw[->] (-3,0) -- (3,0) node[right] {$x$};
+		\draw[->] (0,-3) -- (0,3) node[above] {$y$};
+		\draw[thick, blue, domain=-2.3:2.3, smooth] plot (\x,{0.15*\x*\x*\x + 0.5*\x});
+		\draw[dashed, gray] (-2,0) -- (-2,-2.2);
+		\draw[dashed, gray] (2,0) -- (2,2.2);
+		\draw[dashed, gray] (-2,-2.2) -- (0,-2.2);
+		\draw[dashed, gray] (2,2.2) -- (0,2.2);
+		\node[below] at (-2,0) {$-x$};
+		\node[below] at (2,0) {$x$};
+		\node[right] at (0,-2.2) {$-f(x)$};
+		\node[left] at (0,2.2) {$f(x)$};
+		\node[above, blue] at (1.9,2.7) {$\Cf$};
+		\fill (-2,-2.2) circle (2pt);
+		\fill (0,0) circle (2pt);
+		\fill (2,2.2) circle (2pt);
+	\end{tikzpicture}}
 
 Une fonction $f$ définie sur une partie $I$ de $\R$ est dite \textbf{impaire} si $I$ est symétrique par rapport à $0$ et si, pour tout $x\in I$, on a : $$f(-x)=-f(x)$$
 
@@ -442,7 +442,7 @@ La courbe représentative d'une fonction impaire\sidenote{\manote} est \textbf{s
 
 \begin{enumerate}
 	\item La fonction $f$ définie sur $\intoo{-\infty}{0}\cup\intoo{0}{+\infty}$ par $f(x)=\dfrac{2}{x}$ est impaire, car :
-		\bi\item$\intoo{-\infty}{0}\cup\intoo{0}{+\infty}$ est symétrique par rapport à $0$\item$f(-x)=\dfrac{2}{-x}=-\dfrac{2}{x}=-f(x)$\ei
+	      \bi\item$\intoo{-\infty}{0}\cup\intoo{0}{+\infty}$ est symétrique par rapport à $0$\item$f(-x)=\dfrac{2}{-x}=-\dfrac{2}{x}=-f(x)$\ei
 	\item La fonction $f$ définie sur $\R$ par $f(x)=2x+1$ \textbf{n'}est \textbf{pas} impaire, car : \bi\item $f(-x)=-2x+1\neq -f(x)$\ei
 \end{enumerate}
 
@@ -457,12 +457,11 @@ La courbe représentative d'une fonction impaire\sidenote{\manote} est \textbf{s
 Étant donné une fonction $f$ définie sur $I$ et $\Cf$ sa courbe représentative.
 \begin{itemize}
 	\item Les solutions sur $I$ de l'équation $f(x)=mx+p$ sont les \textbf{abscisses des points d'intersection} entre $\Cf$ et la droite $d$ d'équation $y=mx+p$.
-
-	\item Cas particulier : les solutions de $f(x)=0$ sont les abscisses des points d'intersection entre $\Cf$ et \textbf{l'axe des abscisses}.
-
-	\item Les solutions de $f(x)\geqslant mx+p$ sont les abscisses des points de $\Cf$ situés \textbf{au-dessus ou sur} la droite $d$.
-
-	\item Les solutions de $f(x)\leqslant mx+p$ sont les abscisses des points de $\Cf$ situés \textbf{en-dessous ou sur} la droite $d$.
+	      \begin{itemize}
+		      \item Cas particulier : les solutions de $f(x)=0$ sont les abscisses des points d'intersection entre $\Cf$ et \textbf{l'axe des abscisses}.
+	      \end{itemize}
+	\item Les solutions de $f(x)\ge mx+p$ sont les abscisses des points de $\Cf$ situés \textbf{au-dessus ou sur} la droite $d$.
+	\item Les solutions de $f(x)\le mx+p$ sont les abscisses des points de $\Cf$ situés \textbf{en-dessous ou sur} la droite $d$.
 \end{itemize}
 
 \ex
@@ -472,9 +471,12 @@ Une fonction $f$ est définie sur $[-2\,;\,5]$ par sa courbe $\Cf$.
 	\item Solutions de $f(x)=-x+3$ : $x=0$ et $x=3$.
 	\item Solutions de $f(x)=0$ : $x=-2$ et $x=3$.
 	\item Solutions de $f(x)=2$ : $x=-1$ et $x=2$.
-	\item Solutions de $f(x)\geqslant -x+3$ : $[0\,;\,5]$.
+	\item Solutions de $f(x)\ge -x+3$ : $[0\,;\,5]$.
 	\item Solutions de $f(x)>2$ : $\left]-1\,;\,2\right[$.
 \end{itemize}
+
+% TODO: prop [signe d'une fonction] --> Tableau de signe et exemple
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Fonctions de référence}
@@ -485,6 +487,7 @@ Une fonction $f$ est définie sur $[-2\,;\,5]$ par sa courbe $\Cf$.
 \definition [Fonction linéaire]
 
 Une \textbf{fonction linéaire} est définie sur $\R$ par $f(x)=mx$ où $m\in\R$.
+
 Sa courbe représentative est une droite passant par l'origine de coefficient directeur $m$.
 
 \prop
@@ -498,12 +501,15 @@ Sa courbe représentative est une droite passant par l'origine de coefficient di
 	      \end{itemize}
 \end{itemize}
 
+% TODO: Étude du signe et tableau de signe 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Les fonctions affines}
 
 \definition [Fonction affine]
 
 Une \textbf{fonction affine} est définie sur $\R$ par $f(x)=mx+p$ où $m,p\in\R$.
+
 Sa courbe représentative est une droite de coefficient directeur $m$.
 
 \prop
@@ -513,6 +519,8 @@ Pour tous $a,b\in\R$ avec $b-a>0$ : $f(b)-f(a)=m(b-a)$.
 	\item Si $m>0$, $f$ est \textbf{strictement croissante} sur $\R$.
 	\item Si $m<0$, $f$ est \textbf{strictement décroissante} sur $\R$.
 \end{itemize}
+
+% TODO: Étude du signe et tableau de signe 
 
 \begin{rem}
 	Déterminer l'expression d'une fonction affine connaissant deux de ses valeurs revient à déterminer l'équation réduite d'une droite connaissant deux de ses points.
@@ -534,35 +542,49 @@ Pour tous $a,b\in\R$ avec $b-a>0$ : $f(b)-f(a)=m(b-a)$.
 
 \definition [Fonction carré]
 
-La \textbf{fonction carré} est définie sur $\R$ par $f(x)=x^2$. Sa courbe représentative est une parabole.
+La \textbf{fonction carré} est définie sur $\R$ par $f(x)=x^2$.
+
+Sa courbe représentative est une parabole.
 
 \prop
 
 \begin{itemize}
 	\item La fonction carré est \textbf{paire} : $f(-x)=(-x)^{2}=x^{2}=f(x)$.
-	\item Elle est \textbf{strictement décroissante} sur $\left]-\infty\,;\,0\right[$ et \textbf{strictement croissante} sur $\left]0\,;\,+\infty\right[$.
+	\item Elle est \textbf{strictement décroissante} sur $\intoo{-\infty}{0}$.
+	\item Elle est \textbf{strictement croissante} sur $\intoo{0}{+\infty}$.
 \end{itemize}
 
 \demo
 
-Pour tous $a,b\in\left]-\infty\,;\,0\right[$ avec $b-a>0$ :
-\[
-	f(b)-f(a)=b^{2}-a^{2}=\underbrace{(b-a)}_{>0}\times\underbrace{(b+a)}_{<0}<0.
-\]
-Donc $f$ est strictement décroissante sur $\left]-\infty\,;\,0\right[$.
+\begin{itemize}
+	\item Pour tous $a,b\in\intoo{-\infty}{0}$ avec $b-a>0$ :
 
-			Pour tous $a,b\in\left]0\,;\,+\infty\right[$ avec $b-a>0$ :
-			\[
-				f(b)-f(a)=\underbrace{(b-a)}_{>0}\times\underbrace{(b+a)}_{>0}>0.
-			\]
-			Donc $f$ est strictement croissante sur $\left]0\,;\,+\infty\right[$.
+	      \[
+		      f(b)-f(a)=b^{2}-a^{2}=\underbrace{(b-a)}_{>0}\times\underbrace{(b+a)}_{<0}<0
+	      \]
 
-			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-			\subsection{La fonction inverse}
+	      Donc $f$ est strictement décroissante sur $\intoo{-\infty}{0}$.
 
-			\definition [Fonction inverse]
+	\item Pour tous $a,b\in\intoo{0}{+\infty}$ avec $b-a>0$ :
 
-			La \textbf{fonction inverse} est définie sur $\left]-\infty\,;\,0\right[\cup\left]0\,;\,+\infty\right[$ par $f(x)=\dfrac{1}{x}$. Sa courbe représentative est une hyperbole.
+	      \[
+		      f(b)-f(a)=\underbrace{(b-a)}_{>0}\times\underbrace{(b+a)}_{>0}>0.
+	      \]
+
+	      Donc $f$ est strictement croissante sur $\intoo{0}{+\infty}$.
+
+\end{itemize}
+
+% TODO: Étude du signe et tableau de signe 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{La fonction inverse}
+
+\definition [Fonction inverse]
+
+La \textbf{fonction inverse} est définie sur $\intoo{-\infty}{0}\cup\intoo{0}{+\infty}$ par $f(x)=\dfrac{1}{x}$.
+
+Sa courbe représentative est une hyperbole.
 
 \prop
 
@@ -606,8 +628,8 @@ Pour tous $a,b\in\left[0\,;\,+\infty\right[$ avec $b-a>0$ :
 Étant donné $f$ et $g$ deux fonctions définies sur un même intervalle $I$ :
 
 \begin{itemize}
-	\item Si pour tout $x\in I$, $f(x)-g(x)>0$, alors $\Cf$ est \textbf{au-dessus} de $\Cg$.
-	\item Si pour tout $x\in I$, $f(x)-g(x)<0$, alors $\Cf$ est \textbf{en-dessous} de $\Cg$.
+	\item Si pour tout $x\in I$, $f(x)>g(x)$, alors $\Cf$ est \textbf{au-dessus} de $\Cg$.
+	\item Si pour tout $x\in I$, $f(x)<g(x)$, alors $\Cf$ est \textbf{en-dessous} de $\Cg$.
 \end{itemize}
 
 

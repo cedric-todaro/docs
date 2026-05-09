@@ -2,7 +2,7 @@ set shell := ["bash", "-eu", "-o", "pipefail", "-c"]
 
 @default: all
 
-@all:
+@all: clean
     latexmk -silent -bibtex- -pdf main.tex &> /dev/null
     latexmk -silent -c &> /dev/null
     rm -fr ./main.synctex.gz &> /dev/null
